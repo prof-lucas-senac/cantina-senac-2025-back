@@ -1,0 +1,7 @@
+https://github.com/prof-lucas-senac/cantina-senac-2025-back.git
+
+git init 
+
+$ git remote add origin https://github.com/prof-lucas-senac/cantina-senac-2025-back.git  
+
+
