@@ -1,0 +1,17 @@
+public abstract class Usuario
+{
+    public int id { get; set; }
+    public string NomeDoUsuario { get; set; }
+    public string Email { get; set; }
+    public string Senha { get; set; }
+    public int Status { get; set; }
+    public string Foto { get; set; }
+    public List<Postagem> Postagens { get; set; }
+
+    public abstract string Cadastrar();
+    public abstract string Atualizar();
+    public abstract string PublicarFeedback();
+    public abstract string ComentarFeedback();
+
+    public abstract string logar();
+}
