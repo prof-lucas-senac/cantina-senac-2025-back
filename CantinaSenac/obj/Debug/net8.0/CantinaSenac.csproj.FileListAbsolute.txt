@@ -1,0 +1,15 @@
+C:\SistemasInformacao\prog_web\back\CantinaSenac\bin\Debug\net8.0\CantinaSenac.exe
+C:\SistemasInformacao\prog_web\back\CantinaSenac\bin\Debug\net8.0\CantinaSenac.deps.json
+C:\SistemasInformacao\prog_web\back\CantinaSenac\bin\Debug\net8.0\CantinaSenac.runtimeconfig.json
+C:\SistemasInformacao\prog_web\back\CantinaSenac\bin\Debug\net8.0\CantinaSenac.dll
+C:\SistemasInformacao\prog_web\back\CantinaSenac\bin\Debug\net8.0\CantinaSenac.pdb
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.GeneratedMSBuildEditorConfig.editorconfig
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.AssemblyInfoInputs.cache
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.AssemblyInfo.cs
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.csproj.CoreCompileInputs.cache
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.sourcelink.json
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.dll
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\refint\CantinaSenac.dll
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.pdb
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\CantinaSenac.genruntimeconfig.cache
+C:\SistemasInformacao\prog_web\back\CantinaSenac\obj\Debug\net8.0\ref\CantinaSenac.dll
