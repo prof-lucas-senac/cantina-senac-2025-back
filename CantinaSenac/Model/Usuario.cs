@@ -13,4 +13,6 @@ public abstract class Usuario
     public abstract void PublicarFeedBack();
     public abstract void ComentarFeedback();
     public abstract void Logar();
+
 }
+
