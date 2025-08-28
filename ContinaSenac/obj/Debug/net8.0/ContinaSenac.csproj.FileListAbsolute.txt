@@ -1,0 +1,15 @@
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.exe
+C:\jovem-programador\prog_web2025\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.deps.json
+C:\jovem-programador\prog_web2025\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.runtimeconfig.json
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.dll
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.pdb
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.GeneratedMSBuildEditorConfig.editorconfig
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.AssemblyInfoInputs.cache
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.AssemblyInfo.cs
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.csproj.CoreCompileInputs.cache
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.sourcelink.json
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.dll
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\refint\ContinaSenac.dll
+c:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.pdb
+C:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.genruntimeconfig.cache
+C:\jovem-programador\prog_web2025\Backend\ContinaSenac\obj\Debug\net8.0\ref\ContinaSenac.dll
