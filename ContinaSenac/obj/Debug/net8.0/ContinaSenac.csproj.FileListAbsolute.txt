@@ -1,0 +1,15 @@
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.exe
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.deps.json
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.runtimeconfig.json
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.dll
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\bin\Debug\net8.0\ContinaSenac.pdb
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.GeneratedMSBuildEditorConfig.editorconfig
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.AssemblyInfoInputs.cache
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.AssemblyInfo.cs
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.csproj.CoreCompileInputs.cache
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.sourcelink.json
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.dll
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\refint\ContinaSenac.dll
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.pdb
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ContinaSenac.genruntimeconfig.cache
+C:\workplace\p.prog_web\back\Backend\ContinaSenac\obj\Debug\net8.0\ref\ContinaSenac.dll
