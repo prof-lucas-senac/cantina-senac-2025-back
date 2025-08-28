@@ -3,7 +3,7 @@ namespace CantinaSenac.View
 
    public abstract class Usuario
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
 
         public string NomeDoUsuario { get; set; }

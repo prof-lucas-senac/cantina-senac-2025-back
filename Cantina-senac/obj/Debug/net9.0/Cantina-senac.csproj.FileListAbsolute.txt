@@ -1,0 +1,15 @@
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\bin\Debug\net9.0\Cantina-senac.exe
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\bin\Debug\net9.0\Cantina-senac.deps.json
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\bin\Debug\net9.0\Cantina-senac.runtimeconfig.json
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\bin\Debug\net9.0\Cantina-senac.dll
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\bin\Debug\net9.0\Cantina-senac.pdb
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.AssemblyInfoInputs.cache
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.AssemblyInfo.cs
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.csproj.CoreCompileInputs.cache
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.sourcelink.json
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.dll
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\refint\Cantina-senac.dll
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.pdb
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\Cantina-senac.genruntimeconfig.cache
+C:\Users\cadin\OneDrive\Documentos\dev-web-senac\back\Cantina-senac\obj\Debug\net9.0\ref\Cantina-senac.dll
