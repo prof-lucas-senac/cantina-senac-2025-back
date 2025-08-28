@@ -6,16 +6,16 @@ public abstract class Usuario
     public string Senha { get; set; }
     public int Status { get; set; }
     public string Foto { get; set; }
-    public List<Postagem> Postagens { get; set; }
+  //  public List<Postagem> Postagens { get; set; }
 
-    public void Cadastrar();
-    public void Atualizar();
+ //   public void Cadastrar();
+ //   public void Atualizar();
  
-    public void PublicarFeedback();
+ //   public void PublicarFeedback();
    
-    public void ComentarFeedback();
+ //   public void ComentarFeedback();
 
-    public void Logar();
+ //   public void Logar();
 
 }
 

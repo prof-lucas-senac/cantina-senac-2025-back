@@ -5,6 +5,6 @@ abstract class Curso
     public DateTime DataInicio { get; set; }
     public DateTime DataFinal { get; set; }
     public string Descricao { get; set; }
-    public void ApresentarCurso();
+ //   public void ApresentarCurso();
 
 }   
