@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\CantinaSenac.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\CantinaSenac.csproj",
         "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\obj\\",
+=======
+    "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj": {}
+  },
+  "projects": {
+    "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectName": "CantinaSenac",
+        "projectPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+        "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
+        "outputPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\obj\\",
+>>>>>>> master
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",

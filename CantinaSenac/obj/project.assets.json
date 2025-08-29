@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "c:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
       "projectPath": "c:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
       "outputPath": "c:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\obj\\",
+=======
+      "projectUniqueName": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectName": "CantinaSenac",
+      "projectPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
+      "outputPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\obj\\",
+>>>>>>> master
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",

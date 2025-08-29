@@ -8,6 +8,10 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CantinaSenac
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Prog_Sis\Desktop\workplace\programador web\back\CantinaSenac\
+=======
+build_property.ProjectDir = C:\workplace\pweb_2025\back\CantinaSenac\
+>>>>>>> master
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
