@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "USY7AqiWFxk=",
   "success": true,
   "projectFilePath": "C:\\SistemasInformacao\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
+=======
+  "dgSpecHash": "BW/aU2OqK24=",
+  "success": true,
+  "projectFilePath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+>>>>>>> master
   "expectedPackageFiles": [],
   "logs": []
 }
