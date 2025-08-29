@@ -13,7 +13,7 @@ static class LoginView
         email = Console.ReadLine();
         Console.WriteLine("Senha:");
         senha = Console.ReadLine();
-        if (new LoginController().Auntenticar(email, senha))
+        if (new LoginController().Autenticar(email, senha))
         {
             Console.WriteLine("Pressione ENTER para continuar");
             bool rep = true;
