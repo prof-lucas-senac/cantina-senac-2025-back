@@ -22,7 +22,7 @@ static class LoginView
                 ConsoleKeyInfo tecla = Console.ReadKey();
                 if (tecla.Key == ConsoleKey.Enter)
                 {
-                    FeedbackView.Exibir();
+                    FeedbacksView.Exibir();
                     rep = false;
                 }
             }

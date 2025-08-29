@@ -1,5 +1,6 @@
 class Aluno : Usuario
 {
+    public List<Curso> Cursos { get; set; } = new List<Curso>();
     public override void Atualizar()
     {
         throw new NotImplementedException();
@@ -24,5 +25,4 @@ class Aluno : Usuario
     {
         throw new NotImplementedException();
     }
-    public Curso Curso { get; set; }
 }

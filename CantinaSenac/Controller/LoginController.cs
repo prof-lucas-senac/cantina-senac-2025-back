@@ -1,13 +1,16 @@
 class LoginController
 {
-    static public List<Aluno> alunos = new List<Aluno>();
-    public bool Auntenticar(string email, string senha)
+    public static List<Aluno> alunos = new List<Aluno>();
+
+    public bool Autenticar(string email, string senha)
     {
-        Aluno alunoAutenticado = alunos.Find(a => a.Email == email && a.Senha == senha);
-        if (alunoAutenticado == null)
+        foreach (Aluno aluno in alunos)
         {
-            return false;
+            if (aluno.Email == email && aluno.Senha == senha)
+            {
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 }
