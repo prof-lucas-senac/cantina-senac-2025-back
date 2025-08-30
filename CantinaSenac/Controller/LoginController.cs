@@ -9,23 +9,13 @@ class LoginController
     {
         List<Aluno> alunos = new AlunoDAO().ListarTodos();
 
-        foreach (Aluno autentica in alunos)
+        foreach (Aluno aluno in alunos)
         {
-            if (autentica.Email == email && autentica.Senha == senha)
+            if (aluno.Email == email && aluno.Senha == senha)
             {
-                System.Console.WriteLine("Aluno autenticado com sucesso!");
                 return true;
             }
         }
-
-
-        // foreach (Aluno aluno in alunos)
-        // {
-        //     if (aluno.Email == email && aluno.Senha == senha)
-        //     {
-        //         return true;
-        //     }
-        // }
         
         return false;
 
