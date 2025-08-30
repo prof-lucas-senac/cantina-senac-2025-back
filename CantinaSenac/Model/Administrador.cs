@@ -25,14 +25,6 @@ public class Administrador : Usuario
     {
     }
 
-    public override void Atualizar()
-    {
-    }
-
-    public override void Cadastrar()
-    {
-    }
-
     public override void ComentarFeedback()
     {
     }
