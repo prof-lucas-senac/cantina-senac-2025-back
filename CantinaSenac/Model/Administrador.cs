@@ -28,17 +28,6 @@ public class Administrador : Usuario
     {
 
     }
-
-    public override void Cadastrar()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Atualizar()
-    {
-        throw new NotImplementedException();
-    }
-
     public override void PublicarFeedBack()
     {
         throw new NotImplementedException();

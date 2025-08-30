@@ -1,8 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
-LoginController.alunos.Add(new Aluno()
+/* AlunoDAO.alunos.Add(new Aluno()
 {
     Id = 1,
     Email = "aluno@senac.com",
     Senha = "aluno"
-});
-LoginView.Exibir();
+}); */
+AlunoController alunoController = new AlunoController();
+alunoController.AdicionarAluno();
+
+LoginView.Exibir(); 
