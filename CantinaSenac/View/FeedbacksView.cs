@@ -1,4 +1,4 @@
-static class FeedbacksView
+static class FeedBacksView
 {
     public static void Exibir()
     {

@@ -24,16 +24,6 @@ public class Adminstrador : Usuario
         
     }
 
-    public override void Cadastrar()
-    {
-       
-    }
-
-    public override void Atualizar()
-    {
-        
-    }
-
     public override void PublicarFeedBack()
     {
         
