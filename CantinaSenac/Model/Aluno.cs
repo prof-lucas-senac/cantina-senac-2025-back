@@ -1,6 +1,5 @@
 public class Aluno : Usuario
 {
-    public List<Aluno> Alunos { get; set; }
 
 public Curso curso { get; set; }
     public override void Atualizar()

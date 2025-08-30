@@ -3,17 +3,30 @@ using System.Reflection.Metadata;
 class LoginController
 {
 
-    public static List<Aluno> alunos = new List<Aluno>();
+
 
     public bool Autenticar(string email, string senha)
     {
-        foreach (Aluno aluno in alunos)
+        List<Aluno> alunos = new AlunoDAO().ListarTodos();
+
+        foreach (Aluno autentica in alunos)
         {
-            if (aluno.Email == email && aluno.Senha == senha)
+            if (autentica.Email == email && autentica.Senha == senha)
             {
+                System.Console.WriteLine("Aluno autenticado com sucesso!");
                 return true;
             }
         }
+
+
+        // foreach (Aluno aluno in alunos)
+        // {
+        //     if (aluno.Email == email && aluno.Senha == senha)
+        //     {
+        //         return true;
+        //     }
+        // }
+        
         return false;
 
     }
