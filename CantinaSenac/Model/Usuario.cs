@@ -8,8 +8,7 @@ public abstract class Usuario
     public string Foto { get; set; }
     public List<Postagem> Postagens { get; set; }
 
-    public abstract string Cadastrar();
-    public abstract string Atualizar();
+
     public abstract string PublicarFeedback();
     public abstract string ComentarFeedback();
 
