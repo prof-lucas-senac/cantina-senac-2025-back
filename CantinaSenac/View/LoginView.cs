@@ -23,4 +23,5 @@ static class LoginView
             System.Console.WriteLine("Login e/ou senha incorretos. Pressione Enter para tentar novamente!");
         }
     }
+    
 }

@@ -1,9 +1,12 @@
-﻿LoginController.alunos.Add(new Aluno()
-{
-    Id = 1,
-    Email = "aluno@senac.br",
-    Senha = "aluno",
+﻿// AlunoController.aluno.Adicionar(new Aluno()
+//  {
+//      Id = 1,
+//      Email = "aluno@senac.br",
+//      //Senha = "aluno",
 
-});
+//  });
 
-LoginView.Exibir();
+
+CadastroView.Exibir(new Aluno());
+
+ LoginView.Exibir();
