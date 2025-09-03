@@ -23,7 +23,7 @@ class AlunoDAO : IDAO
         throw new NotImplementedException();
     }
 
-    public List<Aluno> ListarTodos()
+    public List<Aluno> ListarTodos() 
     {
         return alunos;
     }
