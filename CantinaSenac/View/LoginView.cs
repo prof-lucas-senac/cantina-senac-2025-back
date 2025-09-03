@@ -2,33 +2,28 @@ static class LoginView
 {
     public static void Exibir()
     {
-        Console.Clear();
-        Console.WriteLine("=== Login ===");
-        Console.Write("Usuário: ");
-        string email = Console.ReadLine();
-        Console.Write("Senha: ");
-        string senha = Console.ReadLine();
+        string email = "";
+        string senha = "";
 
-        // // Aqui você pode adicionar a lógica de autenticação
+        System.Console.WriteLine("Bem-vind@ ao Cantina Senac!\n");
+        System.Console.WriteLine("Por favor, insira suas credenciais:\n");
+        System.Console.WriteLine("Email:");
+        email = Console.ReadLine();
+        System.Console.WriteLine("Senha:");
+        senha = Console.ReadLine();
+
         if (new LoginController().Autenticar(email, senha))
         {
-            Console.WriteLine("Login bem-sucedido!");
+            System.Console.WriteLine("Aluno autenticado com sucesso! Pressione Enter para continuar.");
             Console.ReadKey();
             FeedbacksView.Exibir();
-            // Redirecionar para a próxima tela ou funcionalidade
         }
         else
         {
-            Console.WriteLine("Usuário ou senha incorretos. Tente novamente.");
-            Console.WriteLine("Pressione qualquer tecla para continuar...");
+            System.Console.WriteLine("Login e/ou Senha incorretos. Pressione Enter para tentar novamente.");
             Console.ReadKey();
-            Exibir(); // Chama novamente para tentar o login
+            Console.Clear();
+            Exibir();
         }
     }
-
-    // private static bool Autenticar(string usuario, string senha)
-    // {
-    //     // Lógica de autenticação (exemplo simples)
-    //     return usuario == "admin" && senha == "admin";
-    // }
 }
