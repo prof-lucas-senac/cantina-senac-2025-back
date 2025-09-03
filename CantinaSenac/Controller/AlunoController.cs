@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System.ComponentModel;
 
 public class AlunoController
@@ -11,6 +12,12 @@ public class AlunoController
         Console.WriteLine("insira a senha do aluno:");
         aluno.Senha = Console.ReadLine();
         
+=======
+class AlunoController
+{
+    public void Adicionar(Aluno aluno)
+    {
+>>>>>>> master
         new AlunoDAO().Cadastrar(aluno);
     }
 }
