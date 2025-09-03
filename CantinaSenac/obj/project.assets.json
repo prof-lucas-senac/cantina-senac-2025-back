@@ -13,7 +13,6 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\SistemasInformacao\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
       "projectPath": "C:\\SistemasInformacao\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
@@ -22,26 +21,11 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-      "projectUniqueName": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
-      "projectName": "CantinaSenac",
-      "projectPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
-      "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> master
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-<<<<<<< HEAD
-=======
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
->>>>>>> master
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -80,12 +64,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
->>>>>>> master
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\SistemasInformacao\\prog_web\\back\\CantinaSenac\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
