@@ -1,7 +1,21 @@
-static class FeedbacksView
+public class FeedbackView
 {
-    public static void Exibir()
+    public void ExibirFeedbacks()
     {
-        System.Console.WriteLine("Tela de feedbacks");
+        FeedbackController controller = new FeedbackController();
+
+        Console.Write("Digite a senha para visualizar os feedbacks: ");
+        string senha = Console.ReadLine();
+
+        var feedbacks = controller.ListarFeedbacks(senha);
+
+        if (feedbacks.Count > 0)
+        {
+            Console.WriteLine("\n--- Lista de Feedbacks ---");
+            foreach (var f in feedbacks)
+            {
+                Console.WriteLine($"ID: {f.Id}, Comentário: {f.Comentario}, Data: {f.Data}, AlunoId: {f.AlunoId}");
+            }
+        }
     }
 }
