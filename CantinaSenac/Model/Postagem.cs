@@ -6,9 +6,9 @@ public class Postagem
 
     public DateTime DataPublicacao { get; set; }
 
-    public Usuario usuario { get; set; }
+    public Usuario Usuario { get; set; }
 
-    public List<Comentario> comentarios { get; set; }
+    public List<Comentario> Comentarios { get; set; }
     
     
 }
