@@ -1,16 +1,18 @@
-static class FeedbeckView
+static class FeedbackView
 {
     public static void Exibir()
     {
-        string feedbeck;
+        string feedback;
 
         Console.WriteLine("--- Tela de Feedback ---\n");
 
         System.Console.WriteLine("Descreva seu feedbeck: ");
-        feedbeck = Console.ReadLine();
+        feedback = Console.ReadLine();
 
         System.Console.WriteLine("\n Obrigado pelo seu Feedbeck!");
-        FeedbackController.Salvar(feedbeck);
+        FeedbackController.Salvar(feedback);
+
+        System.Console.WriteLine($"Lista de Feedbecks: \n" + feedback);
 
         System.Console.WriteLine("\n Pressione Enter para sair...");
         System.Console.ReadKey();
