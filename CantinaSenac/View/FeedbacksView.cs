@@ -4,4 +4,8 @@ static class FeedbacksView
     {
         System.Console.WriteLine("Tela de feedbacks");
     }
+    public static void Listar()
+    {
+        Comentario.Comentar();
+    }
 }
