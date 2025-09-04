@@ -1,15 +1,7 @@
-class LoginController
+public class LoginController
 {
     public bool Autenticar(string email, string senha)
     {
-        List<Aluno> alunos = new AlunoDAO().ListarTodos();
-
-        foreach (Aluno aluno in alunos)
-        {
-            if (aluno.Email == email && aluno.Senha == senha) ;
-        }
-        {
-            return true;
-        }
+        return AlunoDAO.alunos.Exists(a => a.Email == email && a.Senha == senha);
     }
 }
