@@ -5,7 +5,8 @@
     Email = "aluno@senac.com",
     Senha = "aluno"
 }); */
+Console.Clear();
 AlunoController alunoController = new AlunoController();
 alunoController.AdicionarAluno();
 
-LoginView.Exibir(); 
+LoginView.Exibir();

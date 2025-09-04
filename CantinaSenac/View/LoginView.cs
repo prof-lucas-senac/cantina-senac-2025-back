@@ -11,6 +11,7 @@ public static class LoginView
         email = Console.ReadLine();
         Console.Write("Senha: ");
         senha = Console.ReadLine();
+        Console.WriteLine("---------------");
 
         if (new LoginController().Autenticar(email, senha))
         {
