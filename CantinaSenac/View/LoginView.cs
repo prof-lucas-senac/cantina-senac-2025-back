@@ -16,6 +16,7 @@ static class LoginView
         {
             System.Console.WriteLine("Aluno autenticado com sucesso! Pressione Enter para continuar.");
             Console.ReadKey();
+            Console.Clear();
             FeedbacksView.Exibir();
         }
         else
