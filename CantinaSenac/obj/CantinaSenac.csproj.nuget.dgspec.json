@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj": {}
+    "C:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj": {}
   },
   "projects": {
-    "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj": {
+    "C:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectUniqueName": "C:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
         "projectName": "CantinaSenac",
-        "projectPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectPath": "C:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
         "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-        "outputPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\obj\\",
+        "outputPath": "C:\\workplace\\prog_web\\back\\CantinaSenac\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,7 +39,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
