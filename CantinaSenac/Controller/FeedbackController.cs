@@ -1,18 +1,19 @@
 public class FeedbackController
 {
-    private FeedbackDAO feedbackDAO = new FeedbackDAO();
-    private const string senhaCorreta = "1234"; 
+    public FeedbackDAO feedbackDAO = new FeedbackDAO();
 
-    public List<Feedback> ListarFeedbacks(string senha)
+    public List<Feedback> ListarFeedbacks()
     {
-        if (senha == senhaCorreta)
+        return feedbackDAO.ListarTodos();
+    }
+
+    public void AdicionarFeedback(string comentario)
+    {
+        var novoFeedback = new Feedback
         {
-            return feedbackDAO.ListarTodos();
-        }
-        else
-        {
-            Console.WriteLine("Senha incorreta. Acesso negado.");
-            return new List<Feedback>();
-        }
+            Id = FeedbackDAO.feedbacks.Count + 1,
+            Comentario = comentario,};
+
+        feedbackDAO.Cadastrar(novoFeedback);
     }
 }

@@ -1,21 +1,27 @@
-public class FeedbackView 
+public class FeedbackView
 {
     public void ExibirFeedbacks()
     {
         FeedbackController controller = new FeedbackController();
+       
+        var feedbacks = controller.ListarFeedbacks();
 
-        Console.Write("Digite a senha para visualizar os feedbacks: ");
-        string senha = Console.ReadLine();
-
-        var feedbacks = controller.ListarFeedbacks(senha);
-
-        if (feedbacks.Count > 0)
+        Console.WriteLine("\n--- Lista de Feedbacks ---");
+        foreach (var f in feedbacks)
         {
-            Console.WriteLine("\n--- Lista de Feedbacks ---");
-            foreach (var f in feedbacks)
-            {
-                Console.WriteLine($"ID: {f.Id}, Comentário: {f.Comentario}, Data: {f.Data}, AlunoId: {f.AlunoId}");
-            }
+            Console.WriteLine($"Comentário: {f.Comentario}");
+        }
+
+        Console.Write("\nDeseja adicionar um novo feedback? (s/n): ");
+        string resposta = Console.ReadLine();
+
+        if (resposta.ToLower() == "s")
+        {
+            Console.Write("Digite o comentário: ");
+            string comentario = Console.ReadLine();
+
+            controller.AdicionarFeedback(comentario);
+            Console.WriteLine("Feedback adicionado com sucesso!");
         }
     }
 }

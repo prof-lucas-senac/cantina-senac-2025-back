@@ -24,9 +24,7 @@ public static class LoginView
 
 
         }
-
-        
-
+     
         else
             {
                 Console.WriteLine("\nLogin e/ou senha incorretos.");
