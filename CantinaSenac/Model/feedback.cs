@@ -1,4 +1,4 @@
-public class feedback : Postagem
+public class Feedback : Postagem
 {
     
 }

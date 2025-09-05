@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-using System.ComponentModel;
-
 public class AlunoController
 {
     public void AdicionarAluno()
@@ -10,14 +7,7 @@ public class AlunoController
         Console.WriteLine("insira o email do aluno:");
         aluno.Email = Console.ReadLine();
         Console.WriteLine("insira a senha do aluno:");
-        aluno.Senha = Console.ReadLine();
-        
-=======
-class AlunoController
-{
-    public void Adicionar(Aluno aluno)
-    {
->>>>>>> master
+        aluno.Senha = Console.ReadLine();        
         new AlunoDAO().Cadastrar(aluno);
     }
 }
