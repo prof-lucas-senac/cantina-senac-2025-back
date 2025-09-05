@@ -6,7 +6,7 @@ public class FeedbacksController
         Console.WriteLine("adicione um feedback");
         feedback.decricao = Console.ReadLine();
 
-        new FeedbackDAO().Adicionar(feedback);
+        new FeedbackDAO().Cadastrar(feedback);
     }
 
     public static void MostrarFeedbacks()
