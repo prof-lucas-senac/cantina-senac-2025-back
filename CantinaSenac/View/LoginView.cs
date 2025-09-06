@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+
 static class LoginView
 {
     public static void Exibir()
@@ -15,8 +17,7 @@ static class LoginView
         if (new LoginController().Autenticar(email, senha))
         {
             System.Console.WriteLine("Aluno autenticado com sucesso! Pressione Enter para continuar.");
-            Console.ReadKey();
-            Console.Clear();
+            Console.ReadKey();        
             FeedbacksView.Exibir();
         }
         else

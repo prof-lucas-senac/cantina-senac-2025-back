@@ -1,4 +1,4 @@
-class AlunoController
+class AlunoController : FeedbackController
 {
     public void Adicionar(Aluno aluno)
     {
