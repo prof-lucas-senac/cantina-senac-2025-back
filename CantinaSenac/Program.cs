@@ -8,3 +8,4 @@ new AlunoController().Cadastrar(new Aluno()
 });
 
 LoginView.Exibir();
+FeedbacksView.Exibir();

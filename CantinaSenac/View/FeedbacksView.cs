@@ -1,20 +1,70 @@
-static class FeedbackView
-{
-    public static void Exibir()
+     public static class FeedbacksView
     {
-        string feedback;
+        
+        public static void Exibir()
+        {
+            int opcao = -1;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("===== MENU DE FEEDBACKS =====");
+                Console.WriteLine("1 - Cadastrar novo feedback");
+                Console.WriteLine("2 - Listar feedbacks cadastrados");
+                Console.WriteLine("0 - Voltar");
+                Console.Write("Escolha uma opção: ");
 
-        Console.WriteLine("--- Tela de Feedback ---\n");
+                int.TryParse(Console.ReadLine(), out opcao);
 
-        System.Console.WriteLine("Descreva seu feedbeck: ");
-        feedback = Console.ReadLine();
+                switch (opcao)
+                {
+                    case 1:
+                        Cadastrar(); 
+                        break;
+                    case 2:
+                        Listar();
+                        break;
+                    case 0:
+                        Console.WriteLine("Voltando ao menu anterior...");
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida!");
+                        break;
+                }
 
-        System.Console.WriteLine("\n Obrigado pelo seu Feedbeck!");
-        FeedbackController.Salvar(feedback);
+                if (opcao != 0)
+                {
+                    Console.WriteLine("\nPressione ENTER para continuar...");
+                    Console.ReadLine();
+                }
 
-        System.Console.WriteLine($"Lista de Feedbecks: \n" + feedback);
-
-        System.Console.WriteLine("\n Pressione Enter para sair...");
-        System.Console.ReadKey();
+            } while (opcao != 0);
+        }
+        
+        private static void Cadastrar()
+    {
+        Console.Clear();
+        Console.WriteLine("===== CADASTRAR FEEDBACK =====");
+        Console.Write("Descreva seu feedback: ");
+        var texto = Console.ReadLine();
+        FeedbackController.Salvar(texto); 
     }
-}
+
+        private static void Listar()
+        {
+            Console.Clear();
+            Console.WriteLine("===== LISTA DE FEEDBACKS =====\n");
+
+            var lista = FeedbackController.Listar();
+
+            if (lista == null || lista.Count == 0)
+            {
+                Console.WriteLine("Nenhum feedback cadastrado ainda.");
+                return;
+            }
+
+            foreach (var fb in lista)
+            {
+                Console.WriteLine($"{fb.Texto}");
+            }
+        }
+    }

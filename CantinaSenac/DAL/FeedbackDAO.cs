@@ -1,4 +1,4 @@
-class feedbackDAO
+class feedbackDAO : IDAO<Feedback>
 {
     public static List<Feedback> feedbacks = new List<Feedback>();
 
@@ -11,4 +11,29 @@ class feedbackDAO
     {
     return feedbacks;
   }
+
+    public void Atualizar(Feedback objeto)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Cadastrar(Feedback objeto)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Excluir(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Feedback Listar(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<Feedback> ListarTodos()
+    {
+        throw new NotImplementedException();
+    }
 }
