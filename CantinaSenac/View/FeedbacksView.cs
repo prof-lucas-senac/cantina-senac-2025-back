@@ -3,7 +3,7 @@ static class FeedbacksView
     public static void Exibir()
     {
         Console.WriteLine("Cantina Senac ");
-        Console.WriteLine("pressione 1 para adicionar feedback e 2 para listar");
+        Console.WriteLine("pressione [1] para adicionar feedback e [2] para listar");
         string op = Console.ReadLine();
 
         while (op != "0")
@@ -11,7 +11,13 @@ static class FeedbacksView
             switch (op)
             {
                 case "1":
-                    FeedbacksController.AdicionarFeedback();
+                    Feedback feedback = new Feedback();
+
+                    Console.WriteLine("---Adicione um feedback---");
+                    feedback.decricao = Console.ReadLine();
+
+                    FeedbacksController.AdicionarFeedback(feedback);
+
                     Console.WriteLine("feedback adicionado com sucesso pressione enter para continuar");
                     Console.ReadKey();
                     Console.Clear();
@@ -27,7 +33,7 @@ static class FeedbacksView
                     Console.WriteLine("valor invalido");
                     break;
             }
-            Console.WriteLine("pressione 1 para adicionar feedback, 2 para listar e 0 para encerrar");
+            Console.WriteLine("pressione [1] para adicionar feedback, [2] para listar e [0] para encerrar");
             op = Console.ReadLine();
         }
 

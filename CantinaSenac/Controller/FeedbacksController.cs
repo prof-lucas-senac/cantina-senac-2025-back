@@ -1,11 +1,7 @@
 public class FeedbacksController
 {
-    public static void AdicionarFeedback()
+    public static void AdicionarFeedback(Feedback feedback)
     {
-        Feedback feedback = new Feedback();
-        Console.WriteLine("adicione um feedback");
-        feedback.decricao = Console.ReadLine();
-
         new FeedbackDAO().Cadastrar(feedback);
     }
 
@@ -15,6 +11,7 @@ public class FeedbacksController
         if (feedbacks.Count == 0)
         {
             Console.WriteLine("Sem feedbacks");
+            Console.WriteLine("======================================");
         }
         else
         {
