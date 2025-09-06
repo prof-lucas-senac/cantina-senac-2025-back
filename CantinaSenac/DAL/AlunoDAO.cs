@@ -1,5 +1,5 @@
 
-public class AlunoDAO : IDAO
+public class AlunoDAO : IDAO <Aluno>
 {
     private static List<Aluno> alunos = new List<Aluno>();
 

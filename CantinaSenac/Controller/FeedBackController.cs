@@ -1,25 +1,25 @@
 public class FeedBackController
 {
-    public void AdicionarFeedBack()
+    public void AdicionarFeedBack(FeedBack feedBack)
     {
         FeedBackDAO feedBackDAO = new FeedBackDAO();
-        FeedBack feedBack = new FeedBack();
-
-        Console.Write("Digite seu comentário: "); feedBack.Descricao = Console.ReadLine();
-
-        feedBackDAO.Adicionar(feedBack);
+        feedBackDAO.Cadastrar(feedBack);
     }
     public bool VerificarSeTemFeedBacks()
     {
-        List<FeedBack> feedBacks = new FeedBackDAO().ListarFeedBacks();
-        foreach (FeedBack feedBack in feedBacks)
-        {
-            Console.WriteLine(feedBack.Descricao);
-        }
+        List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
         if (feedBacks.Count != 0)
         {
             return true;
         }
         return false;
+    }
+    public void ListarTodosFeedBacks()
+    {
+        List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
+        foreach (FeedBack feedBack in feedBacks)
+        {
+            Console.WriteLine(feedBack.Descricao);
+        }
     }
 }

@@ -1,13 +1,8 @@
 public class AlunoController
 {
-    public void AdicionarAluno()
+    public void AdicionarAluno(Aluno aluno)
     {
         AlunoDAO alunoDAO = new AlunoDAO();
-        Aluno aluno = new Aluno();
-
-        Console.Write("email: "); aluno.Email = Console.ReadLine();
-        Console.Write("senha: "); aluno.Senha = Console.ReadLine();
-
         alunoDAO.Cadastrar(aluno);
     }
 }

@@ -11,17 +11,20 @@ public static class LoginView
         email = Console.ReadLine();
         Console.Write("Senha: ");
         senha = Console.ReadLine();
-        Console.WriteLine("---------------");
+        Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
         if (new LoginController().Autenticar(email, senha))
         {
             Console.WriteLine("Login efetuado com sucesso! Pressione Enter para continuar!");
+            Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.ReadKey();
+            Console.Clear();
             FeedbacksView.Exibir();
         }
         else
         {
             Console.WriteLine("Email e/ou senha incorreto! Pressione Enter para tentar novamente!");
+            Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.ReadKey();
             Console.Clear();
             Exibir();
