@@ -3,11 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-<<<<<<< HEAD
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac", "CantinaSenac\CantinaSenac.csproj", "{6673AD1A-E2B1-47ED-B85F-842C99F40D7B}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac", "CantinaSenac\CantinaSenac.csproj", "{7442F292-2E73-45E5-B083-2AD15F9F7D52}"
->>>>>>> master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,16 +15,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-<<<<<<< HEAD
 		{6673AD1A-E2B1-47ED-B85F-842C99F40D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6673AD1A-E2B1-47ED-B85F-842C99F40D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6673AD1A-E2B1-47ED-B85F-842C99F40D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6673AD1A-E2B1-47ED-B85F-842C99F40D7B}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
-		{7442F292-2E73-45E5-B083-2AD15F9F7D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7442F292-2E73-45E5-B083-2AD15F9F7D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7442F292-2E73-45E5-B083-2AD15F9F7D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7442F292-2E73-45E5-B083-2AD15F9F7D52}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> master
 	EndGlobalSection
 EndGlobal

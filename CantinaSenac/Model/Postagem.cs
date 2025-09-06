@@ -6,11 +6,7 @@ public class Postagem
     public Usuario usuario { get; set; }
     public List<Comentario> Comentarios { get; set; }
 
-    public Postagem(string descricao, Usuario usuarioComentando)
-    {
-        Descricao = descricao;
-        usuario = usuarioComentando;
-    }
+   
 
     
    

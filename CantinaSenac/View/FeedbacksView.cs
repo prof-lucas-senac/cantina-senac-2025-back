@@ -3,9 +3,18 @@ static class FeedbacksView
     public static void Exibir()
     {
         List<Feedback> feedbacks;
+        Console.Clear();
 
         System.Console.WriteLine("Cantina SENAC");
-        System.Console.WriteLine("Lista de Feedbacks:");
+        
+
+
+        System.Console.Write($"Digite seu comentario:");
+        string novoComentario = Console.ReadLine();
+        new FeedbackController().ValidarCometario(novoComentario);
+
+
+        feedbacks = new List<Feedback>();
         feedbacks = new FeedbackController().ListarFeedbacks();
         if (feedbacks.Count > 0)
         {

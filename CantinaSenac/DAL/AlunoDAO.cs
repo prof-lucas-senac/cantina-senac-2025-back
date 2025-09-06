@@ -1,5 +1,5 @@
 
-class AlunoDAO : IDAO
+class AlunoDAO : IDAO<Aluno>
 {
     public static List<Aluno> alunos = new List<Aluno>();
     public void Atualizar(Aluno aluno)

@@ -14,7 +14,7 @@ static class LoginView
         {
             Console.WriteLine($"Aluno autenticado com sucesso!. Presione enter para continuar.");
             Console.ReadKey();
-            FeedbacksViews.Exibir();
+            FeedbacksView.Exibir();
         }
         else
         {

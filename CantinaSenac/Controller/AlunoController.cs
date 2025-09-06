@@ -4,6 +4,6 @@ class AlunoControler
     {
         new AlunoDAO().Cadastrar(aluno);
         LoginView.Exibir();
-        Console.Clear();
+       
     }
 }

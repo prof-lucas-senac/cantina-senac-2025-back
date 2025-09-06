@@ -5,5 +5,5 @@ new AlunoControler().Adicionar(new Aluno()
     Senha = "aluno"
 });
 
-LoginView.Exibir();
+
 
