@@ -5,5 +5,7 @@ new AlunoControler().Adicionar(new Aluno()
     Email = "aluno@senac.br",
     Senha = "aluno",
 });
-FeedbackController.AdicionarFeedback("TESTESTETSTESTE",6);
+Aluno aluno = new Aluno();
+aluno.Id = 2;
+FeedbackController.AdicionarFeedback("TESTESTETSTESTE",6,aluno);
 LoginView.Exibir();

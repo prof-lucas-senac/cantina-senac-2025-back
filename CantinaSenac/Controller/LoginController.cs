@@ -12,4 +12,10 @@ class LoginController
         }
         return false;
     }
+    public Aluno Indentificar(string email, string senha)
+    {
+        List<Aluno> alunos = new AlunoDAO().ListarTodos();
+        Aluno aluno = alunos.Find(a => a.Email == email && a.Senha == senha);
+        return aluno;
+    }
 }

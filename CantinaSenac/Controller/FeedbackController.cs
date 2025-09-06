@@ -1,15 +1,17 @@
 static class FeedbackController
 {   //Algumas coisa vao mudar para DAO
+    static FeedbackDAO feedbackDAO = new FeedbackDAO();
     static int id = 1;
-    public static void AdicionarFeedback(string descricao, int avaliacao)
+    public static void AdicionarFeedback(string descricao, int avaliacao, Usuario usuario)
     {
         Feedback feedback = new Feedback();
         feedback.Descricao = descricao;
         feedback.Avaliacao = avaliacao;
         feedback.Id = id;
         id++;
+        feedback.Usuario = usuario;
         feedback.DataPublicacao = DateTime.Now;
-        ListarFeedback().Add(feedback);
+        feedbackDAO.Cadastrar(feedback);
     }
     // remover apenas se id do aluno for igual id do aluno no feedback
     public static void RemoverFeedback(int id)
@@ -18,7 +20,7 @@ static class FeedbackController
         {
             if (feedback.Id == id)
             {
-                ListarFeedback().Remove(feedback);
+                feedbackDAO.Excluir(id);
             }
         }
 
@@ -30,7 +32,9 @@ static class FeedbackController
             if (feedback.Id == id)
             {
                 feedback.Descricao = descricao;
-                feedback.Avaliacao = avaliacao;    
+                feedback.Avaliacao = avaliacao;
+                feedback.DataPublicacao = DateTime.Now;
+                feedbackDAO.Atualizar(feedback);
             }
         }
     }

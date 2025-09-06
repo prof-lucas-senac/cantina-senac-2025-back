@@ -1,15 +1,15 @@
 
-class FeedbackDAO
+class FeedbackDAO : IDAO<Feedback>
 {
     public static List<Feedback> feedbacks = new List<Feedback>();
-    public void Atualizar()
+    public void Atualizar(Feedback feedback)
     {
         throw new NotImplementedException();
     }
 
-    public void Cadastrar()
+    public void Cadastrar(Feedback feedback)
     {
-        throw new NotImplementedException();
+        feedbacks.Add(feedback);
     }
 
     public void Excluir(int id)
@@ -17,7 +17,7 @@ class FeedbackDAO
         throw new NotImplementedException();
     }
 
-    public Aluno Listar(int id)
+    public Feedback Listar(int id)
     {
         throw new NotImplementedException();
     }
