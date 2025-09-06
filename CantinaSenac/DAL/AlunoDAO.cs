@@ -1,8 +1,8 @@
 
-class AlunoDAO : IDAO
+class AlunoDAO : IDAO<Aluno>
 {
-    public static List<Aluno> alunos = new List<Aluno>();
-    public void Atualizar()
+    private static List<Aluno> alunos = new List<Aluno>();
+    public void Atualizar(Aluno aluno)
     {
         throw new NotImplementedException();
     }
@@ -13,7 +13,7 @@ class AlunoDAO : IDAO
 
     }
 
-    public void Excluir()
+    public void Excluir(int id)
     {
         throw new NotImplementedException();
     }

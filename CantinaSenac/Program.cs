@@ -1,15 +1,18 @@
 ﻿
-// Adiciona alunos fictícios à lista
-new AlunoController().Adicionar(new Aluno()
-{
-    Id = 1,
-    Email = "aluno@senac.br",
-    Senha = "aluno",
-});
+        // Adiciona aluno fictício
+        Aluno aluno = new Aluno()
+        {
+            Id = 1,
+            NomeDoUsuario = "Alan",
+            Email = "alan",
+            Senha = "123"
+        };
 
-
-
-// Exibe a tela de login
+        new AlunoController().Adicionar(aluno);
 LoginView.Exibir();
 
 
+
+       
+
+        

@@ -7,28 +7,26 @@ public static class LoginView
         Console.WriteLine("         TELA DE LOGIN             ");
         Console.WriteLine("===================================\n");
 
-        Console.WriteLine("E-mail: ___________________________\n");
+        Console.Write("E-mail: ");
         string email = Console.ReadLine();
 
-        Console.WriteLine("Senha:  ___________________________");
+        Console.Write("Senha: ");
         string senha = Console.ReadLine();
         Console.WriteLine("===================================\n");
 
-
-        if (new LoginController().Autenticar(email, senha))
+        Aluno aluno = new LoginController().Autenticar(email, senha);
+        if (aluno != null)
         {
-            System.Console.WriteLine("Aluno autenticado com sucesso! precione enter para continuar.");
+            Console.WriteLine("Aluno autenticado com sucesso! Pressione Enter para continuar.");
             Console.ReadKey();
-            FeedBacksView.Exibir();
+            FeedBacksView.Exibir(aluno); // Agora passa o aluno autenticado
         }
         else
         {
-            System.Console.WriteLine("E-mail e/ou senha incorretos. Pressione Enter para tentar novamente");
+            Console.WriteLine("E-mail e/ou senha incorretos. Pressione Enter para tentar novamente");
             Console.ReadKey();
             Console.Clear();
             Exibir();
         }
     }
 }
-
-
