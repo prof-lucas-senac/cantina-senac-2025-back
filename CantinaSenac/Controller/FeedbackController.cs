@@ -14,11 +14,4 @@ public class FeedbackController
         }
         return lista;
     }
-    // {
-    //     // 
-    //     // List <Feedback> lista = feedback.ListarTodos();
-
-   
-        
-    // }
 }

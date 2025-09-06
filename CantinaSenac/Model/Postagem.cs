@@ -4,7 +4,7 @@ public class Postagem
     public string Descricao { get; set; }
     public DateTime dataPostagem { get; set; }
     public Usuario usuario { get; set; }
-    public List<Comentario> comentarios { get; set; }
+    // public List<Comentario> comentarios { get; set; }
 
     public Postagem() { }
 

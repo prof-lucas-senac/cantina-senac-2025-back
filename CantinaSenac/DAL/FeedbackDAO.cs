@@ -1,5 +1,5 @@
 
-class FeedbackDAO
+class FeedbackDAO: IDAO<Feedback>
 {
 
     public static List<Feedback> feedbacks = new List<Feedback>();
@@ -29,6 +29,11 @@ class FeedbackDAO
             }
         }
         throw new Exception("Feedback não encontrado");
+    }
+
+    public Feedback listar(int id)
+    {
+        throw new NotImplementedException();
     }
 
     public List<Feedback> ListarTodos()
