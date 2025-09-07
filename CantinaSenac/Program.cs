@@ -12,3 +12,4 @@ new AlunoController().AdicionarAluno(new Aluno()
     Senha = "123",
 });
 LoginView.Exibir();
+Console.WriteLine("Teste de commit!");
