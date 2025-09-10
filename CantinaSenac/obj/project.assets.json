@@ -2906,11 +2906,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "C:\\Users\\Prog_Sis\\Documents\\prof lucas\\ProgWeb\\Backend\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectPath": "C:\\Users\\Prog_Sis\\Documents\\prof lucas\\ProgWeb\\Backend\\CantinaSenac\\CantinaSenac.csproj",
       "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\obj\\",
+      "outputPath": "C:\\Users\\Prog_Sis\\Documents\\prof lucas\\ProgWeb\\Backend\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2938,7 +2938,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -2971,7 +2972,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
