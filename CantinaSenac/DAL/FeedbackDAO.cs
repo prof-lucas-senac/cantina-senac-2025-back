@@ -1,6 +1,6 @@
 
 
-class FeedbackDAO
+class FeedbackDAO : IDAO<Feedback>
 {
     private static List<Feedback> Feedbacks { get; set; } = new List<Feedback>();
     public void Atualizar(Feedback objeto)
@@ -10,7 +10,7 @@ class FeedbackDAO
 
     public void Cadastrar(Feedback objeto)
     {
-        throw new NotImplementedException();
+        Feedbacks.Add(objeto);
     }
 
     public void Excluir(int id)
