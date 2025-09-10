@@ -1,4 +1,4 @@
-interface IDAO<T>
+interface IDAO <T>
 {
     public void Cadastrar(T objeto);
     public void Atualizar(T objeto);
