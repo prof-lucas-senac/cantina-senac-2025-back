@@ -4,4 +4,12 @@ class FeedbackController
     {
         return new FeedbackDAO().ListarTodos();
     }
+
+    public void PostarFeedback(string descricaoFeedback)
+    {
+        FeedbackDAO dao = new FeedbackDAO();
+        Feedback feedback = new Feedback();
+        feedback.Descricao = descricaoFeedback;
+        dao.Cadastrar(feedback);
+    }
 }
