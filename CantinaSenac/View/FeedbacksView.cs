@@ -2,38 +2,40 @@ public static class FeedbacksView
 {
     public static void Exibir()
     {
+        List<Feedback> feedbacks;
 
-
-
-
-        Feedback feedback = new Feedback();
-
-
-        System.Console.WriteLine("Tela de feedbacks");
-        System.Console.WriteLine("Bem-vindo a tela de feedbacks do cantina Senac!");
-        System.Console.WriteLine("Faça o seu feedback a seguir:");
-        feedback.Descricao = Console.ReadLine();
-        new FeedbackController().Criar(feedback);
-
-
-        System.Console.WriteLine("Se quiser listar todos os feedbacks digite 1, se não digite qualquer outra coisa");
-        int feedbackslistar = int.Parse(Console.ReadLine());
-
-        if (feedbackslistar == 1)
+        Console.Clear();
+        System.Console.WriteLine("Cantina SENAC");
+        System.Console.WriteLine("Lista de Feedbacks:");
+        feedbacks = new FeedbackController().ListarFeedbacks();
+        if (feedbacks.Count > 0)
         {
-            new FeedbackController().Listar();
+            ListarFeedbacks(feedbacks);
         }
         else
         {
-            Console.ReadKey();
-       }
-        
-  
+            System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
+        }
+        ExibirDialogoPostarFeedback();
+    }
 
-        
+    private static void ListarFeedbacks(List<Feedback> feedbacks)
+    {
+        foreach (Feedback feedback in feedbacks)
+        {
+            System.Console.WriteLine(feedback.Descricao);
+        }
+    }
 
-        
+    public static void ExibirDialogoPostarFeedback()
+    {
+        System.Console.WriteLine("Poste o seu feedback:");
+        string descricaoFeedback = Console.ReadLine();
 
-     
+        new FeedbackController().PostarFeedback(descricaoFeedback);
+
+        System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
     }
 }

@@ -1,11 +1,7 @@
 public class Aluno : Usuario
 {
-    public Curso curso { get; set; }
+    // public List<Curso> Cursos { get; set; } = new List<Curso>();
 
-    public override void Cadastrar()
-    {
-        
-    }
 
 
     public override void Atualizar()

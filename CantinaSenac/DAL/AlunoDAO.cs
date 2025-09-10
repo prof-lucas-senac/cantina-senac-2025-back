@@ -1,10 +1,7 @@
 
-using System.ComponentModel.DataAnnotations;
-
-class AlunoDAO : IDAO
+class AlunoDAO : IDAO<Aluno>
 {
-
-    public static List<Aluno> alunos = new List<Aluno>();
+    private static List<Aluno> alunos = new List<Aluno>();
     public void Atualizar(Aluno aluno)
     {
         throw new NotImplementedException();
@@ -12,8 +9,6 @@ class AlunoDAO : IDAO
 
     public void Cadastrar(Aluno aluno)
     {
-
-        aluno.Id = alunos.Count + 1;
         alunos.Add(aluno);
     }
 

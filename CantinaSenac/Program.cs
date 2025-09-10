@@ -1,12 +1,8 @@
-﻿// AlunoController.aluno.Adicionar(new Aluno()
-//  {
-//      Id = 1,
-//      Email = "aluno@senac.br",
-//      //Senha = "aluno",
-
-//  });
-
-
-CadastroView.Exibir(new Aluno());
-
- LoginView.Exibir();
+﻿// See https://aka.ms/new-console-template for more information
+new AlunoController().Adicionar(new Aluno()
+{
+    Id = 1,
+    Email = "aluno@senac.br",
+    Senha = "aluno",
+});
+LoginView.Exibir();

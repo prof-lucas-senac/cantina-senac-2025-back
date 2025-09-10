@@ -1,34 +1,30 @@
 
-class FeedbackDAO
+
+class FeedbackDAO : IDAO<Feedback>
 {
-
-    public static List<Feedback> feedbacks = new List<Feedback>();
-    public void Atualizar(Feedback feedback)
+    private static List<Feedback> Feedbacks { get; set; } = new List<Feedback>();
+    public void Atualizar(Feedback objeto)
     {
         throw new NotImplementedException();
     }
 
-    public void Cadastrar(Feedback feedback)
+    public void Cadastrar(Feedback objeto)
     {
-        feedback.Id = feedbacks.Count + 1;
-        feedbacks.Add(feedback);
+        Feedbacks.Add(objeto);
     }
 
-    public void Excluir(Feedback feedback)
+    public void Excluir(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Feedback Listar(Feedback feedback)
+    public Feedback Listar(int id)
     {
         throw new NotImplementedException();
     }
 
     public List<Feedback> ListarTodos()
     {
-
-        return feedbacks;
-
-
+        return Feedbacks;
     }
 }

@@ -11,14 +11,7 @@ public abstract class Usuario
     public int Status { get; set; }
 
     public string Foto { get; set; }
-
-    public List<Postagem> Postagens { get; set; }
-
-    public abstract void Cadastrar();
-
-
-    public abstract void Atualizar();
-
+    // public List<Postagem> Postagens { get; set; }
     public abstract void PublicarFeedback();
 
     public abstract void ComentarFeedback();
