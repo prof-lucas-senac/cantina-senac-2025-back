@@ -2906,11 +2906,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\prog_web\\back\\CantinaSenac\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "C:\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\prog_web\\back\\CantinaSenac\\CantinaSenac\\CantinaSenac.csproj",
+      "projectPath": "C:\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "packagesPath": "C:\\Users\\Adriano\\.nuget\\packages\\",
-      "outputPath": "C:\\prog_web\\back\\CantinaSenac\\CantinaSenac\\obj\\",
+      "outputPath": "C:\\prog_web\\back\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Adriano\\AppData\\Roaming\\NuGet\\NuGet.Config"
