@@ -1,4 +1,4 @@
-public abstract class Usuario
+ abstract class Usuario
 {
     public int Id { get; set; }
 

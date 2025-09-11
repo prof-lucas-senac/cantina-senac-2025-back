@@ -1,4 +1,4 @@
-public class Administrador : Usuario
+ class Administrador : Usuario
 {
     public void Suspender()
     {
@@ -35,13 +35,13 @@ public class Administrador : Usuario
 
     }
     
-    public override void Cadastrar()
+    public  void Cadastrar()
     {
         
     }
 
 
-    public override void Atualizar()
+    public void Atualizar()
     {
         
     }

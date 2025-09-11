@@ -1,4 +1,4 @@
-public class Curso
+ class Curso
 {
     public int Id { get; set; }
 
