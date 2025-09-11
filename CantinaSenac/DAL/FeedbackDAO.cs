@@ -1,4 +1,4 @@
-public class FeedBackDAO : IDAO<FeedBack>
+class FeedBackDAO : IDAO<FeedBack>
 {
     private static List<FeedBack> feedBacks = new List<FeedBack>();
 

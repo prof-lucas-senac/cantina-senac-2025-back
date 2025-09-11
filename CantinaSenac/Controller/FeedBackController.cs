@@ -1,4 +1,4 @@
-public class FeedBackController
+class FeedBackController
 {
     public void AdicionarFeedBack(FeedBack feedBack)
     {

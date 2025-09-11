@@ -2901,19 +2901,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Samo\\.nuget\\packages\\": {}
+    "C:\\Users\\Prog_Sis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Samo\\OneDrive\\Área de Trabalho\\prog_web_CantinaSenac\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "c:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\Users\\Samo\\OneDrive\\Área de Trabalho\\prog_web_CantinaSenac\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
-      "packagesPath": "C:\\Users\\Samo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Samo\\OneDrive\\Área de Trabalho\\prog_web_CantinaSenac\\back\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
+      "projectPath": "c:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
+      "outputPath": "c:\\workplace\\prog_web\\back\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Samo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
