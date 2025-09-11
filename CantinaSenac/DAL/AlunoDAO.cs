@@ -1,7 +1,7 @@
 
 class AlunoDAO : IDAO<Aluno>
 {
-    public static List<Aluno> alunos = new List<Aluno>();
+    private static List<Aluno> alunos = new List<Aluno>();
     public void Atualizar(Aluno aluno)
     {
         throw new NotImplementedException();
@@ -21,6 +21,7 @@ class AlunoDAO : IDAO<Aluno>
     {
         throw new NotImplementedException();
     }
+
     public List<Aluno> ListarTodos()
     {
         return alunos;

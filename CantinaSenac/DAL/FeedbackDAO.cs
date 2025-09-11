@@ -10,7 +10,7 @@ class FeedbackDAO : IDAO<Feedback>
 
     public void Cadastrar(Feedback objeto)
     {
-        throw new NotImplementedException();
+        Feedbacks.Add(objeto);
     }
 
     public void Excluir(int id)

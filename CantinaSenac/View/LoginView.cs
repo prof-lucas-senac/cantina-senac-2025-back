@@ -16,13 +16,6 @@ static class LoginView
         {
             System.Console.WriteLine("Aluno autenticado com sucesso! Pressione Enter para continuar.");
             Console.ReadKey();
-
-            Console.WriteLine("Digite o seu feedback:");
-            string descricao = Console.ReadLine();
-
-            Feedback feedback = new Feedback(descricao,);
-            Console.WriteLine("Deixe o seu feedback:");
-            feedback.Descricao = Console.ReadLine();
             FeedbacksView.Exibir();
         }
         else
