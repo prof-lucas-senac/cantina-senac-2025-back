@@ -34,7 +34,7 @@ static class FeedbacksView
         
         Feedback feedback = new Feedback();
         Console.WriteLine("Poste seu Feedback aqui: ");
-        feedback.Descricao = Console.ReadLine();
+        feedback.Descricao = Console.ReadLine()!;
         System.Console.WriteLine("Feedback postado");
         Console.ReadKey();
         Exibir();        

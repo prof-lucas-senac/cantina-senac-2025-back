@@ -10,9 +10,9 @@ static class LoginView
         System.Console.WriteLine("Bem-vind@ ao Cantina Senac!\n");
         System.Console.WriteLine("Por favor, insira suas credenciais:\n");
         System.Console.WriteLine("Email:");
-        email = Console.ReadLine();
+        email = Console.ReadLine()!;
         System.Console.WriteLine("Senha:");
-        senha = Console.ReadLine();
+        senha = Console.ReadLine()!;
 
         if (new LoginController().Autenticar(email, senha))
         {
