@@ -1,5 +1,5 @@
 
-public class Comentario
+public class Comentario : Postagem
 {
 
 }
