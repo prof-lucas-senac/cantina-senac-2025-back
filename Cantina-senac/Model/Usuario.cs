@@ -16,7 +16,7 @@ namespace CantinaSenac.View
 
         public string Foto { get; set; }
 
-        public List<Postagem> Postagens { get; set; }
+        // public List<Postagem> Postagens { get; set; }
 
         public abstract void Cadastrar();
 
