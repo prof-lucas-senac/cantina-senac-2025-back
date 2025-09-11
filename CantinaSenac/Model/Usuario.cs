@@ -7,7 +7,7 @@ public abstract class Usuario
     public string Senha { get; set; }
     public int Status { get; set; }
     public string foto { get; set; }
-    public List<Postagem> Postagens { get; set; }
+    // public List<Postagem> Postagens { get; set; }
 
     public Usuario() { }
 
