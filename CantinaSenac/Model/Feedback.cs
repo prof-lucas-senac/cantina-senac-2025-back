@@ -1,4 +1,4 @@
-class FeedBack : Postagem
+public class FeedBack : Postagem
 {
     
 }

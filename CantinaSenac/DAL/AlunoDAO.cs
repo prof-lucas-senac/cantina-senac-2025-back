@@ -1,7 +1,7 @@
 
 public class AlunoDAO : IDAO <Aluno>
 {
-    private static List<Aluno> alunos = new List<Aluno>();
+    private CantinaSenacContext contexto = new CantinaSenacContext();
 
     public void Atualizar(Aluno aluno)
     {
@@ -10,7 +10,7 @@ public class AlunoDAO : IDAO <Aluno>
 
     public void Cadastrar(Aluno aluno)
     {
-        alunos.Add(aluno);
+        //contexto.Add(aluno);
     }
 
     public void Excluir(int id)
@@ -25,6 +25,6 @@ public class AlunoDAO : IDAO <Aluno>
 
     public List<Aluno> ListarTodos()
     {
-        return alunos;
+        return contexto.Alunos.ToList();
     }
 }

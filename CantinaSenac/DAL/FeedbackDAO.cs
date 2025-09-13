@@ -1,10 +1,10 @@
 class FeedBackDAO : IDAO<FeedBack>
 {
-    private static List<FeedBack> feedBacks = new List<FeedBack>();
+    private CantinaSenacContext contexto = new CantinaSenacContext();
 
     public void Cadastrar(FeedBack objeto)
     {
-        feedBacks.Add(objeto);
+        //feedBacks.Add(objeto);
     }
 
     public void Atualizar(FeedBack objeto)
@@ -24,6 +24,6 @@ class FeedBackDAO : IDAO<FeedBack>
 
     public List<FeedBack> ListarTodos()
     {
-        return feedBacks;
+        return contexto.FeedBacks.ToList();
     }
 }

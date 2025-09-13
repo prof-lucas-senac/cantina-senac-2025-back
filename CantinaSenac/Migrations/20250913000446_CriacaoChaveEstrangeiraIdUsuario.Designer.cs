@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250913000446_CriacaoChaveEstrangeiraIdUsuario")]
+    partial class CriacaoChaveEstrangeiraIdUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,14 +32,16 @@ namespace CantinaSenac.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("DataPublicacao")
+                    b.Property<DateTime>("DataPublicacao")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("UsuarioId")
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -86,13 +91,6 @@ namespace CantinaSenac.Migrations
                     b.HasBaseType("Postagem");
 
                     b.ToTable("FeedBacks");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Descricao = "programa loko de bao pia"
-                        });
                 });
 
             modelBuilder.Entity("Aluno", b =>
@@ -116,7 +114,9 @@ namespace CantinaSenac.Migrations
                 {
                     b.HasOne("Usuario", "Usuario")
                         .WithMany("Postagens")
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Usuario");
                 });
