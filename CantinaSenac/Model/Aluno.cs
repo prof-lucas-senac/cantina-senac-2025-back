@@ -1,6 +1,6 @@
-public class Aluno : Usuario
+class Aluno : Usuario
 {
-    public Curso Curso { get; set; }
+    // public Curso Curso { get; set; }
     public override string ComentarFeedback()
     {
         throw new NotImplementedException();

@@ -1,20 +1,15 @@
-public class FeedbackDAO : IDAO<Feedback>
+class FeedbackDAO : IDAO<Feedback>
 {
-    public static List<Feedback> feedbacks = new List<Feedback>
-    {
-        new Feedback { Comentario = "Ótimo curso!",},
-        new Feedback { Comentario = "Precisa melhorar o conteúdo.", }
-    };
 
+    public void Cadastrar(Feedback objeto)
+    {
+        throw new NotImplementedException();
+    }
     public void Atualizar(Feedback objeto)
     {
         throw new NotImplementedException();
     }
 
-    public void Cadastrar(Feedback objeto)
-    {
-        feedbacks.Add(objeto);
-    }
 
     public string Excluir(int id)
     {
@@ -26,8 +21,34 @@ public class FeedbackDAO : IDAO<Feedback>
         throw new NotImplementedException();
     }
 
+
     public List<Feedback> ListarTodos()
     {
-        return feedbacks;
+        throw new NotImplementedException();
+    }
+
+    void IDAO<Feedback>.Cadastrar(Feedback objeto)
+    {
+        throw new NotImplementedException();
+    }
+
+    void IDAO<Feedback>.Atualizar(Feedback objeto)
+    {
+        throw new NotImplementedException();
+    }
+
+    string IDAO<Feedback>.Excluir(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    List<Feedback> IDAO<Feedback>.ListarTodos()
+    {
+        throw new NotImplementedException();
+    }
+
+    Feedback IDAO<Feedback>.Listar(int Id)
+    {
+        throw new NotImplementedException();
     }
 }

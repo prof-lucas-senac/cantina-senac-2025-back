@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250912231010_CriaçãoEInsercaoTabelaAluno")]
+    partial class CriaçãoEInsercaoTabelaAluno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,6 +23,29 @@ namespace CantinaSenac.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+
+            modelBuilder.Entity("Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AlunoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comentario")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("Data")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Feedbacks");
+                });
 
             modelBuilder.Entity("Postagem", b =>
                 {
@@ -36,12 +62,7 @@ namespace CantinaSenac.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable((string)null);
 
@@ -81,11 +102,16 @@ namespace CantinaSenac.Migrations
                     b.UseTpcMappingStrategy();
                 });
 
-            modelBuilder.Entity("Feedback", b =>
+            modelBuilder.Entity("Comentario", b =>
                 {
                     b.HasBaseType("Postagem");
 
-                    b.ToTable("Feedbacks");
+                    b.Property<int?>("PostagemId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("PostagemId");
+
+                    b.ToTable("Comentario");
                 });
 
             modelBuilder.Entity("Aluno", b =>
@@ -105,20 +131,16 @@ namespace CantinaSenac.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Postagem", b =>
+            modelBuilder.Entity("Comentario", b =>
                 {
-                    b.HasOne("Usuario", "Usuario")
-                        .WithMany("Postagens")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Usuario");
+                    b.HasOne("Postagem", null)
+                        .WithMany("Comentarios")
+                        .HasForeignKey("PostagemId");
                 });
 
-            modelBuilder.Entity("Usuario", b =>
+            modelBuilder.Entity("Postagem", b =>
                 {
-                    b.Navigation("Postagens");
+                    b.Navigation("Comentarios");
                 });
 #pragma warning restore 612, 618
         }
