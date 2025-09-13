@@ -30,8 +30,7 @@ static class FeedBacksView
         foreach (Feedback feedback in feedbacks)
         {
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine($"Autor: {feedback.usuario.NomeDoUsuario}");
-            Console.WriteLine($"Nota: {feedback.Nota}");
+            Console.WriteLine($"Autor: {feedback.Usuario.NomeDoUsuario}");
             Console.WriteLine($"Comentário: {feedback.Descricao}");
             Console.WriteLine($"Data: {feedback.DataPublicacao}");
         }
@@ -49,7 +48,7 @@ static class FeedBacksView
         Console.Write("Nota (1 a 5): ");
         int nota = int.Parse(Console.ReadLine());
 
-        var feedback = new Feedback(comentario, nota, usuario);
+        var feedback = new Feedback();
 
         new FeedbackController().Cadastrar(feedback);
 

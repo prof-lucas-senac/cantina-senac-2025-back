@@ -1,4 +1,4 @@
-public class Adminstrador : Usuario
+ class Adminstrador : Usuario
 {
     public void Suspender()
     {
