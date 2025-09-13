@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250913004222_CriacaoFeedback")]
+    partial class CriacaoFeedback
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +32,7 @@ namespace CantinaSenac.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataPublicacao")
+                    b.Property<DateTime?>("DataPublicacao")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
@@ -91,7 +94,7 @@ namespace CantinaSenac.Migrations
                         new
                         {
                             Id = 1,
-                            DataPublicacao = new DateTime(2025, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataPublicacao = new DateTime(2025, 9, 12, 21, 42, 22, 45, DateTimeKind.Local).AddTicks(8357),
                             Descricao = "aluno@senac.br",
                             UsuarioId = 1
                         });
