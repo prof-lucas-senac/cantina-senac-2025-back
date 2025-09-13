@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250912234018_AdicaoForcadaTabelaCurso2")]
+    partial class AdicaoForcadaTabelaCurso2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,7 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("AlunoId");
 
-                    b.ToTable("Curso");
+                    b.ToTable("Curso", (string)null);
                 });
 
             modelBuilder.Entity("Postagem", b =>
@@ -65,6 +68,7 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("UsuarioId")
@@ -112,6 +116,21 @@ namespace CantinaSenac.Migrations
                     b.UseTpcMappingStrategy();
                 });
 
+            modelBuilder.Entity("Comentario", b =>
+                {
+                    b.HasBaseType("Postagem");
+
+                    b.Property<int>("NumCurtidas")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PostagemId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("PostagemId");
+
+                    b.ToTable("Comentario");
+                });
+
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
@@ -120,15 +139,6 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("int");
 
                     b.ToTable("Feedbacks");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DataPublicacao = new DateTime(2025, 9, 12, 21, 37, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = 1,
-                            Avaliacao = 5
-                        });
                 });
 
             modelBuilder.Entity("Aluno", b =>
@@ -151,14 +161,14 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Curso", b =>
                 {
                     b.HasOne("Aluno", null)
-                        .WithMany("Cursos")
+                        .WithMany("Curso")
                         .HasForeignKey("AlunoId");
                 });
 
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.HasOne("Usuario", "Usuario")
-                        .WithMany("Postagens")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -166,14 +176,21 @@ namespace CantinaSenac.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("Usuario", b =>
+            modelBuilder.Entity("Comentario", b =>
                 {
-                    b.Navigation("Postagens");
+                    b.HasOne("Postagem", null)
+                        .WithMany("Comentarios")
+                        .HasForeignKey("PostagemId");
+                });
+
+            modelBuilder.Entity("Postagem", b =>
+                {
+                    b.Navigation("Comentarios");
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
-                    b.Navigation("Cursos");
+                    b.Navigation("Curso");
                 });
 #pragma warning restore 612, 618
         }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250913000458_CriacaoChaveEstrangriraIdUsuario")]
+    partial class CriacaoChaveEstrangriraIdUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,7 +68,11 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("int");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
@@ -120,15 +127,6 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("int");
 
                     b.ToTable("Feedbacks");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DataPublicacao = new DateTime(2025, 9, 12, 21, 37, 0, 0, DateTimeKind.Unspecified),
-                            UsuarioId = 1,
-                            Avaliacao = 5
-                        });
                 });
 
             modelBuilder.Entity("Aluno", b =>
