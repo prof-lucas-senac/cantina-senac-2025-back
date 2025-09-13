@@ -5,5 +5,7 @@ class Postagem
     public int Id { get; set; }
     public string Descricao { get; set; }
     public DateTime DataDePublicacao { get; set; }
-    public List<Comentario> Comentarios = new List<Comentario>();
+    public Usuario Usuario { get; set; }
+    public int UsuarioId { get; set; }
+   // public List<Comentario> Comentarios = new List<Comentario>();
 }
