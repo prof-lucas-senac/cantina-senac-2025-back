@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250912230938_CriacaoEInsercaoTabelaAluno")]
+    partial class CriacaoEInsercaoTabelaAluno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,15 +32,15 @@ namespace CantinaSenac.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataPublicacao")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("dataPublicacao")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -81,6 +84,18 @@ namespace CantinaSenac.Migrations
                     b.UseTpcMappingStrategy();
                 });
 
+            modelBuilder.Entity("Comentario", b =>
+                {
+                    b.HasBaseType("Postagem");
+
+                    b.Property<int?>("PostagemId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("PostagemId");
+
+                    b.ToTable("Comentario");
+                });
+
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
@@ -115,7 +130,7 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.HasOne("Usuario", "Usuario")
-                        .WithMany("Postagens")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -123,9 +138,16 @@ namespace CantinaSenac.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("Usuario", b =>
+            modelBuilder.Entity("Comentario", b =>
                 {
-                    b.Navigation("Postagens");
+                    b.HasOne("Postagem", null)
+                        .WithMany("comentarios")
+                        .HasForeignKey("PostagemId");
+                });
+
+            modelBuilder.Entity("Postagem", b =>
+                {
+                    b.Navigation("comentarios");
                 });
 #pragma warning restore 612, 618
         }

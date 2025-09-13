@@ -1,6 +1,6 @@
 class Aluno : Usuario
 {
-    public Curso curso { get; set; }
+    //public Curso curso { get; set; }
     public override void ComentarPostagem()
     {
         throw new NotImplementedException();
