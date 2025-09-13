@@ -1,18 +1,9 @@
-public class Aluno : Usuario
+class Aluno : Usuario
 {
-    public string Curso { get; set; }
+    // public List<Curso> Cursos { get; set; } = new List<Curso>();
 
-    public override void Atualizar()
-    {
-        throw new NotImplementedException();
-    }
 
-    public override void Cadastrar()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void ComentarFeedBack()
+    public override void ComentarFeedback()
     {
         throw new NotImplementedException();
     }
@@ -22,9 +13,8 @@ public class Aluno : Usuario
         throw new NotImplementedException();
     }
 
-    public override void PublicarFeedBack()
+    public override void PublicarFeedback()
     {
         throw new NotImplementedException();
     }
 }
-

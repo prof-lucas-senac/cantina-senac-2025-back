@@ -5,31 +5,25 @@ static class LoginView
         string email = "";
         string senha = "";
 
-
-        Console.Clear();
-        System.Console.WriteLine($"\t=== Bem Vindo@ ao ===\n\t=== Cantina SENAC! ===");
-        System.Console.WriteLine($"\tDigite seu email:");
+        System.Console.WriteLine("Bem-vind@ ao Cantina Senac!\n");
+        System.Console.WriteLine("Por favor, insira suas credenciais:\n");
+        System.Console.WriteLine("Email:");
         email = Console.ReadLine();
-        System.Console.WriteLine();
-        System.Console.WriteLine($"\tDigite sua senha:");
+        System.Console.WriteLine("Senha:");
         senha = Console.ReadLine();
-        System.Console.WriteLine();
 
         if (new LoginController().Autenticar(email, senha))
         {
-            System.Console.WriteLine($"Aluno autenticado com sucesso!");
-            System.Console.WriteLine($"Pressione uma tecla para continuar");
+            System.Console.WriteLine("Aluno autenticado com sucesso! Pressione Enter para continuar.");
             Console.ReadKey();
-            Feedbacksview.Exibir();
+            FeedbacksView.Exibir();
         }
         else
         {
-            System.Console.WriteLine($"Email ou senha incorretos");
-            System.Console.WriteLine("Pressione Enter para tentar novamente");
+            System.Console.WriteLine("Login e/ou Senha incorretos. Pressione Enter para tentar novamente.");
             Console.ReadKey();
             Console.Clear();
             Exibir();
         }
-
     }
 }
