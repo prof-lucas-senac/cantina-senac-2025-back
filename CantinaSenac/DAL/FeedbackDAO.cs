@@ -2,7 +2,8 @@
 class FeedbackDAO: IDAO<Feedback>
 {
 
-    public static List<Feedback> feedbacks = new List<Feedback>();
+    // public static List<Feedback> feedbacks = new List<Feedback>();
+    private CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Feedback feedback)
     {
         throw new NotImplementedException();
@@ -10,8 +11,9 @@ class FeedbackDAO: IDAO<Feedback>
 
     public void Cadastrar(Feedback feedback)
     {
-        feedback.Id = feedbacks.Count + 1;
-        feedbacks.Add(feedback);
+        // feedback.Id = feedbacks.Count + 1;
+        // feedbacks.Add(feedback);
+
     }
 
     public void Excluir(int id)
@@ -19,17 +21,17 @@ class FeedbackDAO: IDAO<Feedback>
         throw new NotImplementedException();
     }
 
-    public Feedback Listar(int id)
-    {
-        foreach (var item in feedbacks)
-        {
-            if (item.Id == id)
-            {
-                return item;
-            }
-        }
-        throw new Exception("Feedback não encontrado");
-    }
+    // public Feedback Listar(int id)
+    // {
+    //     // foreach (var item in feedbacks)
+    //     // {
+    //     //     if (item.Id == id)
+    //     //     {
+    //     //         return item;
+    //     //     }
+    //     // }
+    //     // throw new Exception("Feedback não encontrado");
+    // }
 
     public Feedback listar(int id)
     {
@@ -38,6 +40,6 @@ class FeedbackDAO: IDAO<Feedback>
 
     public List<Feedback> ListarTodos()
     {
-        return feedbacks;
+       return contexto.Feedbacks.ToList();
     }
 }

@@ -1,7 +1,7 @@
-public class Aluno : Usuario
+ class Aluno : Usuario
 {
 
-public Curso curso { get; set; }
+// public Curso curso { get; set; }
     public override void Atualizar()
     {
 

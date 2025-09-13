@@ -1,4 +1,4 @@
-public class FeedbackController
+ class FeedbackController
 {
     public void Adicionar(Feedback feedback)
     {

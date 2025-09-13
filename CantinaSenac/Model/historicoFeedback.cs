@@ -1,4 +1,4 @@
-public class historicoFeedback
+ class historicoFeedback
 {
     public DateTime dataPublicacao { get; set; }
     public Postagem postagem { get; set; }

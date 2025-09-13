@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250912230934_CriacaoEinsercaoTabelaAluno")]
+    partial class CriacaoEinsercaoTabelaAluno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,17 +36,17 @@ namespace CantinaSenac.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("dataPostagem")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("usuarioId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("usuarioId");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Postagem");
 
                     b.UseTpcMappingStrategy();
                 });
@@ -86,15 +89,6 @@ namespace CantinaSenac.Migrations
                     b.HasBaseType("Postagem");
 
                     b.ToTable("Feedbacks");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Descricao = "Uma otima cantina, amei o pastel!!",
-                            UsuarioId = 1,
-                            dataPostagem = new DateTime(2025, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Aluno", b =>
@@ -117,17 +111,12 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.HasOne("Usuario", "usuario")
-                        .WithMany("Postagens")
-                        .HasForeignKey("UsuarioId")
+                        .WithMany()
+                        .HasForeignKey("usuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("usuario");
-                });
-
-            modelBuilder.Entity("Usuario", b =>
-                {
-                    b.Navigation("Postagens");
                 });
 #pragma warning restore 612, 618
         }

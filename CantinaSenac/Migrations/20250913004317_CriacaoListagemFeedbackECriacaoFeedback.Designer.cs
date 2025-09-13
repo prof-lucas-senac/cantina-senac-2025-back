@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250913004317_CriacaoListagemFeedbackECriacaoFeedback")]
+    partial class CriacaoListagemFeedbackECriacaoFeedback
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,7 +96,7 @@ namespace CantinaSenac.Migrations
                             Id = 1,
                             Descricao = "Uma otima cantina, amei o pastel!!",
                             UsuarioId = 1,
-                            dataPostagem = new DateTime(2025, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            dataPostagem = new DateTime(2025, 9, 12, 21, 43, 16, 765, DateTimeKind.Local).AddTicks(5398)
                         });
                 });
 

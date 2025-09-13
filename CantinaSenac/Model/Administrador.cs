@@ -1,4 +1,4 @@
-public class Admnistrador : Usuario
+ class Admnistrador : Usuario
 {
     public override void Atualizar()
     {
