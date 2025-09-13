@@ -5,9 +5,12 @@ abstract class Usuario
     public string Email { get; set; }
     public string Senha { get; set; }
     public int Status { get; set; }
-    public string Foto { get; set; }
-    // public List<Postagem> Postagens { get; set; }
-    public abstract void PublicarFeedback();
-    public abstract void ComentarFeedback();
+    public string? Foto { get; set; }
+    public List<Postagem> Postagens { get; set; }
+
+    public abstract void Cadastrar();
+    public abstract void Atualizar();
+    public abstract void PublicarFeedBack();
+    public abstract void ComentarFeedBack();
     public abstract void Logar();
 }

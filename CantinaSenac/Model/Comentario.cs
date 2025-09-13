@@ -1,1 +1,1 @@
-public class Comentario : Postagem;
+class Comentario : Postagem;

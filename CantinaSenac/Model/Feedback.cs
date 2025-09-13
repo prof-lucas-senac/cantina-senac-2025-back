@@ -1,4 +1,1 @@
-class Feedback : Postagem
-{
-    
-}
+class Feedback : Postagem;
