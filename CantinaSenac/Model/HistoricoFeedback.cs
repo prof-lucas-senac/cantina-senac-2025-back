@@ -1,7 +1,7 @@
-public class HistoricoFeedBack
+ class HistoricoFeedBack
 {
     public DateTime DataPublicacao { get; set; }
-    public Postagem postagem { get; set; }
-    public Usuario usuario { get; set; }
+    public Postagem Postagem { get; set; }
+    public Usuario Usuario { get; set; }
 
 }

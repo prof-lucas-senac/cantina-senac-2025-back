@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250912232826_CriacaoEInsercaoTabelaAluno2")]
+    partial class CriacaoEInsercaoTabelaAluno2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,12 +39,12 @@ namespace CantinaSenac.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("UsuarioId")
+                    b.Property<int>("usuarioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("usuarioId");
 
                     b.ToTable((string)null);
 
@@ -120,8 +123,8 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.HasOne("Usuario", "usuario")
-                        .WithMany("Postagens")
-                        .HasForeignKey("UsuarioId")
+                        .WithMany()
+                        .HasForeignKey("usuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -138,11 +141,6 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.Navigation("Comentarios");
-                });
-
-            modelBuilder.Entity("Usuario", b =>
-                {
-                    b.Navigation("Postagens");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,4 @@
-public class Administrador : Usuario
+ class Administrador : Usuario
 {
     
 
