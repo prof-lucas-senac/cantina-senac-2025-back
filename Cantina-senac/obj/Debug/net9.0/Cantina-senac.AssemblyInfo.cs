@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cantina-senac")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62d0db7d80610b287664550608fdde2f67fc15cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a2aa47354aada8a9095807e52c37833e728de16")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cantina-senac")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cantina-senac")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
