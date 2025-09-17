@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 class CantinaSenacContext : DbContext
 {
+    
     public DbSet<Aluno> Alunos { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }
     string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=root;";
