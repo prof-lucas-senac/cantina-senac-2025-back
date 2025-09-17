@@ -30,7 +30,7 @@ static class FeedbacksView
     public static void ExibirDialogoPostarFeedback()
     {
         System.Console.WriteLine("Poste o seu feedback:");
-        string descricaoFeedback = Console.ReadLine();
+        string? descricaoFeedback = Console.ReadLine();
 
         new FeedbackController().PostarFeedback(descricaoFeedback);
 
@@ -38,4 +38,6 @@ static class FeedbacksView
         Console.ReadKey();
         Exibir();
     }
+
+    
 }

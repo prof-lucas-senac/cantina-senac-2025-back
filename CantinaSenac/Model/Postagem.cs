@@ -4,5 +4,7 @@ abstract class Postagem
     public string Descricao { get; set; }
     public DateTime DataPublicacao { get; set; }
     public Usuario Usuario { get; set; }
+    public int UsuarioId { get; set; }
+
     // public List<Comentario> Comentarios { get; set; }
 }
