@@ -5,8 +5,13 @@ class FeedbackController
         return new FeedbackDAO().ListarTodos();
     }
 
-    public void Cadastrar(Feedback feedback)
+    public void Cadastrar(string descricaoFeedback)
     {
-        new FeedbackDAO().Cadastrar(feedback);
+        
+        FeedbackDAO dao = new FeedbackDAO();
+        Feedback feedback = new Feedback();
+        feedback.Descricao = descricaoFeedback;
+        feedback.UsuarioId = 1;
+        dao.Cadastrar(feedback);
     }
 }

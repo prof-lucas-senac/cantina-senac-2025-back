@@ -43,14 +43,9 @@ static class FeedBacksView
         Console.WriteLine("=== Cadastrar Feedback ===\n");
 
         Console.Write("Comentário: ");
-        string comentario = Console.ReadLine();
+        string descricaoFeedback = Console.ReadLine();
 
-        Console.Write("Nota (1 a 5): ");
-        int nota = int.Parse(Console.ReadLine());
-
-        var feedback = new Feedback();
-
-        new FeedbackController().Cadastrar(feedback);
+        new FeedbackController().Cadastrar(descricaoFeedback);
 
         Console.WriteLine("\nFeedback enviado com sucesso!");
         Console.WriteLine("Pressione Enter para continuar...");
