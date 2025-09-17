@@ -7,11 +7,11 @@ class FeedbackController : FeedbackDAO
         return new FeedbackDAO().ListarTodos();
     }
 
-    public void PostarFeedBack(Feedback feedbackDescricao)
+    public void PostarFeedback(string descricaoFeedback)
     {
-        
+        FeedbackDAO dao = new FeedbackDAO();
+        Feedback feedback = new Feedback();
+        feedback.Descricao = descricaoFeedback;
+        dao.Cadastrar(feedback);
     }
-
-    
-
 }

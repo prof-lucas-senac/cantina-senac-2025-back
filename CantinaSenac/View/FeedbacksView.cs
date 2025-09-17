@@ -7,7 +7,6 @@ static class FeedbacksView
         List<Feedback> feedbacks;
 
         Console.Clear();
-
         System.Console.WriteLine("Cantina SENAC");
         System.Console.WriteLine("Lista de Feedbacks:");
         feedbacks = new FeedbackController().ListarFeedbacks();
@@ -20,6 +19,7 @@ static class FeedbacksView
         {
             System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
         }
+        ExibirDialogoPostarFeedback();
     }
 
     private static void ListarFeedbacks(List<Feedback> feedbacks)
@@ -29,16 +29,16 @@ static class FeedbacksView
             System.Console.WriteLine(feedback.Descricao);
         }
     }
-    private static void Cadastrar()
+
+    public static void ExibirDialogoPostarFeedback()
     {
-        
-        Feedback feedback = new Feedback();
-        Console.WriteLine("Poste seu Feedback aqui: ");
-        feedback.Descricao = Console.ReadLine()!;
-        System.Console.WriteLine("Feedback postado");
+        System.Console.WriteLine("Poste o seu feedback:");
+        string descricaoFeedback = Console.ReadLine();
+
+        new FeedbackController().PostarFeedback(descricaoFeedback);
+
+        System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
-        Exibir();        
+        Exibir();
     }
-
-
 }

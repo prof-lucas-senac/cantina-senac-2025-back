@@ -17,7 +17,7 @@ static class LoginView
         if (new LoginController().Autenticar(email, senha))
         {
             System.Console.WriteLine("Aluno autenticado com sucesso! Pressione Enter para continuar.");
-            Console.ReadKey();        
+            Console.ReadKey();
             FeedbacksView.Exibir();
         }
         else
