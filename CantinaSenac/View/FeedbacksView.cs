@@ -45,11 +45,11 @@ static class FeedbacksView
 
     private static void Criar()
     {
-        Feedback feedback = new Feedback();
+        // Feedback feedback = new Feedback();
         Console.WriteLine("Por favor, deixe seu feedback sobre a cantina:");
-        feedback.Descricao = Console.ReadLine();
+        string descricaoFeedback = Console.ReadLine();
 
-        new FeedbackController().Adicionar(feedback);
+        new FeedbackController().PostarFeedback(descricaoFeedback);
 
         Console.WriteLine("Feedback cadastrado com sucesso! Pressione Enter para continuar");
         Console.ReadKey();

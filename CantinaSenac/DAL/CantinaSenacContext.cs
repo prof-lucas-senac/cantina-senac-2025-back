@@ -16,6 +16,13 @@ class CantinaSenacContext : DbContext
     {
         builder.Entity<Usuario>().UseTpcMappingStrategy();
         builder.Entity<Postagem>().UseTpcMappingStrategy();
+
+        builder.Entity<Aluno>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+        });
+
         builder.Entity<Aluno>().HasData(
             new Aluno()
             {
@@ -26,15 +33,15 @@ class CantinaSenacContext : DbContext
                 Status = 1
             }
         );
-        builder.Entity<Feedback>().HasData(
-            new Feedback()
-            {
-            Id = 1,
-            Descricao = "Uma otima cantina, amei o pastel!!",
-            dataPostagem = new DateTime(2025, 09, 12),
-            UsuarioId = 1
-    }
-       );
+    //     builder.Entity<Feedback>().HasData(
+    //         new Feedback()
+    //         {
+    //         Id = 1,
+    //         Descricao = "Uma otima cantina, amei o pastel!!",
+    //         dataPostagem = new DateTime(2025, 09, 12),
+    //         UsuarioId = 1
+    // }
+    //    );
     }
 
 }

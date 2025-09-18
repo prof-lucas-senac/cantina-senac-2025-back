@@ -3,8 +3,6 @@ using System.Reflection.Metadata;
 class LoginController
 {
 
-
-
     public bool Autenticar(string email, string senha)
     {
         List<Aluno> alunos = new AlunoDAO().ListarTodos();

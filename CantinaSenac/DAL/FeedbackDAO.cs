@@ -11,8 +11,8 @@ class FeedbackDAO: IDAO<Feedback>
 
     public void Cadastrar(Feedback feedback)
     {
-        // feedback.Id = feedbacks.Count + 1;
-        // feedbacks.Add(feedback);
+        contexto.Feedbacks.Add(feedback);
+        contexto.SaveChanges();
 
     }
  

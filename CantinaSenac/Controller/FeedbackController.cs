@@ -1,4 +1,4 @@
- class FeedbackController
+class FeedbackController
 {
     public void Adicionar(Feedback feedback)
     {
@@ -13,5 +13,14 @@
             System.Console.WriteLine($"ID: {Feedback.Id} - Descrição: {Feedback.Descricao}");
         }
         return lista;
+    }
+
+    public void PostarFeedback(string descricaoFeedback)
+    {
+        FeedbackDAO feedbackDAO = new FeedbackDAO();
+        Feedback feedback = new Feedback();
+        feedback.Descricao = descricaoFeedback;
+        feedback.UsuarioId = 1;
+        feedbackDAO.Cadastrar(feedback);
     }
 }
