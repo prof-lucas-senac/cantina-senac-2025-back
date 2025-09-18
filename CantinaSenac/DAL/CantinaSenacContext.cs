@@ -5,7 +5,7 @@ class CantinaSenacContext : DbContext
     
     public DbSet<Aluno> Alunos { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }
-    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=root;";
+    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=1234;";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -17,6 +17,11 @@ class CantinaSenacContext : DbContext
         builder.Entity<Usuario>().UseTpcMappingStrategy();
         builder.Entity<Postagem>().UseTpcMappingStrategy();
 
+        builder.Entity<Aluno>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+        });
+        
         builder.Entity<Aluno>().HasData(
             new Aluno()
             {
@@ -26,6 +31,18 @@ class CantinaSenacContext : DbContext
                 NomeDoUsuario = "Aluno",
                 Status = 1
             }
+
+
+        );
+        builder.Entity<Feedback>().HasData(
+            new Feedback()
+            {
+                Id = 1,
+                Descricao = "Ótimo atendimento!",
+                DataPublicacao = new DateTime(2025, 09, 17),
+                UsuarioId = 1
+            }
         );
     }
+    
 }
