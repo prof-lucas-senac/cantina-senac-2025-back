@@ -4,7 +4,7 @@ class CantinaSenacContext : DbContext
 {
     public DbSet<Aluno> Alunos { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }
-    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=root;";
+    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=S&nac2024";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -15,6 +15,11 @@ class CantinaSenacContext : DbContext
     {
         builder.Entity<Usuario>().UseTpcMappingStrategy();
         builder.Entity<Postagem>().UseTpcMappingStrategy();
+        builder.Entity<Aluno>(entity =>
+        {             
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+        });
+
 
         builder.Entity<Aluno>().HasData(
             new Aluno()
