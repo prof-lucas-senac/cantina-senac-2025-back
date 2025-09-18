@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    partial class CantinaSenacContextModelSnapshot : ModelSnapshot
+    [Migration("20250918003624_ImplementacaoaAutoincrementDefaultFeedbacks")]
+    partial class ImplementacaoaAutoincrementDefaultFeedbacks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +28,8 @@ namespace CantinaSenac.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
 
                     b.Property<DateTime>("DataPublicacao")
                         .HasColumnType("datetime(6)");
