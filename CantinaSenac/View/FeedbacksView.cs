@@ -14,9 +14,12 @@ static class FeedbacksView
                 foreach (Feedback feedback in FeedbackController.ListarFeedback())
                 {
                     Console.WriteLine("");
-                    Console.WriteLine(feedback.Id);
-                    Console.WriteLine(feedback.Descricao);
-                    Console.WriteLine(feedback.Avaliacao);
+                    Console.WriteLine("ID:" + feedback.Id);
+                    if (feedback.Descricao != null)
+                    {
+                        Console.WriteLine(feedback.Descricao);
+                    }
+                    Console.WriteLine("Nota:" + feedback.Avaliacao);
                 }
             }
             else

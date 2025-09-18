@@ -1,15 +1,13 @@
 static class FeedbackController
 {   //Algumas coisa vao mudar para DAO
     static FeedbackDAO feedbackDAO = new FeedbackDAO();
-    static int id = 1;
     public static void AdicionarFeedback(string descricao, int avaliacao, Usuario usuario)
     {
         Feedback feedback = new Feedback();
         feedback.Descricao = descricao;
         feedback.Avaliacao = avaliacao;
-        feedback.Id = id;
-        id++;
         feedback.Usuario = usuario;
+        feedback.UsuarioId = usuario.Id;
         feedback.DataPublicacao = DateTime.Now;
         feedbackDAO.Cadastrar(feedback);
     }

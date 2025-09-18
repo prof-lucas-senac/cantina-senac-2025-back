@@ -13,6 +13,11 @@ class CantinaSenacContext : DbContext
     {
         builder.Entity<Usuario>().UseTpcMappingStrategy();
         builder.Entity<Postagem>().UseTpcMappingStrategy();
+        builder.Entity<Aluno>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+        }
+        );
         builder.Entity<Aluno>().HasData(new Aluno()
         {
             Id = 1,
