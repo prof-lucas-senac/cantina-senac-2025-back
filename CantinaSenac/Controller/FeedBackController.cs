@@ -3,6 +3,7 @@ class FeedBackController
     public void AdicionarFeedBack(FeedBack feedBack)
     {
         FeedBackDAO feedBackDAO = new FeedBackDAO();
+        feedBack.UsuarioId = 1;
         feedBackDAO.Cadastrar(feedBack);
     }
     public bool VerificarSeTemFeedBacks()

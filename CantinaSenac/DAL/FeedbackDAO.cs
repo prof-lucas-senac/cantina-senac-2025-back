@@ -4,7 +4,8 @@ class FeedBackDAO : IDAO<FeedBack>
 
     public void Cadastrar(FeedBack objeto)
     {
-        //feedBacks.Add(objeto);
+        contexto.FeedBacks.Add(objeto);
+        contexto.SaveChanges();
     }
 
     public void Atualizar(FeedBack objeto)
