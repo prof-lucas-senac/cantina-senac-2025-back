@@ -9,7 +9,8 @@ public class FeedbackDAO : IDAO <Feedback>
 
     public void Cadastrar(Feedback feedback)
     {
-        // Feedbacks.Add(feedback);
+        contexto.Feedbacks.Add(feedback);
+        contexto.SaveChanges();
     }
 
     public void Excluir(int id)

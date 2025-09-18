@@ -2,6 +2,7 @@ public class FeedbacksController
 {
     public static void AdicionarFeedback(Feedback feedback)
     {
+        feedback.UsuarioId = 1;
         new FeedbackDAO().Cadastrar(feedback);
     }
 
