@@ -2901,23 +2901,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\giuli\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\cadin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "C:\\Users\\cadin\\OneDrive\\Documentos\\dev-web-senac\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
-      "packagesPath": "C:\\Users\\giuli\\.nuget\\packages\\",
-      "outputPath": "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
+      "projectPath": "C:\\Users\\cadin\\OneDrive\\Documentos\\dev-web-senac\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+      "packagesPath": "C:\\Users\\cadin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cadin\\OneDrive\\Documentos\\dev-web-senac\\back\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\giuli\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cadin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2939,9 +2941,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -2992,7 +2994,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.7.24407.12/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
