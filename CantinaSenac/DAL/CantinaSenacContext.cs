@@ -16,6 +16,10 @@ class CantinaSenacContext : DbContext
         builder.Entity<Usuario>().UseTpcMappingStrategy();
         builder.Entity<Postagem>().UseTpcMappingStrategy();
 
+        builder.Entity<Usuario>().HasMany(a => a.Postagens)
+            .WithOne(f => f.Usuario)
+            .HasForeignKey(f => f.UsuarioId);
+
         builder.Entity<Aluno>().HasData(
             new Aluno()
             {

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250912230816_CriacaoEInsercaoTabelaAluno")]
-    partial class CriacaoEInsercaoTabelaAluno
+    [Migration("20250920174120_CorrecaoAlunosFeedbacks")]
+    partial class CorrecaoAlunosFeedbacks
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,9 +46,9 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Postagem");
 
-                    b.UseTpcMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -79,23 +79,23 @@ namespace CantinaSenac.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Usuario");
 
-                    b.UseTpcMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
 
-                    b.ToTable("Feedbacks");
+                    b.ToTable("Feedbacks", (string)null);
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos");
+                    b.ToTable("Alunos", (string)null);
 
                     b.HasData(
                         new
@@ -111,12 +111,35 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.HasOne("Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("Postagens")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Feedback", b =>
+                {
+                    b.HasOne("Postagem", null)
+                        .WithOne()
+                        .HasForeignKey("Feedback", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Aluno", b =>
+                {
+                    b.HasOne("Usuario", null)
+                        .WithOne()
+                        .HasForeignKey("Aluno", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Usuario", b =>
+                {
+                    b.Navigation("Postagens");
                 });
 #pragma warning restore 612, 618
         }

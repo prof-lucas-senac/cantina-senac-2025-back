@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250913001025_CorrecaoChaveEstrangeiraUsuarioId")]
-    partial class CorrecaoChaveEstrangeiraUsuarioId
+    [Migration("20250920184947_ImplementacaoEstrategiaTPC")]
+    partial class ImplementacaoEstrategiaTPC
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

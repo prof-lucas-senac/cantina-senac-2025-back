@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 abstract class Postagem
 {
     public int Id { get; set; }
