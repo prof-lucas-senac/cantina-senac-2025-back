@@ -11,17 +11,16 @@ class CantinaSenacContext : DbContext
         optionsBuilder.UseMySql(stringConexao, ServerVersion.AutoDetect(stringConexao));
     }
 
-    protected override void OnModelCreating(ModelBuilder Builder)
+    protected override void OnModelCreating(ModelBuilder builder)
     {
-        Builder.Entity<Usuario>().UseTpcMappingStrategy();
-        Builder.Entity<Postagem>().UseTpcMappingStrategy();
-        Builder.Entity<Aluno>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
-             
-        });
-        Builder.Entity<Aluno>().HasData
-        (
+        builder.Entity<Usuario>().UseTpcMappingStrategy();
+        builder.Entity<Postagem>().UseTpcMappingStrategy();
+
+        builder.Entity<Usuario>().HasMany(a => a.Postagens)
+            .WithOne(f => f.Usuario)
+            .HasForeignKey(f => f.UsuarioId);
+
+        builder.Entity<Aluno>().HasData(
             new Aluno()
             {
                 Id = 1,

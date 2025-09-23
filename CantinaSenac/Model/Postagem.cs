@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 abstract class Postagem
 {
     public int Id { get; set; }
@@ -5,6 +7,5 @@ abstract class Postagem
     public DateTime DataPublicacao { get; set; }
     public Usuario Usuario { get; set; }
     public int UsuarioId { get; set; }
-
     // public List<Comentario> Comentarios { get; set; }
 }

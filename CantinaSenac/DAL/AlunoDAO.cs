@@ -1,6 +1,6 @@
 
 class AlunoDAO : IDAO<Aluno>
-{  
+{
     private CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Aluno aluno)
     {
@@ -9,7 +9,7 @@ class AlunoDAO : IDAO<Aluno>
 
     public void Cadastrar(Aluno aluno)
     {
-        //alunos.Add(aluno);
+        // alunos.Add(aluno);
     }
 
     public void Excluir(int id)
