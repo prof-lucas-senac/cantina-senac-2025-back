@@ -1,0 +1,15 @@
+C:\workplace\Prog_web\back\CantinaSenac\bin\Debug\net9.0\CantinaSenac.exe
+C:\workplace\Prog_web\back\CantinaSenac\bin\Debug\net9.0\CantinaSenac.deps.json
+C:\workplace\Prog_web\back\CantinaSenac\bin\Debug\net9.0\CantinaSenac.runtimeconfig.json
+C:\workplace\Prog_web\back\CantinaSenac\bin\Debug\net9.0\CantinaSenac.dll
+C:\workplace\Prog_web\back\CantinaSenac\bin\Debug\net9.0\CantinaSenac.pdb
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.GeneratedMSBuildEditorConfig.editorconfig
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.AssemblyInfoInputs.cache
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.AssemblyInfo.cs
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.csproj.CoreCompileInputs.cache
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.sourcelink.json
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.dll
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\refint\CantinaSenac.dll
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.pdb
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\CantinaSenac.genruntimeconfig.cache
+C:\workplace\Prog_web\back\CantinaSenac\obj\Debug\net9.0\ref\CantinaSenac.dll

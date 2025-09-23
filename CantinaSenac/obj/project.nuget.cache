@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "M8HbKYzd6Dw=",
   "success": true,
   "projectFilePath": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
@@ -52,5 +53,11 @@
     "C:\\Users\\Prog_Sis\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.19\\microsoft.aspnetcore.app.ref.8.0.19.nupkg.sha512",
     "C:\\Users\\Prog_Sis\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.19\\microsoft.netcore.app.host.win-x64.8.0.19.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "kFNCLOcjj8A=",
+  "success": true,
+  "projectFilePath": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> 57cd655051b3bef58785277520da2acb380a3564
   "logs": []
 }

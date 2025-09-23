@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\cadin\\OneDrive\\Documentos\\dev-web-senac\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {}
   },
   "projects": {
@@ -23,13 +24,37 @@
         ],
         "originalTargetFrameworks": [
           "net8.0"
+=======
+    "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj": {}
+  },
+  "projects": {
+    "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectName": "CantinaSenac",
+        "projectPath": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
+        "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
+        "outputPath": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+>>>>>>> 57cd655051b3bef58785277520da2acb380a3564
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
+<<<<<<< HEAD
           "net8.0": {
             "targetAlias": "net8.0",
+=======
+          "net9.0": {
+            "targetAlias": "net9.0",
+>>>>>>> 57cd655051b3bef58785277520da2acb380a3564
             "projectReferences": {}
           }
         },
@@ -46,6 +71,7 @@
         "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
+<<<<<<< HEAD
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
@@ -60,6 +86,10 @@
               "version": "[9.0.0, )"
             }
           },
+=======
+        "net9.0": {
+          "targetAlias": "net9.0",
+>>>>>>> 57cd655051b3bef58785277520da2acb380a3564
           "imports": [
             "net461",
             "net462",
@@ -71,6 +101,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+<<<<<<< HEAD
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
@@ -89,12 +120,18 @@
               "version": "[8.0.7, 8.0.7]"
             }
           ],
+=======
+>>>>>>> 57cd655051b3bef58785277520da2acb380a3564
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 57cd655051b3bef58785277520da2acb380a3564
         }
       }
     }
