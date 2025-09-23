@@ -5,7 +5,7 @@
 namespace CantinaSenac.Migrations
 {
     /// <inheritdoc />
-    public partial class ImplementacaoAutoincrementoAlunos : Migration
+    public partial class ImplemetacaoEstrategiaTph : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

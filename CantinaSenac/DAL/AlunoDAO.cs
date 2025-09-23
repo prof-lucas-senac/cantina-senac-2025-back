@@ -13,7 +13,7 @@ class AlunoDAO : IDAO<Aluno>
 
     }
 
-    public void Excluir(int id)
+    public void Excluir(Aluno objeto)
     {
         throw new NotImplementedException();
     }

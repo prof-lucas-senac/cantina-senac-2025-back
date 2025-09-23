@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250913001103_CriacaoChaveEstrangeiraIdUsuario")]
-    partial class CriacaoChaveEstrangeiraIdUsuario
+    [Migration("20250923232505_implementacaoDBTPH")]
+    partial class implementacaoDBTPH
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,8 +39,10 @@ namespace CantinaSenac.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("IdUsuario")
-                        .HasColumnType("int");
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
@@ -49,9 +51,11 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Postagem");
 
-                    b.UseTpcMappingStrategy();
+                    b.HasDiscriminator().HasValue("Postagem");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -82,23 +86,23 @@ namespace CantinaSenac.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Usuario");
 
-                    b.UseTpcMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
 
-                    b.ToTable("Feedbacks");
+                    b.HasDiscriminator().HasValue("Feedback");
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos");
+                    b.ToTable("Alunos", (string)null);
 
                     b.HasData(
                         new
@@ -120,6 +124,15 @@ namespace CantinaSenac.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Aluno", b =>
+                {
+                    b.HasOne("Usuario", null)
+                        .WithOne()
+                        .HasForeignKey("Aluno", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Usuario", b =>

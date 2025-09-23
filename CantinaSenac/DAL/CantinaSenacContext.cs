@@ -12,14 +12,13 @@ class CantinaSenacContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder Builder)
     {
-        Builder.Entity<Usuario>().UseTpcMappingStrategy();
-        Builder.Entity<Postagem>().UseTpcMappingStrategy();
 
-        Builder.Entity<Aluno>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
-            
-        });
+        Builder.Entity<Aluno>().ToTable("Alunos");
+
+        Builder.Entity<Usuario>().HasMany(a => a.Postagens)
+            .WithOne(f => f.Usuario)
+            .HasForeignKey(f => f.UsuarioId);
+
         Builder.Entity<Aluno>().HasData(
             new Aluno()
             {
