@@ -1,6 +1,6 @@
 
 class AlunoDAO : IDAO<Aluno>
-{
+{  
     private CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Aluno aluno)
     {
