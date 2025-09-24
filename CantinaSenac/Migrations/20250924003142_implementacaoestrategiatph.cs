@@ -7,31 +7,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CantinaSenac.Migrations
 {
     /// <inheritdoc />
-    public partial class CriacaoDatabase : Migration
+    public partial class implementacaoestrategiatph : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterDatabase()
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Curso",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    DataInicio = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    DataFinal = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Descricao = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Curso", x => x.Id);
-                })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
@@ -47,21 +28,14 @@ namespace CantinaSenac.Migrations
                     Senha = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    Foto = table.Column<string>(type: "longtext", nullable: false)
+                    Foto = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Discriminator = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    cursoId = table.Column<int>(type: "int", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuario", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Usuario_Curso_cursoId",
-                        column: x => x.cursoId,
-                        principalTable: "Curso",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -74,42 +48,31 @@ namespace CantinaSenac.Migrations
                     decricao = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataPublicacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    usuarioId = table.Column<int>(type: "int", nullable: false),
-                    Discriminator = table.Column<string>(type: "varchar(13)", maxLength: 13, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    PostagemId = table.Column<int>(type: "int", nullable: true)
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
+                    Discriminator = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Postagem", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Postagem_Postagem_PostagemId",
-                        column: x => x.PostagemId,
-                        principalTable: "Postagem",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Postagem_Usuario_usuarioId",
-                        column: x => x.usuarioId,
+                        name: "FK_Postagem_Usuario_UsuarioId",
+                        column: x => x.UsuarioId,
                         principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Postagem_PostagemId",
-                table: "Postagem",
-                column: "PostagemId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Postagem_usuarioId",
-                table: "Postagem",
-                column: "usuarioId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Usuario_cursoId",
+            migrationBuilder.InsertData(
                 table: "Usuario",
-                column: "cursoId");
+                columns: new[] { "Id", "Discriminator", "Email", "Foto", "NomeDoUsuario", "Senha", "Status" },
+                values: new object[] { 1, "Aluno", "aluno@senac.br", null, "aluno", "aluno", 1 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Postagem_UsuarioId",
+                table: "Postagem",
+                column: "UsuarioId");
         }
 
         /// <inheritdoc />
@@ -120,9 +83,6 @@ namespace CantinaSenac.Migrations
 
             migrationBuilder.DropTable(
                 name: "Usuario");
-
-            migrationBuilder.DropTable(
-                name: "Curso");
         }
     }
 }

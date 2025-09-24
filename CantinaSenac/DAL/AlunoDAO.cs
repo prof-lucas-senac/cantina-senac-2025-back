@@ -2,19 +2,22 @@
 class AlunoDAO : IDAO <Aluno>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
-    public void Atualizar(Aluno aluno)
+    public void Atualizar(Aluno objeto)
     {
-        throw new NotImplementedException();
+        contexto.Alunos.Update(objeto);
+        contexto.SaveChanges();
     }
 
-    public void Cadastrar(Aluno aluno)
+    public void Cadastrar(Aluno objeto)
     {
-        // alunos.Add(aluno);
+        contexto.Alunos.Add(objeto);
+        contexto.SaveChanges();
     }
 
-    public void Excluir(int id)
+    public void Excluir(Aluno objeto)
     {
-        throw new NotImplementedException();
+        contexto.Alunos.Remove(objeto);
+        contexto.SaveChanges();
     }
 
     public Aluno Listar(int id)
