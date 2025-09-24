@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 class CantinaSenacContext : DbContext
 {
@@ -13,14 +14,11 @@ class CantinaSenacContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Usuario>().UseTpcMappingStrategy();
-        builder.Entity<Postagem>().UseTpcMappingStrategy();
-
         builder.Entity<Usuario>().HasMany(a => a.Postagens)
             .WithOne(f => f.Usuario)
             .HasForeignKey(f => f.UsuarioId);
 
-        builder.Entity<Aluno>().HasData(
+        builder.Entity<Aluno>().HasData(    
             new Aluno()
             {
                 Id = 1,
