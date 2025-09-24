@@ -5,17 +5,19 @@ class FeedBackDAO : IDAO<FeedBack>
     public void Cadastrar(FeedBack objeto)
     {
         contexto.FeedBacks.Add(objeto);
-        contexto.SaveChanges();
+        contexto.SaveChanges(); // salva as alterações no banco de dados
     }
 
     public void Atualizar(FeedBack objeto)
     {
-        throw new NotImplementedException();
+       contexto.FeedBacks.Update(objeto);
+       contexto.SaveChanges();
     }
 
-    public void Excluir(int id)
+    public void Excluir(FeedBack objeto)
     {
-        throw new NotImplementedException();
+        contexto.FeedBacks.Remove(objeto);
+        contexto.SaveChanges();
     }
 
     public FeedBack Listar(int id)

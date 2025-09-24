@@ -11,13 +11,10 @@ public class CantinaSenacContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Usuario>().UseTpcMappingStrategy();
-        builder.Entity<Postagem>().UseTpcMappingStrategy();
+        builder.Entity<Usuario>().HasMany(a => a.Postagens) //define a chave primaria
+            .WithOne(f => f.Usuario) //define o relacionamento
+            .HasForeignKey(f => f.UsuarioId); //define a chave estrangeira
 
-        builder.Entity<Aluno>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
-        });
         builder.Entity<Aluno>().HasData //hasdata serve para inserir novo aluno
         (
             new Aluno()
@@ -27,14 +24,6 @@ public class CantinaSenacContext : DbContext
                 Email = "abc",
                 Senha = "teste",
                 Status = 1
-            }
-        );
-        builder.Entity<FeedBack>().HasData
-        (
-            new FeedBack()
-            {
-                Id = 1,
-                Descricao = "programa loko de bao pia"
             }
         );
     }
