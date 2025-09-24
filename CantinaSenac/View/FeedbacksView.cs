@@ -3,18 +3,10 @@ static class FeedbacksView
     public static void Exibir()
     {
         List<Feedback> feedbacks;
+
         Console.Clear();
-
         System.Console.WriteLine("Cantina SENAC");
-        
-
-
-        System.Console.Write($"Digite seu comentario:");
-        string novoComentario = Console.ReadLine();
-        new FeedbackController().ValidarCometario(novoComentario);
-
-
-        feedbacks = new List<Feedback>();
+        System.Console.WriteLine("Lista de Feedbacks:");
         feedbacks = new FeedbackController().ListarFeedbacks();
         if (feedbacks.Count > 0)
         {
@@ -24,6 +16,7 @@ static class FeedbacksView
         {
             System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
         }
+        ExibirDialogoPostarFeedback();
     }
 
     private static void ListarFeedbacks(List<Feedback> feedbacks)
@@ -32,5 +25,17 @@ static class FeedbacksView
         {
             System.Console.WriteLine(feedback.Descricao);
         }
+    }
+
+    public static void ExibirDialogoPostarFeedback()
+    {
+        System.Console.WriteLine("Poste o seu feedback:");
+        string descricaoFeedback = Console.ReadLine();
+
+        new FeedbackController().PostarFeedback(descricaoFeedback);
+
+        System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
     }
 }
