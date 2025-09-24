@@ -74,9 +74,9 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Postagem");
 
-                    b.UseTpcMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -107,9 +107,9 @@ namespace CantinaSenac.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Usuario");
 
-                    b.UseTpcMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Feedback", b =>
@@ -119,7 +119,7 @@ namespace CantinaSenac.Migrations
                     b.Property<int>("Avaliacao")
                         .HasColumnType("int");
 
-                    b.ToTable("Feedbacks");
+                    b.ToTable("Feedbacks", (string)null);
 
                     b.HasData(
                         new
@@ -135,7 +135,7 @@ namespace CantinaSenac.Migrations
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos");
+                    b.ToTable("Alunos", (string)null);
 
                     b.HasData(
                         new
@@ -164,6 +164,24 @@ namespace CantinaSenac.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Feedback", b =>
+                {
+                    b.HasOne("Postagem", null)
+                        .WithOne()
+                        .HasForeignKey("Feedback", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Aluno", b =>
+                {
+                    b.HasOne("Usuario", null)
+                        .WithOne()
+                        .HasForeignKey("Aluno", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Usuario", b =>

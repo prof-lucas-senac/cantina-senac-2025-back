@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250912234018_AdicaoForcadaTabelaCurso2")]
-    partial class AdicaoForcadaTabelaCurso2
+    [Migration("20250924003817_ForcamentoTPH")]
+    partial class ForcamentoTPH
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,7 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("AlunoId");
 
-                    b.ToTable("Curso", (string)null);
+                    b.ToTable("Curso");
                 });
 
             modelBuilder.Entity("Postagem", b =>
@@ -68,7 +68,6 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("UsuarioId")
@@ -78,9 +77,9 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Postagem");
 
-                    b.UseTpcMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -111,24 +110,9 @@ namespace CantinaSenac.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Usuario");
 
-                    b.UseTpcMappingStrategy();
-                });
-
-            modelBuilder.Entity("Comentario", b =>
-                {
-                    b.HasBaseType("Postagem");
-
-                    b.Property<int>("NumCurtidas")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PostagemId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("PostagemId");
-
-                    b.ToTable("Comentario");
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Feedback", b =>
@@ -138,14 +122,23 @@ namespace CantinaSenac.Migrations
                     b.Property<int>("Avaliacao")
                         .HasColumnType("int");
 
-                    b.ToTable("Feedbacks");
+                    b.ToTable("Feedbacks", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DataPublicacao = new DateTime(2025, 9, 12, 21, 37, 0, 0, DateTimeKind.Unspecified),
+                            UsuarioId = 1,
+                            Avaliacao = 5
+                        });
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos");
+                    b.ToTable("Alunos", (string)null);
 
                     b.HasData(
                         new
@@ -161,14 +154,14 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Curso", b =>
                 {
                     b.HasOne("Aluno", null)
-                        .WithMany("Curso")
+                        .WithMany("Cursos")
                         .HasForeignKey("AlunoId");
                 });
 
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.HasOne("Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("Postagens")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -176,21 +169,32 @@ namespace CantinaSenac.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("Comentario", b =>
+            modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasOne("Postagem", null)
-                        .WithMany("Comentarios")
-                        .HasForeignKey("PostagemId");
-                });
-
-            modelBuilder.Entity("Postagem", b =>
-                {
-                    b.Navigation("Comentarios");
+                        .WithOne()
+                        .HasForeignKey("Feedback", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
-                    b.Navigation("Curso");
+                    b.HasOne("Usuario", null)
+                        .WithOne()
+                        .HasForeignKey("Aluno", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Usuario", b =>
+                {
+                    b.Navigation("Postagens");
+                });
+
+            modelBuilder.Entity("Aluno", b =>
+                {
+                    b.Navigation("Cursos");
                 });
 #pragma warning restore 612, 618
         }

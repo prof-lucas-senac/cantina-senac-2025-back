@@ -14,14 +14,6 @@ static class FeedbackController
     // remover apenas se id do aluno for igual id do aluno no feedback
     public static void RemoverFeedback(int id)
     {
-        foreach (Feedback feedback in ListarFeedback())
-        {
-            if (feedback.Id == id)
-            {
-                feedbackDAO.Excluir(id);
-            }
-        }
-
     }
     public static void EditarFeedback(string descricao, int avaliacao, int id)
     {

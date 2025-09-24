@@ -12,7 +12,7 @@ class AlunoDAO : IDAO<Aluno>
         // alunos.Add(aluno);
     }
 
-    public void Excluir(int id)
+    public void Excluir(Aluno aluno)
     {
         throw new NotImplementedException();
     }
