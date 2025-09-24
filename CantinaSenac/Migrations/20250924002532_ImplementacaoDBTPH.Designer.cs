@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250918002703_ImplementacaoAutoincrementoAlunos")]
-    partial class ImplementacaoAutoincrementoAlunos
+    [Migration("20250924002532_ImplementacaoDBTPH")]
+    partial class ImplementacaoDBTPH
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,11 @@ namespace CantinaSenac.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
+
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
@@ -46,9 +51,11 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Postagem");
 
-                    b.UseTpcMappingStrategy();
+                    b.HasDiscriminator().HasValue("Postagem");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -58,6 +65,11 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -79,23 +91,25 @@ namespace CantinaSenac.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Usuario");
 
-                    b.UseTpcMappingStrategy();
+                    b.HasDiscriminator().HasValue("Usuario");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
 
-                    b.ToTable("Feedbacks");
+                    b.HasDiscriminator().HasValue("Feedback");
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos");
+                    b.HasDiscriminator().HasValue("Aluno");
 
                     b.HasData(
                         new

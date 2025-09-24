@@ -2,16 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-<<<<<<< HEAD
     <TargetFramework>net8.0</TargetFramework>
-=======
-    <TargetFramework>net9.0</TargetFramework>
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-<<<<<<< HEAD
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,6 +15,4 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
   </ItemGroup>
 
-=======
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
 </Project>

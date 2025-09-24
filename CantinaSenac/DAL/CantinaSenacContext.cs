@@ -13,8 +13,6 @@ class CantinaSenacContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Usuario>().UseTpcMappingStrategy();
-        builder.Entity<Postagem>().UseTpcMappingStrategy();
 
         builder.Entity<Usuario>().HasMany(a => a.Postagens)
             .WithOne(f => f.Usuario)
