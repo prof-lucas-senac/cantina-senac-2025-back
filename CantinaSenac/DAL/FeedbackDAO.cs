@@ -1,5 +1,7 @@
 class feedbackDAO : IDAO<Feedback>
 {
+    private CantinaSenacContext contexto = new CantinaSenacContext();
+    
     public static List<Feedback> feedbacks = new List<Feedback>();
 
     public static void Adicionar(Feedback feedback)
