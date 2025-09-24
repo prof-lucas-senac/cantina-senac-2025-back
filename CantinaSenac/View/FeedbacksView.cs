@@ -1,70 +1,38 @@
      public static class FeedbacksView
     {
-        
-        public static void Exibir()
-        {
-            int opcao = -1;
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("===== MENU DE FEEDBACKS =====");
-                Console.WriteLine("1 - Cadastrar novo feedback");
-                Console.WriteLine("2 - Listar feedbacks cadastrados");
-                Console.WriteLine("0 - Voltar");
-                Console.Write("Escolha uma opção: ");
+        List<Feedback> feedbacks;
 
-                int.TryParse(Console.ReadLine(), out opcao);
-
-                switch (opcao)
-                {
-                    case 1:
-                        Cadastrar(); 
-                        break;
-                    case 2:
-                        Listar();
-                        break;
-                    case 0:
-                        Console.WriteLine("Voltando ao menu anterior...");
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida!");
-                        break;
-                }
-
-                if (opcao != 0)
-                {
-                    Console.WriteLine("\nPressione ENTER para continuar...");
-                    Console.ReadLine();
-                }
-
-            } while (opcao != 0);
-        }
-        
-        private static void Cadastrar()
-    {
         Console.Clear();
-        Console.WriteLine("===== CADASTRAR FEEDBACK =====");
-        Console.Write("Descreva seu feedback: ");
-        var texto = Console.ReadLine();
-        FeedbackController.Salvar(texto); 
+        System.Console.WriteLine("Cantina SENAC");
+        System.Console.WriteLine("Lista de Feedbacks:");
+        feedbacks = new FeedbackController().ListarFeedbacks();
+        if (feedbacks.Count > 0)
+        {
+            ListarFeedbacks(feedbacks);
+        }
+        else
+        {
+            System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
+        }
+        ExibirDialogoPostarFeedback();
     }
 
-        private static void Listar()
+    private static void ListarFeedbacks(List<Feedback> feedbacks)
+    {
+        foreach (Feedback feedback in feedbacks)
         {
-            Console.Clear();
-            Console.WriteLine("===== LISTA DE FEEDBACKS =====\n");
-
-            var lista = FeedbackController.Listar();
-
-            if (lista == null || lista.Count == 0)
-            {
-                Console.WriteLine("Nenhum feedback cadastrado ainda.");
-                return;
-            }
-
-            foreach (var fb in lista)
-            {
-                Console.WriteLine($"{fb.Texto}");
-            }
+            System.Console.WriteLine(feedback.Descricao);
         }
+    }
+
+    public static void ExibirDialogoPostarFeedback()
+    {
+        System.Console.WriteLine("Poste o seu feedback:");
+        string descricaoFeedback = Console.ReadLine();
+
+        new FeedbackController().PostarFeedback(descricaoFeedback);
+
+        System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
     }

@@ -1,18 +1,6 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 class Aluno : Usuario
 {
-    //public Curso curso { get; set; }
-    public override void ComentarPostagem()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Logar()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void PublicarPostagem()
-    {
-        throw new NotImplementedException();
-    }
+    // public List<Curso> Cursos { get; set; } = new List<Curso>();
 }
