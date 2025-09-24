@@ -17,13 +17,18 @@ class CantinaSenacContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Usuario>().UseTpcMappingStrategy();
-        builder.Entity<Postagem>().UseTpcMappingStrategy();
+       // builder.Entity<Usuario>().UseTpcMappingStrategy();
+        //builder.Entity<Postagem>().UseTpcMappingStrategy();
 
-        builder.Entity<Aluno>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
-        });
+         builder.Entity<Usuario>().HasMany(a => a.Postagens)
+            .WithOne(f => f.Usuario)
+            .HasForeignKey(f => f.UsuarioId);
+
+        // builder.Entity<Aluno>(entity =>
+        //{
+        //   entity.Property(e => e.Id).ValueGeneratedOnAdd();
+        //});
+        builder.Entity<Aluno>().ToTable("Alunos");
         builder.Entity<Aluno>().HasData(
             new Aluno()
             {
@@ -35,15 +40,15 @@ class CantinaSenacContext : DbContext
             }
         );
 
-        builder.Entity<Feedback>().HasData(
-       new Feedback()
-       {
-           Id = 1,
-           Descricao = "aluno@senac.br",
-           DataPublicacao = new DateTime(2025, 09, 12),
-           UsuarioId = 1
-       }
-   );
+     //   builder.Entity<Feedback>().HasData(
+     //  new Feedback()
+    //   {
+       //    Id = 1,
+      //     Descricao = "aluno@senac.br",
+       //    DataPublicacao = new DateTime(2025, 09, 12),
+       //    UsuarioId = 1
+    //   }
+ //  );
     }
 } 
 
