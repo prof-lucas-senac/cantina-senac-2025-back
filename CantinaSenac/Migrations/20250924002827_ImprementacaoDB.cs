@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CantinaSenac.Migrations
 {
     /// <inheritdoc />
-    public partial class CriacaoDataBase : Migration
+    public partial class ImprementacaoDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,13 +16,11 @@ namespace CantinaSenac.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Alunos",
+                name: "Usuario",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Curso = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     NomeDoUsuario = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: false)
@@ -30,12 +28,14 @@ namespace CantinaSenac.Migrations
                     Senha = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    Foto = table.Column<string>(type: "longtext", nullable: false)
+                    Foto = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Discriminator = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Alunos", x => x.Id);
+                    table.PrimaryKey("PK_Usuario", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -48,23 +48,31 @@ namespace CantinaSenac.Migrations
                     Descricao = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataPublicação = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    AlunoId = table.Column<int>(type: "int", nullable: true)
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
+                    Discriminator = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Postagem", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Postagem_Alunos_AlunoId",
-                        column: x => x.AlunoId,
-                        principalTable: "Alunos",
-                        principalColumn: "Id");
+                        name: "FK_Postagem_Usuario_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "Usuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.InsertData(
+                table: "Usuario",
+                columns: new[] { "Id", "Discriminator", "Email", "Foto", "NomeDoUsuario", "Senha", "Status" },
+                values: new object[] { 1, "Aluno", "aluno@senac.br", null, "Aluno", "aluno", 1 });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Postagem_AlunoId",
+                name: "IX_Postagem_UsuarioId",
                 table: "Postagem",
-                column: "AlunoId");
+                column: "UsuarioId");
         }
 
         /// <inheritdoc />
@@ -74,7 +82,7 @@ namespace CantinaSenac.Migrations
                 name: "Postagem");
 
             migrationBuilder.DropTable(
-                name: "Alunos");
+                name: "Usuario");
         }
     }
 }
