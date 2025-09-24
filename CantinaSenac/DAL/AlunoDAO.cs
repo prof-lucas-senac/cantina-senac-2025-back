@@ -10,9 +10,9 @@ class  AlunoDAO : IDAO<Aluno>
     }
     public void Cadastrar(Aluno aluno)
     {
-        // alunos.Add(aluno);
+      
     }
-    public string Excluir(int id)
+    public void Excluir(Aluno objeto)
     {
         throw new NotImplementedException();
     }
