@@ -1,4 +1,4 @@
-class Feedback
+class Feedback:Postagem
 {
     public int Id { get; set; }
     public string Comentario { get; set; }

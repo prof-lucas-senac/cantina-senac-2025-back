@@ -1,19 +1,16 @@
 class FeedbackController
 {
-    public void Adicionar(Feedback feedback)
+    public List<Feedback> ListarFeedbacks()
     {
-        new FeedbackDAO().Cadastrar(feedback);
+        return new FeedbackDAO().ListarTodos();
     }
+
     public void PostarFeedback(string descricaoFeedback)
-        {
-        Feedback dao = new FeedbackDAO();
+    {
+        FeedbackDAO dao = new FeedbackDAO();
         Feedback feedback = new Feedback();
         feedback.Descricao = descricaoFeedback;
-        feedback.UsuarioId = 1; // ID do usuário logado (exemplo)
+        feedback.UsuarioId = 1;
         dao.Cadastrar(feedback);
-        }
-  
-    {
-        new FeedbackDAO().Cadastrar(feedback);
     }
 }
