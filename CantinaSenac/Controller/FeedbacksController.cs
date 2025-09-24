@@ -13,6 +13,7 @@ class FeedbackController : FeedbackDAO
         Feedback feedback = new Feedback();
         feedback.Descricao = descricaoFeedback;
         feedback.UsuarioId = 1;
+        feedback.DataPublicacao = DateTime.Now;
         dao.Cadastrar(feedback);
     }
 }

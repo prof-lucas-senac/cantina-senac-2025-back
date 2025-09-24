@@ -3,17 +3,23 @@
 class FeedbackDAO : IDAO<Feedback>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
-
+    public void Atualizar(Feedback objeto)
+    {
+        contexto.Feedbacks.Update(objeto);
+        contexto.SaveChanges();
+    }
 
     public void Cadastrar(Feedback objeto)
     {
         contexto.Feedbacks.Add(objeto);
         contexto.SaveChanges();
     }
-    public void Atualizar(Feedback objeto)
+
+    public void Excluir(Feedback objeto)
     {
-        throw new NotImplementedException();
-    }  
+        contexto.Feedbacks.Remove(objeto);
+        contexto.SaveChanges();
+    }
 
     public Feedback Listar(int id)
     {
@@ -23,10 +29,5 @@ class FeedbackDAO : IDAO<Feedback>
     public List<Feedback> ListarTodos()
     {
         return contexto.Feedbacks.ToList();
-    }
-
-    public void Excluir(int id)
-    {
-        throw new NotImplementedException();
     }
 }
