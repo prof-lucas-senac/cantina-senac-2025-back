@@ -1,7 +1,6 @@
 {
   "version": 3,
   "targets": {
-<<<<<<< HEAD
     "net8.0": {
       "Humanizer.Core/2.14.1": {
         "type": "package",
@@ -2902,18 +2901,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cadin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-    "net9.0": {}
-  },
-  "libraries": {},
-  "projectFileDependencyGroups": {
-    "net9.0": []
-  },
-  "packageFolders": {
     "C:\\Users\\Prog_Sis\\.nuget\\packages\\": {}
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
   },
   "project": {
     "version": "1.0.0",
@@ -2924,33 +2912,18 @@
       "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
       "outputPath": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
-<<<<<<< HEAD
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
-=======
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
       "configFilePaths": [
         "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-<<<<<<< HEAD
         "net8.0"
-=======
-        "net9.0"
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-<<<<<<< HEAD
         "net8.0": {
           "targetAlias": "net8.0",
-=======
-        "net9.0": {
-          "targetAlias": "net9.0",
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
           "projectReferences": {}
         }
       },
@@ -2967,7 +2940,6 @@
       "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-<<<<<<< HEAD
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
@@ -2982,10 +2954,6 @@
             "version": "[9.0.0, )"
           }
         },
-=======
-      "net9.0": {
-        "targetAlias": "net9.0",
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
         "imports": [
           "net461",
           "net462",
@@ -2997,7 +2965,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-<<<<<<< HEAD
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
@@ -3016,8 +2983,6 @@
             "version": "[8.0.19, 8.0.19]"
           }
         ],
-=======
->>>>>>> 57cd655051b3bef58785277520da2acb380a3564
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -3026,5 +2991,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\workplace\\Prog_web\\back\\CantinaSenac\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
+    }
+  ]
 }
