@@ -14,35 +14,30 @@ class CantinaSenacContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Usuario>().UseTpcMappingStrategy();
-        builder.Entity<Postagem>().UseTpcMappingStrategy();
+       builder.Entity<Usuario>().HasMany(a => a.Postagens)
+            .WithOne(f => f.Usuario)
+            .HasForeignKey(f => f.UsuarioId);
+            builder.Entity<Aluno>().ToTable("Alunos");
 
-        builder.Entity<Aluno>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
-        });
-        
         builder.Entity<Aluno>().HasData(
             new Aluno()
             {
                 Id = 1,
-                Email = "aluno@senac.br",
+                NomeDoUsuario = "Joao",
+                Email = "aluno@senac.com.br",
                 Senha = "aluno",
-                NomeDoUsuario = "Aluno",
                 Status = 1
             }
-
-
         );
-        builder.Entity<Feedback>().HasData(
-            new Feedback()
-            {
-                Id = 1,
-                Descricao = "Ótimo atendimento!",
-                DataPublicacao = new DateTime(2025, 09, 17),
-                UsuarioId = 1
-            }
-        );
+     //   builder.Entity<Feedback>().HasData(
+      //      new Feedback()
+      //      {
+      //          Id = 1,
+       //         Descricao = "Ótimo atendimento!",
+      //          DataPublicacao = new DateTime(2025, 09, 17),
+       //         UsuarioId = 1
+     //       }
+      //  );
     }
     
 }

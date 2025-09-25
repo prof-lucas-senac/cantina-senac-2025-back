@@ -1,5 +1,8 @@
+using System.Diagnostics;
+
 static class FeedbacksView
 {
+
     public static void Exibir()
     {
         List<Feedback> feedbacks;
@@ -16,7 +19,25 @@ static class FeedbacksView
         {
             System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
         }
-        ExibirDialogoPostarFeedback();
+        System.Console.WriteLine("menu de opcoes");
+        System.Console.WriteLine("1 - Adicionar Feedback");
+        System.Console.WriteLine("2 - Alterar Feedback");
+        System.Console.WriteLine("4 - Excluir Feedback");
+        switch (Console.ReadLine())
+        {
+            case "1":
+                ExibirDialogoPostarFeedback();
+                break;
+            case "2":
+                ExibirDialogoAtualizarFeedback();
+                break;
+            case "3":
+                // ExibirDialogoExcluirFeedback();
+                break;
+            case "4":
+                break;
+        }
+      
     }
 
     private static void ListarFeedbacks(List<Feedback> feedbacks)
@@ -35,6 +56,20 @@ static class FeedbacksView
         new FeedbackController().PostarFeedback(descricaoFeedback);
 
         System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
+    }
+
+    private static void ExibirDialogoAtualizarFeedback()
+    {
+        Feedback feedback = new Feedback();
+        System.Console.WriteLine("Digite o ID do feedback que deseja alterar:");
+        feedback.Id = int.Parse(Console.ReadLine());
+        System.Console.WriteLine("Digite a nova descrição do feedback:");
+        feedback.Descricao = Console.ReadLine();
+        new FeedbackController().AtualizarFeedback(feedback);
+        
+        System.Console.WriteLine("feedback alterado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
         Exibir();
     }
