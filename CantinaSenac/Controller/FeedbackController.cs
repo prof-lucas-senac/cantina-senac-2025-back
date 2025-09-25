@@ -1,25 +1,61 @@
 static class FeedbackController
+{
+
+    private static FeedbackDAO dao = new FeedbackDAO();
+    private static List<Feedback> _feedbacks = new List<Feedback>();
+
+
+    public static void Salvar(string objeto)
     {
-         private static List<Feedback> _feedbacks = new List<Feedback>();
- 
-        public static void Salvar(string texto)
+        if (string.IsNullOrWhiteSpace(objeto))
         {
-            if (string.IsNullOrWhiteSpace(texto))
-            {
-                Console.WriteLine("\nNada foi informado. Feedback não salvo.");
-                return;
-            }
- 
-            var novo = new Feedback()
-            {
-                Id = _feedbacks.Count + 1
-            };
- 
-            _feedbacks.Add(novo);
-            Console.WriteLine("\nFeedback salvo com sucesso!");
+            Console.WriteLine("\nNada foi informado. Feedback não salvo.");
+            return;
         }
-        public static List<Feedback> Listar()
+
+        var novo = new Feedback()
         {
-            return _feedbacks;
+            Id = _feedbacks.Count + 1,
+            Descricao = objeto
+        };
+
+        _feedbacks.Add(novo);
+        Console.WriteLine("\nFeedback salvo com sucesso!");
+    }
+
+    public static List<Feedback> Listar()
+    {
+        return _feedbacks;
+    }
+
+    public static Feedback BuscarPorId(int id)
+    {
+        return _feedbacks.FirstOrDefault(fb => fb.Id == id);
+    }
+
+    public static void Atualizar(Feedback feedbackAtualizado)
+    {
+        var index = _feedbacks.FindIndex(fb => fb.Id == feedbackAtualizado.Id);
+        if (index != -1)
+        {
+            _feedbacks[index] = feedbackAtualizado;
         }
     }
+
+    public static void PostarFeedback(string descricaoFeedback)
+    {
+        Feedback feedback = new Feedback();
+        feedback.Descricao = descricaoFeedback;
+        feedback.DataPublicacao = DateTime.Now;
+        dao.Cadastrar(feedback);
+    }
+    public static void AtualizarFeedback(Feedback feedback)
+    {
+        feedback.DataPublicacao = DateTime.Now;
+        feedback.UsuarioId = 1;
+        dao.Atualizar(feedback);
+
+    }
+}
+
+

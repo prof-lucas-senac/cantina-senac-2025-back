@@ -16,7 +16,7 @@ class FeedbackDAO : IDAO<Feedback>
     {
         contexto.Feedbacks.Remove(objeto);
         contexto.SaveChanges();
-    }s
+    }
 
     public Feedback Listar(int Id)
     {
@@ -37,11 +37,6 @@ class FeedbackDAO : IDAO<Feedback>
     void IDAO<Feedback>.Atualizar(Feedback objeto)
     {
         throw new NotImplementedException();
-    }
-
-    string IDAO<Feedback>.Excluir(int id)
-    {
-       contexto.Feedbacks.Remove();
     }
 
     List<Feedback> IDAO<Feedback>.ListarTodos()

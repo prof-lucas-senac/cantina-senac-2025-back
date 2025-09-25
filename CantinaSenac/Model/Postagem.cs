@@ -6,5 +6,4 @@ abstract class Postagem
     public Usuario Usuario { get; set; }
     public int UsuarioId { get; set; }
     
-    // public List<Comentario> Comentarios { get; set; }
-}
+ }
