@@ -54,6 +54,8 @@ static class FeedBacksView
     private static void ListarFeedbacks(List<Feedback> feedbacks)
     {
         Console.Clear();
+        Console.SetCursorPosition(0, 0);
+
         Console.WriteLine("=== Lista de Feedbacks ===\n");
 
         if (feedbacks.Count == 0)

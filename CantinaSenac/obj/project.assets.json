@@ -2901,26 +2901,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Prog_Sis\\.nuget\\packages\\": {}
+    "C:\\Users\\alanr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Prog_Sis\\Documents\\prof lucas\\ProgWeb\\Backend\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "C:\\Users\\alanr\\OneDrive\\Documentos\\github-alanoliverdev\\projeto-8\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\Users\\Prog_Sis\\Documents\\prof lucas\\ProgWeb\\Backend\\CantinaSenac\\CantinaSenac.csproj",
-      "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Prog_Sis\\Documents\\prof lucas\\ProgWeb\\Backend\\CantinaSenac\\obj\\",
+      "projectPath": "C:\\Users\\alanr\\OneDrive\\Documentos\\github-alanoliverdev\\projeto-8\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+      "packagesPath": "C:\\Users\\alanr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alanr\\OneDrive\\Documentos\\github-alanoliverdev\\projeto-8\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\alanr\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2938,8 +2936,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -2972,7 +2969,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

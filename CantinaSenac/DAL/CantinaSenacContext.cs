@@ -11,7 +11,7 @@ class CantinaSenacContext : DbContext
     public DbSet<Feedback> Feedbacks { get; set; }
 
     // String de conexão com o banco de dados MySQL
-    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=S&nac2024";
+    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac_Alan;Uid=root;Pwd=S&nac2025;";
 
     // Configura o provedor de banco de dados e a string de conexão
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
