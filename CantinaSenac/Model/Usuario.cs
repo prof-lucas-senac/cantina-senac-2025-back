@@ -6,5 +6,9 @@ public abstract class Usuario
     public string Senha { get; set; }
     public int Status { get; set; }
     public string? Foto { get; set; }
-    public List<Postagem> Postagens { get; set; }
+    public List<Postagem> Postagens { get; set;}
+
+    public abstract string PublicarFeedback();
+    public abstract string ComentarFeedback();
+    public abstract string Logar();
 }

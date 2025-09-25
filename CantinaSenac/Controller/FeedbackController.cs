@@ -1,25 +1,24 @@
-    public static class FeedbackController
+class FeedbackController
+{
+    private FeedbackDAO dao = new FeedbackDAO();
+    public List<Feedback> ListarFeedbacks()
     {
-         private static List<Feedback> _feedbacks = new List<Feedback>();
-
-        public static void Salvar(string texto)
-        {
-            if (string.IsNullOrWhiteSpace(texto))
-            {
-                Console.WriteLine("\nNada foi informado. Feedback não salvo.");
-                return;
-            }
-
-            var novo = new Feedback(texto)
-            {
-                Id = _feedbacks.Count + 1 
-            };
-
-            _feedbacks.Add(novo);
-            Console.WriteLine("\nFeedback salvo com sucesso!");
-        }
-        public static List<Feedback> Listar()
-        {
-            return _feedbacks;
-        }
+        return new FeedbackDAO().ListarTodos();
     }
+
+    public void PostarFeedback(string descricaoFeedback)
+    {
+        Feedback feedback = new Feedback();
+        feedback.Descricao = descricaoFeedback;
+        feedback.UsuarioId = 1;
+        feedback.DataPublicacao = DateTime.Now;
+        dao.Cadastrar(feedback);
+    }
+
+    public void AtualizaFeedback(Feedback feedback)
+    {
+        feedback.DataPublicacao = DateTime.Now;
+        feedback.UsuarioId = 1;
+        dao.Atualizar(feedback);
+    }
+}

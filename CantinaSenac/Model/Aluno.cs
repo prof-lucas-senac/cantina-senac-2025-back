@@ -1,6 +1,15 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
 class Aluno : Usuario
 {
-    // public List<Curso> Cursos { get; set; } = new List<Curso>();
+    public override string ComentarFeedback()
+    {
+        throw new NotImplementedException();
+    }
+    public override string Logar()
+    {
+        throw new NotImplementedException();
+    }
+    public override string PublicarFeedback()
+    {
+        throw new NotImplementedException();
+    }
 }
