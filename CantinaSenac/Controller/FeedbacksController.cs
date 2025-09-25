@@ -1,12 +1,34 @@
 public class FeedbacksController
 {
-    public static void AdicionarFeedback(Feedback feedback)
+    private FeedbackDAO feedbackDAO = new FeedbackDAO();
+    public void AdicionarFeedback(Feedback feedback)
     {
+        feedback.DataPublicacao = DateTime.Now;
         feedback.UsuarioId = 1;
-        new FeedbackDAO().Cadastrar(feedback);
+
+        feedbackDAO.Cadastrar(feedback);
+    }
+    public void RemoverFeedback(int id)
+    {
+        FeedbackDAO feedbackDAO = new FeedbackDAO();
+        List<Feedback> feedbacks = feedbackDAO.ListarTodos();
+        foreach (Feedback item in feedbacks)
+        {
+            if (item.Id == id)
+            {
+                feedbackDAO.Excluir(item);
+            }
+        }
+    }
+    public void AtualizarFeedback(Feedback feedback)
+    {
+        feedback.DataPublicacao = DateTime.Now;
+        feedback.UsuarioId = 1;
+        
+        feedbackDAO.Atualizar(feedback);
     }
 
-    public static void MostrarFeedbacks()
+    public void MostrarFeedbacks()
     {
         List<Feedback> feedbacks = new FeedbackDAO().ListarTodos();
         if (feedbacks.Count == 0)
@@ -18,7 +40,7 @@ public class FeedbacksController
         {
             foreach (Feedback feedback in feedbacks)
             {
-                Console.WriteLine(feedback.decricao);
+                Console.WriteLine(feedback.Id + " || " + feedback.decricao);
                 Console.WriteLine("======================================");
             }
         }
