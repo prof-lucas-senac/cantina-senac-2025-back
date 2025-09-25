@@ -1,10 +1,7 @@
 static class FeedbacksView
 {
-    public static void Exibir(Aluno aluno)
+    public static void Exibir()
     {
-        bool rep = true;
-        while (rep)
-        {
             Console.Clear();
             Console.WriteLine("=================");
             Console.WriteLine("Tela de feedbacks");
@@ -26,7 +23,7 @@ static class FeedbacksView
             {
                 Console.WriteLine("Nenhum Feedback encontrado");
             }
-            Console.WriteLine("1-Criar feedback,2-Deletar feedback, 3-Modificar feedback, 4-Sair");
+            Console.WriteLine("1-Criar feedback,2-Deletar feedback, 3-Modificar feedback");
             int escolha = int.Parse(Console.ReadLine());
             {
                 string descricao;
@@ -34,32 +31,55 @@ static class FeedbacksView
                 switch (escolha)
                 {
                     case 1:
-                        Console.WriteLine("Descrição:");
-                        descricao = Console.ReadLine();
-                        Console.WriteLine("Avaliação:");
-                        avaliacao = int.Parse(Console.ReadLine());
-                        FeedbackController.AdicionarFeedback(descricao, avaliacao, aluno);
+                        ExibirDialogoPostarFeedback();
                         break;
                     case 2:
-                        Console.WriteLine("Id do feedback:");
-                        id = int.Parse(Console.ReadLine());
-                        FeedbackController.RemoverFeedback(id);
+                        ExibirDialogoExcluirFeedback();
                         break;
                     case 3:
-                        Console.WriteLine("Id do feedback:");
-                        id = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Descrição:");
-                        descricao = Console.ReadLine();
-                        Console.WriteLine("Avaliação:");
-                        avaliacao = int.Parse(Console.ReadLine());
-                        FeedbackController.EditarFeedback(descricao, avaliacao, id);
-                        break;
-                    case 4:
-                        rep = false;
+                        ExibirDialogoEditarFeedback();
                         break;
                 }
             }
+        
+        void ExibirDialogoPostarFeedback()
+        {
+            Feedback feedback = new Feedback();
+            Console.WriteLine("Descrição:");
+            feedback.Descricao = Console.ReadLine();
+            Console.WriteLine("Avaliação:");
+            feedback.Avaliacao = int.Parse(Console.ReadLine());
+            FeedbackController.AdicionarFeedback(feedback);
+            Console.WriteLine("Feedback postado com sucesso aperte ENTER para retornar a tela de feedbacks");
+            bool rep = true;
+            while (rep == true)
+            {
+                ConsoleKeyInfo tecla = Console.ReadKey();
+                if (tecla.Key == ConsoleKey.Enter)
+                {
+                    Exibir();
+                }
+            }
+        }
+        void ExibirDialogoEditarFeedback()
+        {
+            Feedback feedback = new Feedback();
+            Console.WriteLine("Id do feedback:");
+            feedback.Id = int.Parse(Console.ReadLine());
+            Console.WriteLine("Nova Descrição:");
+            feedback.Descricao = Console.ReadLine();
+            Console.WriteLine("Nova Avaliação:");
+            feedback.Avaliacao = int.Parse(Console.ReadLine());
+            Console.WriteLine("Feedback editado com sucesso aperte ENTER para retornar a tela de feedbacks");
+            FeedbackController.EditarFeedback(feedback);
+        }
+        void ExibirDialogoExcluirFeedback()
+        {
+            Console.WriteLine("Id do feedback:");
+            int id = int.Parse(Console.ReadLine());
+            FeedbackController.RemoverFeedback(id);
+            Console.WriteLine("Feedback excuido com sucesso aperte ENTER para retornar a tela de feedbacks");
         }
     }
-    
+
 }

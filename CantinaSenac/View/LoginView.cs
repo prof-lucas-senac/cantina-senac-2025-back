@@ -23,7 +23,7 @@ static class LoginView
                 if (tecla.Key == ConsoleKey.Enter)
                 {
                     Aluno aluno = new LoginController().Indentificar(email, senha);
-                    FeedbacksView.Exibir(aluno);
+                    FeedbacksView.Exibir();
                     rep = false;
                 }
             }
