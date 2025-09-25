@@ -2907,12 +2907,15 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\jovem-programador\\prog_web2025\\Backend\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "c:\\jovem-programador\\prog_web2025\\Backend\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\jovem-programador\\prog_web2025\\Backend\\CantinaSenac\\CantinaSenac.csproj",
+      "projectPath": "c:\\jovem-programador\\prog_web2025\\Backend\\CantinaSenac\\CantinaSenac.csproj",
       "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\jovem-programador\\prog_web2025\\Backend\\CantinaSenac\\obj\\",
+      "outputPath": "c:\\jovem-programador\\prog_web2025\\Backend\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
@@ -2940,7 +2943,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
