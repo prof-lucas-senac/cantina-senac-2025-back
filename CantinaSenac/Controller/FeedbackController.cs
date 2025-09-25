@@ -1,5 +1,6 @@
 class FeedbackController
 {
+    FeedbackDAO dao = new FeedbackDAO();
     public List<Feedback> ListarFeedbacks()
     {
         return new FeedbackDAO().ListarTodos();
@@ -7,10 +8,16 @@ class FeedbackController
 
     public void PostarFeedback(string descricaoFeedback)
     {
-        FeedbackDAO dao = new FeedbackDAO();
+
         Feedback feedback = new Feedback();
         feedback.Descricao = descricaoFeedback;
         feedback.UsuarioId = 1;
         dao.Cadastrar(feedback);
+    }
+
+    public void AtualizarFeedback(Feedback feedback)
+    {
+        feedback.DataDePublicacao = DateTime.Now;
+        feedback.UsuarioId = 1;
     }
 }
