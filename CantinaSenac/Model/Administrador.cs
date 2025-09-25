@@ -15,27 +15,27 @@ public class Administrador : Usuario
     public void DeletarCurso()
     { }
 
-    public override void Cadastrar()
+    public  void Cadastrar()
     {
         throw new NotImplementedException();
     }
 
-    public override void Atualizar()
+    public  void Atualizar()
     {
         throw new NotImplementedException();
     }
 
-    public override void PublicarFeedback()
+    public  void PublicarFeedback()
     {
         throw new NotImplementedException();
     }
 
-    public override void ComentarFeedback()
+    public  void ComentarFeedback()
     {
         throw new NotImplementedException();
     }
 
-    public override void Logar()
+    public  void Logar()
     {
         throw new NotImplementedException();
     }
