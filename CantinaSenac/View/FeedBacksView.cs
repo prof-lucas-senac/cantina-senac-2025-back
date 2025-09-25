@@ -1,66 +1,151 @@
-// Classe estática responsável por exibir e cadastrar feedbacks no console
+// Classe estática responsável por exibir, cadastrar, alterar e excluir feedbacks no console
 static class FeedBacksView
 {
-    // Método principal que exibe a lista de feedbacks e pergunta se o usuário deseja cadastrar um novo
+    // Exibe o menu principal de gerenciamento de feedbacks
     public static void Exibir(Aluno aluno)
     {
-        Console.Clear(); // Limpa a tela do console
-        Console.WriteLine("Cantina SENAC");
-        Console.WriteLine("Lista de Feedbacks:\n");
+        bool continuar = true;
 
-        // Obtém todos os feedbacks cadastrados através do controller
-        List<Feedback> feedbacks = new FeedbackController().ListarFeedbacks();
-
-        // Se houver feedbacks, exibe a lista; senão, mostra mensagem de ausência
-        if (feedbacks.Count > 0)
+        while (continuar)
         {
-            ListarFeedbacks(feedbacks); // Chama método auxiliar para exibir os feedbacks
-        }
-        else
-        {
-            Console.WriteLine("Nenhum Feedback foi postado ainda.");
-        }
+            Console.Clear();
+            Console.WriteLine("===== MENU DE FEEDBACKS =====");
+            Console.WriteLine("1 - Listar Feedbacks");
+            Console.WriteLine("2 - Adicionar Feedback");
+            Console.WriteLine("3 - Alterar Feedback");
+            Console.WriteLine("4 - Excluir Feedback");
+            Console.WriteLine("0 - Voltar");
+            Console.Write("\nEscolha uma opção: ");
+            string opcao = Console.ReadLine();
 
-        // Pergunta ao usuário se deseja cadastrar um novo feedback
-        Console.WriteLine("\nDeseja cadastrar um novo feedback? (s/n)");
-        string opcao = Console.ReadLine().ToLower();
+            switch (opcao)
+            {
+                case "1":
+                    ListarFeedbacks(new FeedbackController().ListarFeedbacks());
+                    Console.WriteLine("\nPressione Enter para continuar...");
+                    Console.ReadKey();
+                    break;
 
-        // Se a resposta for "s", chama o método de cadastro
-        if (opcao == "s")
-        {
-            CadastrarFeedback(aluno); // Passa o aluno logado como autor do feedback
+                case "2":
+                    CadastrarFeedback(aluno);
+                    break;
+
+                case "3":
+                    AlterarFeedback(aluno);
+                    break;
+
+                case "4":
+                    ExcluirFeedback();
+                    break;
+
+                case "0":
+                    continuar = false;
+                    break;
+
+                default:
+                    Console.WriteLine("Opção inválida. Pressione Enter para tentar novamente.");
+                    Console.ReadKey();
+                    break;
+            }
         }
     }
 
-    // Método auxiliar que exibe os feedbacks formatados
+    // Exibe os feedbacks formatados no console
     private static void ListarFeedbacks(List<Feedback> feedbacks)
     {
+        Console.Clear();
+        Console.WriteLine("=== Lista de Feedbacks ===\n");
+
+        if (feedbacks.Count == 0)
+        {
+            Console.WriteLine("Nenhum Feedback foi postado ainda.");
+            return;
+        }
+
         foreach (Feedback feedback in feedbacks)
         {
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine($"Autor: {feedback.Usuario.NomeDoUsuario}");     // Exibe nome do autor
-            Console.WriteLine($"Comentário: {feedback.Descricao}");            // Exibe texto do feedback
-            Console.WriteLine($"Data: {feedback.DataPublicacao}");             // Exibe data de publicação
+            Console.WriteLine($"ID: {feedback.Id}");
+            Console.WriteLine($"Autor: {feedback.Usuario.NomeDoUsuario}");
+            Console.WriteLine($"Comentário: {feedback.Descricao}");
+            Console.WriteLine($"Data: {feedback.DataPublicacao}");
         }
         Console.WriteLine("-----------------------------------");
     }
 
-    // Método que coleta dados do usuário e cadastra um novo feedback
+    // Coleta dados do usuário e cadastra um novo feedback
     public static void CadastrarFeedback(Usuario usuario)
     {
-        Console.Clear(); // Limpa a tela
+        Console.Clear();
         Console.WriteLine("=== Cadastrar Feedback ===\n");
 
-        // Solicita o comentário do usuário
         Console.Write("Comentário: ");
-        string descricaoFeedback = Console.ReadLine();
+        string descricao = Console.ReadLine();
 
-        // ⚠️ ERRO: Aqui está tentando passar uma string para um método que espera um objeto Feedback
-        // Correção necessária: criar e preencher um objeto Feedback com os dados coletados
+        var feedback = new Feedback
+        {
+            Descricao = descricao,
+            DataPublicacao = DateTime.Now,
+            UsuarioId = usuario.Id,
+            Usuario = usuario
+        };
 
-        new FeedbackController().Cadastrar(descricaoFeedback); // ❌ Isso causará erro de tipo (CS1503)
+        new FeedbackController().Cadastrar(feedback);
 
         Console.WriteLine("\nFeedback enviado com sucesso!");
+        Console.WriteLine("Pressione Enter para continuar...");
+        Console.ReadKey();
+    }
+
+    // Permite alterar um feedback existente
+    private static void AlterarFeedback(Usuario usuario)
+    {
+        Console.Clear();
+        Console.WriteLine("=== Alterar Feedback ===\n");
+
+        Console.Write("Informe o ID do feedback que deseja alterar: ");
+        int id = int.Parse(Console.ReadLine());
+
+        Console.Write("Nova descrição: ");
+        string novaDescricao = Console.ReadLine();
+
+        var feedback = new Feedback
+        {
+            Id = id,
+            Descricao = novaDescricao,
+            DataPublicacao = DateTime.Now,
+            UsuarioId = usuario.Id,
+            Usuario = usuario
+        };
+
+        var feedbackExistente = new FeedbackController().BuscarPorId(id);
+        if (feedbackExistente == null)
+        {
+            Console.WriteLine("Feedback não encontrado. Pressione Enter para voltar.");
+            Console.ReadKey();
+            return;
+        }
+
+
+        new FeedbackController().Atualizar(feedback);
+
+        Console.WriteLine("\nFeedback atualizado com sucesso!");
+        Console.WriteLine("Pressione Enter para continuar...");
+        Console.ReadKey();
+    }
+
+    // Permite excluir um feedback pelo ID
+    private static void ExcluirFeedback()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Excluir Feedback ===\n");
+
+        Console.Write("Informe o ID do feedback que deseja excluir: ");
+        int id = int.Parse(Console.ReadLine());
+
+        new FeedbackController().Excluir(id);
+
+        Console.WriteLine("\nFeedback excluído com sucesso!");
         Console.WriteLine("Pressione Enter para continuar...");
         Console.ReadKey();
     }
