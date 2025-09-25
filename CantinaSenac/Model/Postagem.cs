@@ -1,4 +1,6 @@
-abstract class Postagem
+using System.ComponentModel.DataAnnotations;
+
+public abstract class Postagem
 {
     public int Id { get; set; }
     public string Descricao { get; set; }
