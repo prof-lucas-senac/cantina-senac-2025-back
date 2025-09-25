@@ -6,10 +6,5 @@
     public DateTime dataTermino { get; set; }
     public string descricao { get; set; }
 
-    public Curso() { }
-
-    public void ApresentarCurso()
-    { 
-        
-    }
+  
 }

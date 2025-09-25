@@ -21,6 +21,18 @@ class FeedbackController
         Feedback feedback = new Feedback();
         feedback.Descricao = descricaoFeedback;
         feedback.UsuarioId = 1;
+        feedback.dataPostagem = DateTime.Now;
         feedbackDAO.Cadastrar(feedback);
     }
+    public void AtualizarFeedback(Feedback feedback, string novaDescricao)
+{
+    FeedbackDAO feedbackDAO = new FeedbackDAO();
+  
+    if (feedback != null)
+    {
+        feedback.Descricao = novaDescricao;
+        feedback.dataPostagem = DateTime.Now; 
+        feedbackDAO.Atualizar(feedback);
+    }
+}
 }

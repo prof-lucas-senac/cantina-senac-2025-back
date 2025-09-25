@@ -7,7 +7,8 @@ class AlunoDAO : IDAO<Aluno>
 
     public void Atualizar(Aluno aluno)
     {
-        throw new NotImplementedException();
+        contexto.Alunos.Update(aluno);
+        contexto.SaveChanges();
     }
 
     public void Cadastrar(Aluno aluno)
@@ -15,22 +16,22 @@ class AlunoDAO : IDAO<Aluno>
         // aluno.Id = alunos.Count + 1;
         // alunos.Add(aluno);
         contexto.Alunos.Add(aluno);
+        contexto.SaveChanges();
     }
 
-    public void Excluir(int id)
+    public void Excluir(Aluno objeto)
     {
-        throw new NotImplementedException();
+        contexto.Alunos.Remove(objeto);
+        contexto.SaveChanges();
     }
 
-    public Aluno listar(int id)
+    public Aluno Listar(int id)
     {
-        
-        throw new NotImplementedException();
+        return contexto.Alunos.Find(id);
     }
 
     public List<Aluno> ListarTodos()
     {
-        // return alunos;
         return contexto.Alunos.ToList();
     }
-}
+} 
