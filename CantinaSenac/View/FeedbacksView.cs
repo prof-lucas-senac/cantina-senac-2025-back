@@ -1,5 +1,8 @@
+using System.Diagnostics;
+
 static class FeedbacksView
 {
+
     public static void Exibir()
     {
         List<Feedback> feedbacks;
@@ -16,9 +19,33 @@ static class FeedbacksView
         {
             System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
         }
-        ExibirDialogoPostarFeedback();
-    }
+        
 
+        CantinaSenacContext contexto = new CantinaSenacContext();
+        Console.WriteLine($"Bem vindo ao menu FeedBack! Escolha uma das opções a seguir.");
+        Console.WriteLine($"1- Adicionar Feedback.");
+        Console.WriteLine($"2- Editar Feedback.");
+        Console.WriteLine($"3- Excluir Feedback.");
+        Console.WriteLine($"4- Listar todos os Feedbacks.");
+        Console.WriteLine($"5- Sair do menu Feedback.");
+        int opcaoMenu = Convert.ToInt32(Console.ReadLine());
+
+        switch (opcaoMenu)
+        {
+            case 1:
+                ExibirDialogoPostarFeedback();
+                break;
+
+            case 2:
+                ExibirDialogoEditarFeedback();
+
+                break;
+
+
+
+
+        }
+    }
     private static void ListarFeedbacks(List<Feedback> feedbacks)
     {
         foreach (Feedback feedback in feedbacks)
@@ -37,5 +64,29 @@ static class FeedbacksView
         System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
         Exibir();
+    }
+
+
+    public static void ExibirDialogoEditarFeedback()
+    {
+        Feedback feedbackEditar = new Feedback();
+        //FeedbackDAO feedBacDao = new FeedbackDAO();
+        Console.WriteLine($"Insira o id do comentario que deseja editar.");
+        int idEditar = Convert.ToInt32(Console.ReadLine());
+        feedbackEditar.Id = idEditar;
+
+        Console.WriteLine($"Insira um novo FeedBack.");
+        feedbackEditar.Descricao = Console.ReadLine();
+
+        new FeedbackController().AtualizarFeedbak(feedbackEditar);
+
+        Console.WriteLine($"FeedBack Atualizado.");
+
+        System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
+
+
+
     }
 }
