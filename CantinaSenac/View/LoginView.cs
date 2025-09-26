@@ -5,12 +5,10 @@ static class LoginView
         string email = "";
         string senha = "";
 
-        System.Console.WriteLine("==== BEM VINDO(A) À CANTINA SENAC! ====\n");
+        System.Console.WriteLine("Bem-vind@ ao Cantina Senac!\n");
         System.Console.WriteLine("Por favor, insira suas credenciais:\n");
-
         System.Console.WriteLine("Email:");
         email = Console.ReadLine();
-
         System.Console.WriteLine("Senha:");
         senha = Console.ReadLine();
 
@@ -22,7 +20,7 @@ static class LoginView
         }
         else
         {
-            System.Console.WriteLine("Ocorreu um erro :( Pressione Enter para tentar novamente!");
+            System.Console.WriteLine("Login e/ou Senha incorretos. Pressione Enter para tentar novamente.");
             Console.ReadKey();
             Console.Clear();
             Exibir();

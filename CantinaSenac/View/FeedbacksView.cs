@@ -2,34 +2,40 @@ static class FeedbacksView
 {
     public static void Exibir()
     {
+        List<Feedback> feedbacks;
+
         Console.Clear();
-        Console.WriteLine("--- Tela de Feedback ---\n");
+        System.Console.WriteLine("Cantina SENAC");
+        System.Console.WriteLine("Lista de Feedbacks:");
+        feedbacks = new FeedbackController().ListarFeedbacks();
+        if (feedbacks.Count > 0)
+        {
+            ListarFeedbacks(feedbacks);
+        }
+        else
+        {
+            System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
+        }
+        ExibirDialogoPostarFeedback();
+    }
 
-
-        Console.WriteLine("Digite seu feedback sobre a cantina:");
-        string feedback = Console.ReadLine();
-
-        Console.WriteLine("\nObrigado pelo seu feedback!");
-
-        FeedbackController.Salvar(feedback);
-
-        Console.WriteLine("\nPressione Enter para continuar...");
-        Console.ReadKey();
-
-        System.Console.WriteLine("--- Menu de Opções ---\n");
-        System.Console.WriteLine("1. Adicionar Feedback:\n");
-        System.Console.WriteLine("2. Alterar Feedback:\n");
-        System.Console.WriteLine("3. Excluir Feedback:\n");
-
-        switch (System.Console.ReadLine()) {
-            case "1":
-                Exibir();
-                break;
-            case "2":
-                break;
-            case "3":
-                break;
+    private static void ListarFeedbacks(List<Feedback> feedbacks)
+    {
+        foreach (Feedback feedback in feedbacks)
+        {
+            System.Console.WriteLine(feedback.Descricao);
         }
     }
+
+    public static void ExibirDialogoPostarFeedback()
+    {
+        System.Console.WriteLine("Poste o seu feedback:");
+        string descricaoFeedback = Console.ReadLine();
+
+        new FeedbackController().PostarFeedback(descricaoFeedback);
+
+        System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
+    }
 }
- 
