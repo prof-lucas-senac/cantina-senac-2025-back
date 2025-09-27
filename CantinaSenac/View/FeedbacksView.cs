@@ -30,7 +30,7 @@ public class FeedbacksView
                     AlterarFeedBack();
                     break;
                 case 4:
-                    Console.WriteLine("Funcionalidade de excluir feedback ainda não implementada.");
+                    ExcluirFeedBack();
                     break;
                 case 0:
                     return;
@@ -48,8 +48,6 @@ public class FeedbacksView
         Console.WriteLine();
         feedBackController.AdicionarFeedBack(feedBack);
         Console.WriteLine("Comentário adicionado com sucesso!");
-        Console.ReadKey();
-        Console.ReadKey();
     }
     public static void ListarFeedBacks()
     {
@@ -66,5 +64,13 @@ public class FeedbacksView
         Console.Write("Digite o novo comentário: ");
         feedBack.Descricao = Console.ReadLine();
         feedBackController.AlterarFeedBack(feedBack);
+    }
+    public static void ExcluirFeedBack()
+    {
+        FeedBack feedBack = new FeedBack();
+        Console.Write("Digite o ID do feedback que deseja excluir: ");
+        feedBack.Id = int.Parse(Console.ReadLine());
+        feedBackController.ExcluirFeedBack(feedBack);
+        Console.WriteLine("Feedback excluído com sucesso!");
     }
 }

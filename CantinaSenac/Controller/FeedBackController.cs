@@ -7,7 +7,7 @@ class FeedBackController
         feedBack.DataPublicacao = DateTime.Now;
         feedBackDAO.Cadastrar(feedBack);
     }
-    public bool VerificarSeTemFeedBacks()
+    /*public bool VerificarSeTemFeedBacks()
     {
         List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
         if (feedBacks.Count != 0)
@@ -15,13 +15,15 @@ class FeedBackController
             return true;
         }
         return false;
-    }
+    }*/
     public void ListarTodosFeedBacks()
     {
         List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
         foreach (FeedBack feedBack in feedBacks)
         {
-            Console.WriteLine(feedBack.Descricao);
+            Console.WriteLine("Descrição: ", feedBack.Descricao);
+            Console.WriteLine("ID: ", feedBack.Id);
+            Console.WriteLine("----------");
         }
     }
     public void AlterarFeedBack(FeedBack feedBack)
@@ -29,5 +31,9 @@ class FeedBackController
         feedBack.DataPublicacao = DateTime.Now;
         feedBack.UsuarioId = 1;
         feedBackDAO.Atualizar(feedBack);
+    }
+    public void ExcluirFeedBack(FeedBack feedBack)
+    {
+        feedBackDAO.Excluir(feedBack);
     }
 }
