@@ -19,7 +19,7 @@ static class FeedbacksView
         {
             System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
         }
-        
+
 
         CantinaSenacContext contexto = new CantinaSenacContext();
         Console.WriteLine($"Bem vindo ao menu FeedBack! Escolha uma das opções a seguir.");
@@ -39,6 +39,10 @@ static class FeedbacksView
             case 2:
                 ExibirDialogoEditarFeedback();
 
+                break;
+
+            case 3:
+                ExibirDialogodeExcluirFeedback();
                 break;
 
 
@@ -78,7 +82,7 @@ static class FeedbacksView
         Console.WriteLine($"Insira um novo FeedBack.");
         feedbackEditar.Descricao = Console.ReadLine();
 
-        new FeedbackController().AtualizarFeedbak(feedbackEditar);
+        new FeedbackController().AtualizarFeedback(feedbackEditar);
 
         Console.WriteLine($"FeedBack Atualizado.");
 
@@ -86,6 +90,17 @@ static class FeedbacksView
         Console.ReadKey();
         Exibir();
 
+
+
+    }
+
+    public static void ExibirDialogodeExcluirFeedback()
+    {
+        Feedback feedbackExcluir = new Feedback();
+        Console.WriteLine($"Informe o ID do Feedback que deseja excluir.");
+        int idExcluir = Convert.ToInt32(Console.ReadLine());
+        feedbackExcluir.Id = idExcluir;
+        new FeedbackController().ExcluirFeedback(feedbackExcluir);
 
 
     }
