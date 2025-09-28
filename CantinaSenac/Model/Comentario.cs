@@ -1,6 +1,5 @@
-public class Comentario : Postagem
+ class Comentario : Postagem
 {
-
     public override string ToString()
     {
         return $"{Usuario}: {Descricao}";

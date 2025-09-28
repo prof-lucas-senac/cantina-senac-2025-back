@@ -1,8 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
-
-public class CantinaSenacContext : DbContext
+class CantinaSenacContext : DbContext
 {
     public DbSet<Aluno> Alunos { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }
@@ -15,6 +13,8 @@ public class CantinaSenacContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        
+
         builder.Entity<Usuario>().HasMany(a => a.Postagens)
             .WithOne(f => f.Usuario)
             .HasForeignKey(f => f.UsuarioId);
