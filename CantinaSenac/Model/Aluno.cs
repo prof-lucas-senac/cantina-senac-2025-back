@@ -1,40 +1,14 @@
 class Aluno : Usuario
 {
-<<<<<<< HEAD
-    public Curso curso { get; set; }
-
-=======
-    // public List<Curso> Cursos { get; set; } = new List<Curso>();
->>>>>>> master
-    public override void Atualizar()
+    public override string ComentarFeedback()
     {
         throw new NotImplementedException();
     }
-
-    public override void Cadastrar()
+    public override string Logar()
     {
         throw new NotImplementedException();
     }
-
-<<<<<<< HEAD
-    public override void ComentarPostagem()
-=======
-    public override void ComentarFeedback()
->>>>>>> master
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Logar()
-    {
-        throw new NotImplementedException();
-    }
-
-<<<<<<< HEAD
-    public override void PublicarPostagem()
-=======
-    public override void PublicarFeedback()
->>>>>>> master
+    public override string PublicarFeedback()
     {
         throw new NotImplementedException();
     }
