@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250920174120_CorrecaoAlunosFeedbacks")]
-    partial class CorrecaoAlunosFeedbacks
+    [Migration("20250924002106_ImplementacaoDBTPH")]
+    partial class ImplementacaoDBTPH
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,11 @@ namespace CantinaSenac.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
+
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
@@ -48,7 +53,9 @@ namespace CantinaSenac.Migrations
 
                     b.ToTable("Postagem");
 
-                    b.UseTptMappingStrategy();
+                    b.HasDiscriminator().HasValue("Postagem");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -58,6 +65,11 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -81,21 +93,23 @@ namespace CantinaSenac.Migrations
 
                     b.ToTable("Usuario");
 
-                    b.UseTptMappingStrategy();
+                    b.HasDiscriminator().HasValue("Usuario");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
 
-                    b.ToTable("Feedbacks", (string)null);
+                    b.HasDiscriminator().HasValue("Feedback");
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos", (string)null);
+                    b.HasDiscriminator().HasValue("Aluno");
 
                     b.HasData(
                         new
@@ -117,24 +131,6 @@ namespace CantinaSenac.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("Feedback", b =>
-                {
-                    b.HasOne("Postagem", null)
-                        .WithOne()
-                        .HasForeignKey("Feedback", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Aluno", b =>
-                {
-                    b.HasOne("Usuario", null)
-                        .WithOne()
-                        .HasForeignKey("Aluno", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Usuario", b =>
