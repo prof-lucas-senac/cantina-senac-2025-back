@@ -8,7 +8,7 @@ class FeedbackController
 
     public void PostarFeedback(string descricaoFeedback)
     {
-        
+
         Feedback feedback = new Feedback();
         feedback.Descricao = descricaoFeedback;
         feedback.UsuarioId = 1;
@@ -20,4 +20,21 @@ class FeedbackController
         feedback.UsuarioId = 1;
         dao.Atualizar(feedback);
     }
+    
+    public void ExcluirFeedback(int id)
+{
+    // Buscar o feedback pelo ID
+    var feedback = dao.Listar(id);
+
+    if (feedback != null)
+    {
+        dao.Excluir(feedback);
+    }
+    else
+    {
+        //caso não encontre o feedback, lança uma exceção
+        throw new Exception("Feedback não encontrado para exclusão.");
+    }
+}
+
 }
