@@ -11,7 +11,7 @@ class FeedBackDAO : IDAO<FeedBack>
     public void Atualizar(FeedBack objeto)
     {
        contexto.FeedBacks.Update(objeto);
-       contexto.SaveChanges();
+        contexto.SaveChanges();
     }
 
     public void Excluir(FeedBack objeto)

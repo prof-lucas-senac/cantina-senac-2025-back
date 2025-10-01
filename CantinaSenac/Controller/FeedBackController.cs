@@ -7,22 +7,13 @@ class FeedBackController
         feedBack.DataPublicacao = DateTime.Now;
         feedBackDAO.Cadastrar(feedBack);
     }
-    /*public bool VerificarSeTemFeedBacks()
-    {
-        List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
-        if (feedBacks.Count != 0)
-        {
-            return true;
-        }
-        return false;
-    }*/
     public void ListarTodosFeedBacks()
     {
         List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
         foreach (FeedBack feedBack in feedBacks)
         {
-            Console.WriteLine("Descrição: ", feedBack.Descricao);
-            Console.WriteLine("ID: ", feedBack.Id);
+            Console.WriteLine("Descrição: " + feedBack.Descricao);
+            Console.WriteLine("ID: " + feedBack.Id);
             Console.WriteLine("----------");
         }
     }
