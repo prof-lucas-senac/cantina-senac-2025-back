@@ -21,4 +21,11 @@ class FeedbackController
         feedback.UsuarioId = 1;
         dao.Atualizar(feedback);
     }
+
+    public void ExcluirFeedback(int id)
+    {
+        dao.Excluir(id);
+    }
+
+    
 }

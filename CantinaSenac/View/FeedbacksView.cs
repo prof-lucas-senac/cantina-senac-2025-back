@@ -22,7 +22,7 @@ static class FeedbacksView
         System.Console.WriteLine("menu de opcoes");
         System.Console.WriteLine("1 - Adicionar Feedback");
         System.Console.WriteLine("2 - Alterar Feedback");
-        System.Console.WriteLine("4 - Excluir Feedback");
+        System.Console.WriteLine("3 - Excluir Feedback");
         switch (Console.ReadLine())
         {
             case "1":
@@ -32,12 +32,12 @@ static class FeedbacksView
                 ExibirDialogoAtualizarFeedback();
                 break;
             case "3":
-                // ExibirDialogoExcluirFeedback();
+                ExibirDialogoExcluirFeedback();
                 break;
             case "4":
                 break;
         }
-      
+
     }
 
     private static void ListarFeedbacks(List<Feedback> feedbacks)
@@ -68,9 +68,29 @@ static class FeedbacksView
         System.Console.WriteLine("Digite a nova descrição do feedback:");
         feedback.Descricao = Console.ReadLine();
         new FeedbackController().AtualizarFeedback(feedback);
-        
+
         System.Console.WriteLine("feedback alterado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
         Exibir();
     }
+    
+    private static void ExibirDialogoExcluirFeedback()
+{
+    System.Console.WriteLine("Digite o ID do feedback que deseja excluir:");
+    int id = int.Parse(Console.ReadLine());
+
+    try
+    {
+        new FeedbackController().ExcluirFeedback(id);
+        System.Console.WriteLine("Feedback excluído com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+    }
+    catch (Exception ex)
+    {
+        System.Console.WriteLine($"Erro ao excluir feedback: {ex.Message}");
+    }
+
+    Console.ReadKey();
+    Exibir();
+}
+
 }

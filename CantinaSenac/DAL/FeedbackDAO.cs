@@ -21,10 +21,19 @@ class FeedbackDAO : IDAO<Feedback>
         contexto.SaveChanges();
     }
 
-    public void Excluir(int id)
+   public void Excluir(int id)
+{
+    Feedback feedback = contexto.Feedbacks.FirstOrDefault(f => f.Id == id);
+    if (feedback != null)
     {
-        throw new NotImplementedException();
+        contexto.Feedbacks.Remove(feedback);
+        contexto.SaveChanges();
     }
+    else
+    {
+        throw new Exception("Feedback não encontrado!");
+    }
+}
 
     public Feedback Listar(int id)
     {
