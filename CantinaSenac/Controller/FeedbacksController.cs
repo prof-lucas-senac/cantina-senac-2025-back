@@ -20,4 +20,8 @@ class FeedbackController
         feedback.UsuarioId = 1;
         dao.Atualizar(feedback);
     }
+    public void ExcluirFeedback(Feedback feedback)
+    {
+        dao.Excluir(feedback);
+    }
 }

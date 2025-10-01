@@ -50,6 +50,8 @@ namespace CantinaSenac.Migrations
                     DataPublicacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false),
                     Discriminator = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Comentario = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>

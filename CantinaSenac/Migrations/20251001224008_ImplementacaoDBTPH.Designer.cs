@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250924002532_ImplementacaoDBTPH")]
+    [Migration("20251001224008_ImplementacaoDBTPH")]
     partial class ImplementacaoDBTPH
     {
         /// <inheritdoc />
@@ -101,6 +101,10 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
+
+                    b.Property<string>("Comentario")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasDiscriminator().HasValue("Feedback");
                 });

@@ -99,6 +99,10 @@ namespace CantinaSenac.Migrations
                 {
                     b.HasBaseType("Postagem");
 
+                    b.Property<string>("Comentario")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasDiscriminator().HasValue("Feedback");
                 });
 
