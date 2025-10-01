@@ -23,6 +23,7 @@ static class FeedbacksView
         System.Console.WriteLine("- Adicionar Feedback: \t1");
         System.Console.WriteLine("- Alterar Feedback: \t2");
         System.Console.WriteLine("- Excluir Feedback: \t3");
+        System.Console.WriteLine("4. Exibir detalhes Feedback");
         switch (Console.ReadLine())
         {
             case "1":
@@ -32,9 +33,38 @@ static class FeedbacksView
                 ExibirDialogoAtualizarFeedback();
                 break;
             case "3":
+                ExibirDialogoRemoverFeedback();
                 break;
-            
+            case "4":
+                ExibirDialogoDetalhesFeedback();
+                break;
+
         }
+    }
+
+    public static void ExibirDialogoDetalhesFeedback()
+    {
+        Feedback feedback = new Feedback();
+        System.Console.WriteLine("Informe o Id do Feedback a ser exibido:");
+        int id = Convert.ToInt32(Console.ReadLine());
+
+        Feedback feedbackSelecionado = new FeedbackController().ListarPorId(id);
+
+        if (feedbackSelecionado != null)
+        {
+
+        }
+        else
+        {
+            System.Console.WriteLine("Feedback não encontrado. \n");
+
+        }
+        System.Console.WriteLine("Pressione qualquer tecla para retornar a rela feedback");
+        Console.ReadKey();
+        Exibir();
+
+
+
     }
 
     private static void ExibirDialogoAtualizarFeedback()
@@ -69,6 +99,23 @@ static class FeedbacksView
         System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
         Exibir();
+    }
+
+    public static void ExibirDialogoRemoverFeedback()
+    {
+        Feedback feedback = new Feedback();
+        System.Console.WriteLine("Informe o Id do Feedback a ser excluído:");
+        feedback.Id = Convert.ToInt32(Console.ReadLine());
+
+        new FeedbackController().ExcluirFeedback(feedback);
+
+        System.Console.WriteLine("Feedback excluído com sucesso. Pressione qualquer tecla para retornar a tela de Feedbacks");
+
+        Console.ReadKey();
+        Exibir();
+
+
+
     }
 
 

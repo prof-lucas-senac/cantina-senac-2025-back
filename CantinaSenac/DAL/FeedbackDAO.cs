@@ -24,7 +24,7 @@ class FeedbackDAO : IDAO<Feedback>
         contexto.SaveChanges();
     }
 
-    public Feedback Listar(int id)
+    public Feedback ListarPorId(int id)
     {
         return null;
     }
