@@ -17,10 +17,17 @@ static class FeedbacksView
         {
             System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
         }
+<<<<<<< HEAD
         ExibirDialogoPostarFeedback();
         System.Console.WriteLine("1 adicionar feedback");
         System.Console.WriteLine("2 alterar feedback");
         System.Console.WriteLine("3 remover feedback");
+=======
+        System.Console.WriteLine("Menu de opções:\n");
+        System.Console.WriteLine("1. Adicionar Feedback;");
+        System.Console.WriteLine("2. Alterar Feedback;");
+        System.Console.WriteLine("3. Excluir Feedback;");
+>>>>>>> 2463e34d1beaaa2a58ebbd433ddf1af8d5e4afee
         switch (Console.ReadLine())
         {
             case "1":
@@ -31,6 +38,7 @@ static class FeedbacksView
                 break;
             case "3":
                 break;
+<<<<<<< HEAD
             default:
                 System.Console.WriteLine("Opção inválida. Pressione qualquer tecla para continuar.");
                 Console.ReadKey();
@@ -40,6 +48,25 @@ static class FeedbacksView
     }
 
 
+=======
+        }
+    }
+
+    private static void ExibirDialogoAtualizarFeedback()
+    {
+        Feedback feedback = new Feedback();
+        System.Console.WriteLine("Informe o Id do Feedback a ser atualizado:");
+        feedback.Id = Convert.ToInt32(Console.ReadLine());
+        System.Console.WriteLine("Insira o novo feedback:");
+        feedback.Descricao = Console.ReadLine();
+
+        new FeedbackController().AtualizarFeedback(feedback);
+        
+        System.Console.WriteLine("Feedback atualizado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
+    }
+>>>>>>> 2463e34d1beaaa2a58ebbd433ddf1af8d5e4afee
     private static void ListarFeedbacks(List<Feedback> feedbacks)
     {
         foreach (Feedback feedback in feedbacks)
