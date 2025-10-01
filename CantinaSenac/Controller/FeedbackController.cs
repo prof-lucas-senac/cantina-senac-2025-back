@@ -56,6 +56,20 @@ static class FeedbackController
         dao.Atualizar(feedback);
 
     }
+
+  public static void Remover(int id)
+{
+    var feedback = BuscarPorId(id);
+    if (feedback == null)
+    {
+        Console.WriteLine($"\nFeedback com ID {id} não encontrado.");
+        return;
+    }
+
+    _feedbacks.Remove(feedback);
+    dao.Remover(id); 
+    Console.WriteLine($"\nFeedback com ID {id} removido com sucesso.");
+}
 }
 
 

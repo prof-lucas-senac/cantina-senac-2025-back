@@ -1,15 +1,17 @@
 class FeedbackDAO : IDAO<Feedback>
 {
+    private CantinaSenacContext contexto = new CantinaSenacContext();
 
-   private CantinaSenacContext contexto = new CantinaSenacContext();
+    public void Cadastrar(Feedback objeto)
+    {
+        contexto.Feedbacks.Add(objeto);
+        contexto.SaveChanges();
+    }
+
     public void Atualizar(Feedback objeto)
     {
         contexto.Feedbacks.Update(objeto);
         contexto.SaveChanges();
-    }
- public void Cadastrar(Feedback objeto)
-    {
-        throw new NotImplementedException();
     }
 
     public void Excluir(Feedback objeto)
@@ -18,34 +20,28 @@ class FeedbackDAO : IDAO<Feedback>
         contexto.SaveChanges();
     }
 
-    public Feedback Listar(int Id)
+    public void Remover(int id)
     {
-        throw new NotImplementedException();
+        var feedback = contexto.Feedbacks.FirstOrDefault(fb => fb.Id == id);
+        if (feedback != null)
+        {
+            contexto.Feedbacks.Remove(feedback);
+            contexto.SaveChanges();
+            Console.WriteLine($"\nFeedback com ID {id} removido do banco de dados.");
+        }
+        else
+        {
+            Console.WriteLine($"\nFeedback com ID {id} não encontrado no banco de dados.");
+        }
     }
 
+    public Feedback Listar(int id)
+    {
+        return contexto.Feedbacks.FirstOrDefault(fb => fb.Id == id);
+    }
 
     public List<Feedback> ListarTodos()
     {
-        throw new NotImplementedException();
-    }
-
-    void IDAO<Feedback>.Cadastrar(Feedback objeto)
-    {
-        throw new NotImplementedException();
-    }
-
-    void IDAO<Feedback>.Atualizar(Feedback objeto)
-    {
-        throw new NotImplementedException();
-    }
-
-    List<Feedback> IDAO<Feedback>.ListarTodos()
-    {
-        throw new NotImplementedException();
-    }
-
-    Feedback IDAO<Feedback>.Listar(int Id)
-    {
-        throw new NotImplementedException();
+        return contexto.Feedbacks.ToList();
     }
 }
