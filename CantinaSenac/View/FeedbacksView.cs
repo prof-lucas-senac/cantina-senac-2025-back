@@ -38,6 +38,8 @@ static class FeedbacksView
                     Alterar();
                     break;
                 case "3":
+                    Excluir();
+                    break;
                 case "4":
                     System.Console.WriteLine("\nObrigado por acessar o menu de feedbacks! Até mais!");
                     Console.ReadKey();
@@ -61,7 +63,7 @@ static class FeedbacksView
         Console.ReadKey();
     }
 
-        private static void Alterar()
+    private static void Alterar()
     {
         FeedbackController controller = new FeedbackController();
 
@@ -85,6 +87,35 @@ static class FeedbacksView
                 Console.WriteLine("Feedback atualizado com sucesso! Pressione Enter para continuar.");
                 Console.ReadKey();
                 encontrado = false;
+                break;
+            }
+        }
+
+        if (!encontrado)
+        {
+            Console.WriteLine("Feedback não encontrado! Pressione Enter para continuar.");
+            Console.ReadKey();
+        }
+    }
+    private static void Excluir()
+    {
+        FeedbackController controller = new FeedbackController();
+
+        Console.WriteLine("Digite o ID do feedback que deseja excluir:");
+        int id = int.Parse(Console.ReadLine());
+
+        List<Feedback> feedbacks = controller.Listar();
+        bool encontrado = false;
+
+        foreach (var feedback in feedbacks)
+        {
+            if (feedback.Id == id)
+            {
+                controller.DeletarFeedback(feedback);
+
+                Console.WriteLine("Feedback excluído com sucesso! Pressione Enter para continuar.");
+                Console.ReadKey();
+                encontrado = true;
                 break;
             }
         }
