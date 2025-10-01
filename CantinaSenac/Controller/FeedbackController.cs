@@ -8,8 +8,9 @@ static class FeedbackController
         feedbackDAO.Cadastrar(feedback);
     }
     // remover apenas se id do aluno for igual id do aluno no feedback
-    public static void RemoverFeedback(int id)
+    public static void RemoverFeedback(Feedback feedback)
     {
+        feedbackDAO.Excluir(feedback);
     }
     public static void EditarFeedback(Feedback feedback)
     {
