@@ -23,7 +23,7 @@ static class FeedbacksView
         {
             Console.WriteLine("Nenhum Feedback encontrado");
         }
-        Console.WriteLine("1-Criar feedback,2-Deletar feedback, 3-Modificar feedback");
+        Console.WriteLine("1-Criar feedback,2-Deletar feedback, 3-Modificar feedback, 4-Exibir detalhes de um feedback");
         int escolha = int.Parse(Console.ReadLine());
         {
             string descricao;
@@ -38,6 +38,9 @@ static class FeedbacksView
                     break;
                 case 3:
                     ExibirDialogoEditarFeedback();
+                    break;
+                case 4:
+                    ExibirDetalhesVoidFeedback();
                     break;
             }
         }
@@ -85,6 +88,32 @@ static class FeedbacksView
             Feedback fed = FeedbackController.ListarFeedback().Find(a => a.Id == id);
             FeedbackController.RemoverFeedback(fed);
             Console.WriteLine("Feedback excuido com sucesso aperte ENTER para retornar a tela de feedbacks");
+            ConsoleKeyInfo tecla = Console.ReadKey();
+            if (tecla.Key == ConsoleKey.Enter)
+            {
+                Exibir();
+            }
+        }
+        void ExibirDetalhesVoidFeedback()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Informe o Id do feedback a ser exibido");
+            int id = int.Parse(Console.ReadLine()!);
+            Feedback? feedbackSelecionado = FeedbackController.ListarPorId(id);
+            if (feedbackSelecionado != null)
+            {
+                Console.WriteLine("");
+                Console.WriteLine($"Id: {feedbackSelecionado.Id}");
+                Console.WriteLine($"Data da publicação: {feedbackSelecionado.DataPublicacao}");
+                Console.WriteLine($"Descricao: {feedbackSelecionado.Descricao}");
+                Console.WriteLine($"Avaliacao: {feedbackSelecionado.Avaliacao}");
+                Console.WriteLine($"UsuarioId: {feedbackSelecionado.UsuarioId}");
+            }
+            else
+            {
+                Console.WriteLine("Feedback não encontrado");
+            }
+            Console.WriteLine("Aperte ENTER para retornar a tela de feedbacks");
             ConsoleKeyInfo tecla = Console.ReadKey();
             if (tecla.Key == ConsoleKey.Enter)
             {
