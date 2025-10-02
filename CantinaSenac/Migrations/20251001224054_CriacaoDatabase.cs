@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CantinaSenac.Migrations
 {
     /// <inheritdoc />
-    public partial class ImplementacaoDBTPH : Migration
+    public partial class CriacaoDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,12 +49,18 @@ namespace CantinaSenac.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataPublicacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false),
-                    Discriminator = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    Discriminator = table.Column<string>(type: "varchar(13)", maxLength: 13, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    PostagemId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Postagem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Postagem_Postagem_PostagemId",
+                        column: x => x.PostagemId,
+                        principalTable: "Postagem",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Postagem_Usuario_UsuarioId",
                         column: x => x.UsuarioId,
@@ -68,6 +74,11 @@ namespace CantinaSenac.Migrations
                 table: "Usuario",
                 columns: new[] { "Id", "Discriminator", "Email", "Foto", "NomeDoUsuario", "Senha", "Status" },
                 values: new object[] { 1, "Aluno", "aluno@senac.br", null, "Aluno", "aluno", 1 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Postagem_PostagemId",
+                table: "Postagem",
+                column: "PostagemId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Postagem_UsuarioId",

@@ -1,7 +1,7 @@
 
 class AlunoDAO : IDAO<Aluno>
 {
-    private CantinaSenacContext contexto = new CantinaSenacContext();
+    public CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Aluno aluno)
     {
         throw new NotImplementedException();
@@ -9,7 +9,7 @@ class AlunoDAO : IDAO<Aluno>
 
     public void Cadastrar(Aluno aluno)
     {
-        // alunos.Add(aluno);
+        //alunos.Add(aluno);
     }
 
     public void Excluir(Aluno objeto)
@@ -17,9 +17,9 @@ class AlunoDAO : IDAO<Aluno>
         throw new NotImplementedException();
     }
 
-    public Aluno Listar(int id)
+    public Aluno ListarPorId(int id)
     {
-        throw new NotImplementedException();
+        return null;
     }
 
     public List<Aluno> ListarTodos()

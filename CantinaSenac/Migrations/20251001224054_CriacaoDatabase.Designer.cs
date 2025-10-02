@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20250912230816_CriacaoEInsercaoTabelaAluno")]
-    partial class CriacaoEInsercaoTabelaAluno
+    [Migration("20251001224054_CriacaoDatabase")]
+    partial class CriacaoDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,11 @@ namespace CantinaSenac.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("varchar(13)");
+
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
@@ -46,9 +51,11 @@ namespace CantinaSenac.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Postagem");
 
-                    b.UseTpcMappingStrategy();
+                    b.HasDiscriminator().HasValue("Postagem");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -58,6 +65,11 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -79,23 +91,37 @@ namespace CantinaSenac.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable((string)null);
+                    b.ToTable("Usuario");
 
-                    b.UseTpcMappingStrategy();
+                    b.HasDiscriminator().HasValue("Usuario");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("Comentario", b =>
+                {
+                    b.HasBaseType("Postagem");
+
+                    b.Property<int?>("PostagemId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("PostagemId");
+
+                    b.HasDiscriminator().HasValue("Comentario");
                 });
 
             modelBuilder.Entity("Feedback", b =>
                 {
                     b.HasBaseType("Postagem");
 
-                    b.ToTable("Feedbacks");
+                    b.HasDiscriminator().HasValue("Feedback");
                 });
 
             modelBuilder.Entity("Aluno", b =>
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos");
+                    b.HasDiscriminator().HasValue("Aluno");
 
                     b.HasData(
                         new
@@ -111,12 +137,29 @@ namespace CantinaSenac.Migrations
             modelBuilder.Entity("Postagem", b =>
                 {
                     b.HasOne("Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("Postagens")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Comentario", b =>
+                {
+                    b.HasOne("Postagem", null)
+                        .WithMany("Comentarios")
+                        .HasForeignKey("PostagemId");
+                });
+
+            modelBuilder.Entity("Postagem", b =>
+                {
+                    b.Navigation("Comentarios");
+                });
+
+            modelBuilder.Entity("Usuario", b =>
+                {
+                    b.Navigation("Postagens");
                 });
 #pragma warning restore 612, 618
         }

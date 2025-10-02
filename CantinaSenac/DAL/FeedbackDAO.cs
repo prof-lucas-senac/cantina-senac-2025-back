@@ -1,8 +1,7 @@
-
-
 class FeedbackDAO : IDAO<Feedback>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
+    private static List<Feedback> Feedbacks { get; set; } = new List<Feedback>();
     public void Atualizar(Feedback objeto)
     {
         contexto.Feedbacks.Update(objeto);
@@ -21,9 +20,11 @@ class FeedbackDAO : IDAO<Feedback>
         contexto.SaveChanges();
     }
 
-    public Feedback Listar(int id)
+    public Feedback ListarPorId(int id)
     {
-        throw new NotImplementedException();
+        Feedback? feedback = null;
+        feedback = contexto.Feedbacks.FirstOrDefault(feedback => feedback.Id == id);
+        return feedback;
     }
 
     public List<Feedback> ListarTodos()
