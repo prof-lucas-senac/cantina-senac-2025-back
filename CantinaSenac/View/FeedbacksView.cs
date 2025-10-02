@@ -23,6 +23,7 @@ static class FeedbacksView
         System.Console.WriteLine("1 - Adicionar Feedback");
         System.Console.WriteLine("2 - Alterar Feedback");
         System.Console.WriteLine("3 - Excluir Feedback");
+        System.Console.WriteLine("4 - Exibir dialogo de postar Feedback");
         switch (Console.ReadLine())
         {
             case "1":
@@ -35,11 +36,33 @@ static class FeedbacksView
                 ExibirDialogoExcluirFeedback();
                 break;
             case "4":
+                ExibirDialogoDetalhesFeedback();
                 break;
         }
 
     }
 
+    private static void ExibirDialogoDetalhesFeedback()
+    {
+        System.Console.WriteLine("Digite o ID do feedback que deseja ver os detalhes:");
+        int id = int.Parse(Console.ReadLine());
+        Feedback? feedbackSelecionado = new FeedbackController().ListarPorId(id);
+        if (feedbackSelecionado != null)
+        {
+            System.Console.WriteLine($"ID: {feedbackSelecionado.Id}");
+            System.Console.WriteLine($"Descrição: {feedbackSelecionado.Descricao}");
+            System.Console.WriteLine($"Data de Publicação: {feedbackSelecionado.DataPublicacao}");
+            System.Console.WriteLine($"Usuário ID: {feedbackSelecionado.UsuarioId}");
+        }
+        else
+        {
+            System.Console.WriteLine("Feedback não encontrado.");
+        }
+
+        System.Console.WriteLine("Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
+    }
     private static void ListarFeedbacks(List<Feedback> feedbacks)
     {
         foreach (Feedback feedback in feedbacks)

@@ -26,6 +26,19 @@ class FeedbackController
     {
         dao.Excluir(id);
     }
+    public Feedback ListarPorId(int id)
+    {
+        Feedback feedback = dao.ListarPorId(id);
 
-    
+        if (feedback != null)
+        {
+            return feedback;
+        }
+        else
+        {
+            System.Console.WriteLine("Feedback não encontrado!");
+            return null;
+        }
+    }
+
 }

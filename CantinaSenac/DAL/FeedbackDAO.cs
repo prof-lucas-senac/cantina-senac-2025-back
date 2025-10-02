@@ -35,10 +35,11 @@ class FeedbackDAO : IDAO<Feedback>
     }
 }
 
-    public Feedback Listar(int id)
+    public Feedback ListarPorId(int id)
     {
-        throw new NotImplementedException();
-    }
+        return contexto.Feedbacks.FirstOrDefault(f => f.Id == id);
+    
+}
 
     public List<Feedback> ListarTodos()
     {
