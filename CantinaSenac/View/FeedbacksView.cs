@@ -10,9 +10,10 @@ public class FeedbacksView
             Console.Clear();
             Console.WriteLine("¬¬¬¬¬ |Tela de Feedbacks| ¬¬¬¬¬");
             Console.WriteLine("[1] Adicionar Feedback");
-            Console.WriteLine("[2] Listar Feedbacks");
+            Console.WriteLine("[2] Listar todos Feedbacks");
             Console.WriteLine("[3] Alterar Feedback");
             Console.WriteLine("[4] Excluir Feedback");
+            Console.WriteLine("[5] Ver detalhes de um Feedback");
             Console.WriteLine("[0] Sair");
             Console.Write("Escolha uma opção: ");
             int opcao = int.Parse(Console.ReadLine());
@@ -31,6 +32,9 @@ public class FeedbacksView
                     break;
                 case 4:
                     ExcluirFeedBack();
+                    break;
+                case 5:
+                    ListarUnicoFeedBack();
                     break;
                 case 0:
                     return;
@@ -72,5 +76,25 @@ public class FeedbacksView
         feedBack.Id = int.Parse(Console.ReadLine());
         feedBackController.ExcluirFeedBack(feedBack);
         Console.WriteLine("Feedback excluído com sucesso!");
+    }
+    private static void ListarUnicoFeedBack()
+    {
+        Console.Write("Digite o ID do feedback que deseja exibir detalhes: ");
+        int id = Convert.ToInt32(Console.ReadLine());
+
+
+        FeedBack feedbackSelecionado = new FeedBackController().ListarPorId(id);
+        
+        if (feedbackSelecionado != null)
+        {
+            Console.WriteLine($"ID do Feedback: {feedbackSelecionado.Id}");
+            Console.WriteLine($"Descrição: {feedbackSelecionado.Descricao}");
+            Console.WriteLine($"Data de Publicação: {feedbackSelecionado.DataPublicacao}");
+            Console.WriteLine($"ID do Usuário: {feedbackSelecionado.UsuarioId}");
+        }
+        else
+        {
+            Console.WriteLine("Feedback não encontrado!");
+        }
     }
 }

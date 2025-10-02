@@ -12,7 +12,7 @@ class FeedBackController
         List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
         foreach (FeedBack feedBack in feedBacks)
         {
-            Console.WriteLine("Descrição: " + feedBack.Descricao);
+            Console.WriteLine($"Decrição: {feedBack.Descricao}");
             Console.WriteLine("ID: " + feedBack.Id);
             Console.WriteLine("----------");
         }
@@ -26,5 +26,18 @@ class FeedBackController
     public void ExcluirFeedBack(FeedBack feedBack)
     {
         feedBackDAO.Excluir(feedBack);
+    }
+    public FeedBack ListarPorId(int id)
+    {
+        FeedBack feedBack = feedBackDAO.ListarPorId(id);
+
+        if (feedBack != null)
+        {
+            return feedBack;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

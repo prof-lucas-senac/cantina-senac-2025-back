@@ -10,7 +10,7 @@ class FeedBackDAO : IDAO<FeedBack>
 
     public void Atualizar(FeedBack objeto)
     {
-       contexto.FeedBacks.Update(objeto);
+        contexto.FeedBacks.Update(objeto);
         contexto.SaveChanges();
     }
 
@@ -20,9 +20,11 @@ class FeedBackDAO : IDAO<FeedBack>
         contexto.SaveChanges();
     }
 
-    public FeedBack Listar(int id)
+    public FeedBack ListarPorId(int id)
     {
-        throw new NotImplementedException();
+        contexto.FeedBacks.Find(id);
+        return contexto.FeedBacks.Find(id);
+        // pode ser usado FirstOrDefault(feedback => feedback.Id == id); para verificar se existe o id no banco
     }
 
     public List<FeedBack> ListarTodos()

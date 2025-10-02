@@ -18,7 +18,7 @@ public class AlunoDAO : IDAO <Aluno>
         throw new NotImplementedException();
     }
 
-    public Aluno Listar(int id)
+    public Aluno ListarPorId(int id)
     {
         throw new NotImplementedException();
     }
