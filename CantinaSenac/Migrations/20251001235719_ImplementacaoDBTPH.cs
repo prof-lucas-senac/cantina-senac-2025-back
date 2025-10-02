@@ -50,11 +50,8 @@ namespace CantinaSenac.Migrations
                     DataPublicacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false),
                     Discriminator = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
-<<<<<<<< HEAD:CantinaSenac/Migrations/20251001224008_ImplementacaoDBTPH.cs
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Comentario = table.Column<string>(type: "longtext", nullable: true)
-========
->>>>>>>> 2463e34d1beaaa2a58ebbd433ddf1af8d5e4afee:CantinaSenac/Migrations/20250924002106_ImplementacaoDBTPH.cs
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>

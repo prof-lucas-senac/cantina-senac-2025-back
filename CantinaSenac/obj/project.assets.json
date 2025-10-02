@@ -2906,7 +2906,6 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
       "projectPath": "C:\\workplace\\Prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
@@ -2915,23 +2914,11 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-      "projectUniqueName": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
-      "projectName": "CantinaSenac",
-      "projectPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
-      "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 2463e34d1beaaa2a58ebbd433ddf1af8d5e4afee
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2949,7 +2936,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -2977,7 +2965,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-<<<<<<< HEAD
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
@@ -2996,18 +2983,12 @@
             "version": "[8.0.19, 8.0.19]"
           }
         ],
-=======
->>>>>>> 2463e34d1beaaa2a58ebbd433ddf1af8d5e4afee
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
->>>>>>> 2463e34d1beaaa2a58ebbd433ddf1af8d5e4afee
       }
     }
   },
@@ -3016,7 +2997,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\workplace\\Prog_web\\back\\CantinaSenac\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
+      "message": "Problema ao ler o arquivo de cache C:\\workplace\\Prog_web\\back\\CantinaSenac\\obj\\project.nuget.cache: '<' is an invalid start of a value. Path: $.expectedPackageFiles[42] | LineNumber: 48 | BytePositionInLine: 0."
     }
   ]
 }

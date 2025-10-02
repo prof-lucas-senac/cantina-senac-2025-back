@@ -11,11 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-<<<<<<<< HEAD:CantinaSenac/Migrations/20251001224008_ImplementacaoDBTPH.Designer.cs
-    [Migration("20251001224008_ImplementacaoDBTPH")]
-========
-    [Migration("20250924002106_ImplementacaoDBTPH")]
->>>>>>>> 2463e34d1beaaa2a58ebbd433ddf1af8d5e4afee:CantinaSenac/Migrations/20250924002106_ImplementacaoDBTPH.Designer.cs
+    [Migration("20251001235719_ImplementacaoDBTPH")]
     partial class ImplementacaoDBTPH
     {
         /// <inheritdoc />
