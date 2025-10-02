@@ -2,6 +2,8 @@
 // Atua como intermediária entre a camada de apresentação (views) e a camada de dados (DAO)
 class FeedbackController
 {
+
+    private FeedbackDAO dao = new FeedbackDAO();
     // Retorna todos os feedbacks cadastrados no sistema
     public List<Feedback> ListarFeedbacks()
     {
@@ -29,6 +31,20 @@ class FeedbackController
     // Retorna um feedback específico pelo ID (opcional, útil para edição)
     public Feedback BuscarPorId(int id)
     {
-        return new FeedbackDAO().Listar(id);
+        return new FeedbackDAO().ListarPorId(id);
+    }
+
+    public Feedback ListarPorId(int id)
+    {
+        Feedback feedback = dao.ListarPorId(id);
+
+        if (feedback != null)
+        {
+            return feedback;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

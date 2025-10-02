@@ -41,9 +41,13 @@ class FeedbackDAO : IDAO<Feedback>
         }
     }
 
-    public Feedback Listar(int id)
+    public Feedback ListarPorId(int id)
     {
-        return contexto.Feedbacks.Find(id);
+        Feedback? feedback = null;
+        feedback = contexto.Feedbacks.FirstOrDefault(
+            feedback => feedback.Id == id
+        );
+        return feedback;
     }
 
     public List<Feedback> ListarTodos()

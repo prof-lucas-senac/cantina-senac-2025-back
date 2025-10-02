@@ -27,7 +27,7 @@ class AlunoDAO : IDAO<Aluno>
     }
 
     // Método para buscar um aluno pelo ID (ainda não implementado)
-    public Aluno Listar(int Id)
+    public Aluno ListarPorId(int Id)
     {
         throw new NotImplementedException(); // será usado para retornar um aluno específico
     }

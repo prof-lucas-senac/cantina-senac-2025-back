@@ -2,7 +2,7 @@
 static class FeedBacksView
 {
     // Exibe o menu principal de gerenciamento de feedbacks
-    public static void Exibir(Aluno aluno)
+    public static void Exibir( )
     {
         bool continuar = true;
 
@@ -14,6 +14,7 @@ static class FeedBacksView
             Console.WriteLine("2 - Adicionar Feedback");
             Console.WriteLine("3 - Alterar Feedback");
             Console.WriteLine("4 - Excluir Feedback");
+            Console.WriteLine("5 - Exibir detalhes do Feedback");
             Console.WriteLine("0 - Voltar");
             Console.Write("\nEscolha uma opção: ");
             string opcao = Console.ReadLine();
@@ -27,15 +28,19 @@ static class FeedBacksView
                     break;
 
                 case "2":
-                    CadastrarFeedback(aluno);
+                    CadastrarFeedback();
                     break;
 
                 case "3":
-                    AlterarFeedback(aluno);
+                    AlterarFeedback();
                     break;
 
                 case "4":
                     ExcluirFeedback();
+                    break;
+
+                case "5":
+                    ExibirDetalhesFeedbacks();
                     break;
 
                 case "0":
@@ -48,6 +53,31 @@ static class FeedBacksView
                     break;
             }
         }
+    }
+
+    private static void ExibirDetalhesFeedbacks()
+    {
+        System.Console.WriteLine("Informe o ID do feedback a ser exibido: ");
+        int id = Convert.ToInt32(Console.ReadLine());
+
+        Feedback feedbackSelecionado = new FeedbackController().ListarPorId(id);
+
+        if (feedbackSelecionado != null)
+        {
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine($"ID do Feedback: {feedbackSelecionado.Id}");
+            Console.WriteLine($"ID do Autor: {feedbackSelecionado.UsuarioId}");
+            Console.WriteLine($"Comentário: {feedbackSelecionado.Descricao}");
+            Console.WriteLine($"Data: {feedbackSelecionado.DataPublicacao}");
+        }
+        else
+        {
+            System.Console.WriteLine($"Feedbacks não encontrado.\n");
+        }
+
+        System.Console.WriteLine("Pressione qualquer tecla para retornar a tela de feedbakcs.");
+        Console.ReadKey();
+        Exibir();
     }
 
     // Exibe os feedbacks formatados no console
@@ -76,7 +106,7 @@ static class FeedBacksView
     }
 
     // Coleta dados do usuário e cadastra um novo feedback
-    public static void CadastrarFeedback(Usuario usuario)
+    public static void CadastrarFeedback( )
     {
         Console.Clear();
         Console.WriteLine("=== Cadastrar Feedback ===\n");
@@ -88,8 +118,6 @@ static class FeedBacksView
         {
             Descricao = descricao,
             DataPublicacao = DateTime.Now,
-            UsuarioId = usuario.Id,
-            Usuario = usuario
         };
 
         new FeedbackController().Cadastrar(feedback);
@@ -100,7 +128,7 @@ static class FeedBacksView
     }
 
     // Permite alterar um feedback existente
-    private static void AlterarFeedback(Usuario usuario)
+    private static void AlterarFeedback( )
     {
         Console.Clear();
         Console.WriteLine("=== Alterar Feedback ===\n");
@@ -116,8 +144,6 @@ static class FeedBacksView
             Id = id,
             Descricao = novaDescricao,
             DataPublicacao = DateTime.Now,
-            UsuarioId = usuario.Id,
-            Usuario = usuario
         };
 
         var feedbackExistente = new FeedbackController().BuscarPorId(id);

@@ -6,13 +6,13 @@ abstract class Usuario
     public int Id { get; set; }
 
     // Nome de exibição do usuário
-    public string NomeDoUsuario { get; set; }
+    public string? NomeDoUsuario { get; set; }
 
     // Endereço de e-mail do usuário
-    public string Email { get; set; }
+    public string? Email { get; set; }
 
     // Senha de acesso do usuário
-    public string Senha { get; set; }
+    public string? Senha { get; set; }
 
     // Status do usuário (ex: ativo, suspenso, etc.)
     public int Status { get; set; }

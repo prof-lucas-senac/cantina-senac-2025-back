@@ -15,5 +15,5 @@ interface IDAO<T>
     public List<T> ListarTodos();
 
     // Retorna um único objeto do tipo T com base no seu identificador
-    public T Listar(int id);
+    public T ListarPorId(int id);
 }

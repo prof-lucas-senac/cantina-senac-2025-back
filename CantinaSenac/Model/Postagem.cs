@@ -6,13 +6,13 @@ abstract class Postagem
     public int Id { get; set; }
 
     // Texto ou conteúdo principal da postagem
-    public string Descricao { get; set; }
+    public string? Descricao { get; set; }
 
     // Data e hora em que a postagem foi publicada
-    public DateTime DataPublicacao { get; set; }
+    public DateTime DataPublicacao { get; set; } 
 
     // Referência ao usuário que criou a postagem (propriedade de navegação)
-    public Usuario Usuario { get; set; }
+    public Usuario? Usuario { get; set; }
 
     // Chave estrangeira que relaciona a postagem ao usuário
     public int UsuarioId { get; set; }
