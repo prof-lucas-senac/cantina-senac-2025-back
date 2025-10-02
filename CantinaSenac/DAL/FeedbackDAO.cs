@@ -20,9 +20,13 @@ public class FeedbackDAO : IDAO <Feedback>
         contexto.SaveChanges();
     }
 
-    public Feedback Listar(int id)
+    public Feedback ListarPorId(int id)
     {
-        throw new NotImplementedException();
+        Feedback? feedback = null;
+        feedback = contexto.Feedbacks.FirstOrDefault(
+            feedback => feedback.Id == id
+            );
+        return feedback;
     }
 
     public List<Feedback> ListarTodos()

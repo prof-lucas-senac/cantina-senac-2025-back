@@ -8,23 +8,16 @@ public class FeedbacksController
 
         feedbackDAO.Cadastrar(feedback);
     }
-    public void RemoverFeedback(int id)
+    public void RemoverFeedback(Feedback feedback)
     {
-        FeedbackDAO feedbackDAO = new FeedbackDAO();
-        List<Feedback> feedbacks = feedbackDAO.ListarTodos();
-        foreach (Feedback item in feedbacks)
-        {
-            if (item.Id == id)
-            {
-                feedbackDAO.Excluir(item);
-            }
-        }
+        feedbackDAO.Excluir(feedback);
+
     }
+
     public void AtualizarFeedback(Feedback feedback)
     {
         feedback.DataPublicacao = DateTime.Now;
-        feedback.UsuarioId = 1;
-        
+
         feedbackDAO.Atualizar(feedback);
     }
 
@@ -45,5 +38,16 @@ public class FeedbacksController
             }
         }
     }
-
+    public Feedback ListarPorId(int id)
+    {
+        Feedback feedback = feedbackDAO.ListarPorId(id);
+        if (feedback != null)
+        {
+            return feedback;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

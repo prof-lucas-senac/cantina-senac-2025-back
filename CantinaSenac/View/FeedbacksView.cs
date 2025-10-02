@@ -2,15 +2,15 @@ static class FeedbacksView
 {
     public static void Exibir()
     {
-        string op = "";
+        string op;
         do
         {
             Console.WriteLine("Lista de Feedbacks:");
             Console.WriteLine("======================================");
             new FeedbacksController().MostrarFeedbacks();
 
-            Console.WriteLine("Cantina Senac ");
-            Console.WriteLine("pressione: \n[1] para adicionar feedback \n[2] para remover \n[3] para atualizar \n[0] para sair");
+            Console.WriteLine("\nCantina Senac\n ");
+            Console.WriteLine("pressione: \n[1] para adicionar feedback \n[2] para remover \n[3] para atualizar\n[4] Exibir detalhes do Feedback \n[0] para sair");
             op = Console.ReadLine();
 
             switch (op)
@@ -25,6 +25,9 @@ static class FeedbacksView
                     break;
                 case "3":
                     ExibirDialogoAtualizarFeedback();
+                    break;
+                case "4":
+                    ExibirDialogoDetalhesFeedback();
                     break;
                 default:
                     Console.WriteLine("valor invalido");
@@ -43,14 +46,12 @@ static class FeedbacksView
         {
             new FeedbacksController().AdicionarFeedback(feedback);
         }
-        catch (System.Exception)
+        catch (Exception)
         {
             Console.WriteLine("não foi possivel remover");
-            throw;
         }
-        
 
-        Console.WriteLine("feedback adicionado com sucesso pressione enter para continuar");
+        Console.WriteLine("pressione enter para continuar");
         Console.ReadKey();
         Console.Clear();
     }
@@ -67,32 +68,52 @@ static class FeedbacksView
         {
             new FeedbacksController().AtualizarFeedback(feedback);
         }
-        catch (System.Exception)
+        catch (Exception)
         {
             Console.WriteLine("não foi possivel atualizar");
-            throw;
         }
 
-        Console.WriteLine("feedback atualizado com sucesso pressione enter para continuar");
+        Console.WriteLine("pressione enter para continuar");
         Console.ReadKey();
         Console.Clear();
     }
     private static void ExibirDialogoRemoverFeedback()
     {
+        Feedback feedback = new Feedback();
         Console.WriteLine("---Remova um feedback---");
         Console.WriteLine("para remover o feedback digite o id");
-        int id = int.Parse(Console.ReadLine());
+        feedback.Id = int.Parse(Console.ReadLine());
 
         try
         {
-            new FeedbacksController().RemoverFeedback(id);
+            new FeedbacksController().RemoverFeedback(feedback);
         }
-        catch (System.Exception)
+        catch (Exception)
         {
             Console.WriteLine("não foi possivel remover");
-            throw;
         }
-        Console.WriteLine("feedback removido com sucesso pressione enter para continuar");
+
+        Console.WriteLine("pressione enter para continuar");
+        Console.ReadKey();
+        Console.Clear();
+    }
+    private static void ExibirDialogoDetalhesFeedback()
+    {
+        Console.WriteLine("informe o Id do Feedback a ser exibido");
+        int id = int.Parse(Console.ReadLine());
+
+        Feedback? feedbackEscolhido = new FeedbacksController().ListarPorId(id);
+
+        if (feedbackEscolhido != null)
+        {
+            System.Console.WriteLine("--detalhes do feedback--");
+            Console.WriteLine($" ID: {feedbackEscolhido.Id}\n Feedback: {feedbackEscolhido.decricao}\n Data de publicação: {feedbackEscolhido.DataPublicacao}");
+        }
+        else
+        {
+            System.Console.WriteLine("feedback não encontrado\n");
+        }
+        Console.WriteLine("pressione enter para continuar");
         Console.ReadKey();
         Console.Clear();
     }
