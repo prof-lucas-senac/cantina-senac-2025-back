@@ -23,15 +23,29 @@ class FeedbackController
     }
 
     public void RemoverFeedback(int id)
-{
-    Feedback feedback = dao.ListarTodos().FirstOrDefault(f => f.Id == id);
-    if (feedback != null)
     {
-        dao.Excluir(feedback);
+        Feedback feedback = dao.ListarTodos().FirstOrDefault(f => f.Id == id);
+        if (feedback != null)
+        {
+            dao.Excluir(feedback);
+        }
+        else
+        {
+            Console.WriteLine("Feedback não encontrado.");
+        }
     }
-    else
+
+    public Feedback? ListarPorId(int id)
     {
-        Console.WriteLine("Feedback não encontrado.");
+        Feedback feedback = dao.ListarPorId(id);
+
+        if (feedback != null)
+        {
+            return feedback;
+        }
+        else
+        {
+            return null;
+        }
     }
-}
 }
