@@ -24,7 +24,8 @@ static class FeedbacksView
             Console.WriteLine("1 - Cadastrar novo feedback");
             Console.WriteLine("2 - Alterar Feedback");
             Console.WriteLine("3 - Excluir Feedback");
-            Console.WriteLine("4 - Sair");
+            Console.WriteLine("4 - listar Feedback");
+            Console.WriteLine("5 - Sair");
 
             Console.Write("Escolha: ");
             string opcao = Console.ReadLine();
@@ -41,6 +42,10 @@ static class FeedbacksView
                     Excluir();
                     break;
                 case "4":
+                    listarFeedback();
+                    break;
+
+                case "5":
                     System.Console.WriteLine("\nObrigado por acessar o menu de feedbacks! Até mais!");
                     Console.ReadKey();
                     loping = false;
@@ -125,5 +130,22 @@ static class FeedbacksView
             Console.WriteLine("Feedback não encontrado! Pressione Enter para continuar.");
             Console.ReadKey();
         }
+    }
+
+    public static void listarFeedback()
+    {
+        System.Console.WriteLine("Informe o Id do feedback que deseja listar:");
+        int id = int.Parse(Console.ReadLine());
+        Feedback? feedbackSelecionado = new FeedbackController().listarPorId(id);
+        if (feedbackSelecionado != null)
+        {
+            System.Console.WriteLine($"ID: {feedbackSelecionado.Id} - Descrição: {feedbackSelecionado.Descricao} - Data de Postagem: {feedbackSelecionado.dataPostagem}");
+        }
+        else
+        {
+            System.Console.WriteLine("Feedback não encontrado.");
+        }
+        System.Console.WriteLine("Pressione Enter para continuar...");
+        Console.ReadKey();
     }
 }

@@ -25,7 +25,7 @@ class AlunoDAO : IDAO<Aluno>
         contexto.SaveChanges();
     }
 
-    public Aluno Listar(int id)
+    public Aluno ListarPorId(int id)
     {
         return contexto.Alunos.Find(id);
     }
