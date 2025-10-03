@@ -1,14 +1,11 @@
-using System.ComponentModel.Design.Serialization;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
+using Microsoft.EntityFrameworkCore.Metadata;
+
 class CantinaSenacContext : DbContext
 {
-
     public DbSet<Aluno> Alunos { get; set; }
-
     public DbSet<Feedback> Feedbacks { get; set; }
-    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=S&nac2024;";
-
+    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=root;";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -17,19 +14,11 @@ class CantinaSenacContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-       // builder.Entity<Usuario>().UseTpcMappingStrategy();
-        //builder.Entity<Postagem>().UseTpcMappingStrategy();
-
-         builder.Entity<Usuario>().HasMany(a => a.Postagens)
+        builder.Entity<Usuario>().HasMany(a => a.Postagens)
             .WithOne(f => f.Usuario)
             .HasForeignKey(f => f.UsuarioId);
 
-        // builder.Entity<Aluno>(entity =>
-        //{
-        //   entity.Property(e => e.Id).ValueGeneratedOnAdd();
-        //});
-        builder.Entity<Aluno>().ToTable("Alunos");
-        builder.Entity<Aluno>().HasData(
+        builder.Entity<Aluno>().HasData(    
             new Aluno()
             {
                 Id = 1,
@@ -39,17 +28,5 @@ class CantinaSenacContext : DbContext
                 Status = 1
             }
         );
-
-     //   builder.Entity<Feedback>().HasData(
-     //  new Feedback()
-    //   {
-       //    Id = 1,
-      //     Descricao = "aluno@senac.br",
-       //    DataPublicacao = new DateTime(2025, 09, 12),
-       //    UsuarioId = 1
-    //   }
- //  );
     }
-} 
-
-// toda alteração tem que ter migration
+}
