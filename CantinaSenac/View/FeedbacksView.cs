@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 
 static class FeedbacksView
 {
@@ -19,15 +20,16 @@ static class FeedbacksView
         {
             System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
         }
-        
+
 
         CantinaSenacContext contexto = new CantinaSenacContext();
         Console.WriteLine($"Bem vindo ao menu FeedBack! Escolha uma das opções a seguir.");
         Console.WriteLine($"1- Adicionar Feedback.");
         Console.WriteLine($"2- Editar Feedback.");
         Console.WriteLine($"3- Excluir Feedback.");
-        Console.WriteLine($"4- Listar todos os Feedbacks.");
+        Console.WriteLine($"4- Listar detalhes do Feedback.");
         Console.WriteLine($"5- Sair do menu Feedback.");
+
         int opcaoMenu = Convert.ToInt32(Console.ReadLine());
 
         switch (opcaoMenu)
@@ -39,6 +41,17 @@ static class FeedbacksView
             case 2:
                 ExibirDialogoEditarFeedback();
 
+                break;
+
+            case 3:
+                ExibirDialogodeExcluirFeedback();
+                break;
+
+            case 4:
+                ExibirDialogorDetalhesDoFeedback();
+                break;
+            case 5:
+                Console.WriteLine($"Fim doprograma");
                 break;
 
 
@@ -87,6 +100,44 @@ static class FeedbacksView
         Exibir();
 
 
+
+    }
+
+    public static void ExibirDialogodeExcluirFeedback()
+    {
+        Feedback feedbackExcluir = new Feedback();
+        Console.WriteLine($"Informe o ID do Feedback que deseja excluir.");
+        int idExcluir = Convert.ToInt32(Console.ReadLine());
+
+        new FeedbackController().ExcluirFeedback(feedbackExcluir);
+
+        System.Console.WriteLine(" Feedback excluido com sucesso.");
+        System.Console.WriteLine(" Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
+
+
+    }
+
+    private static void ExibirDialogorDetalhesDoFeedback()
+    {
+        Console.WriteLine($"Informe o ID do Feedback a ser exibido.");
+        int id = Convert.ToInt32(Console.ReadLine());
+
+        Feedback? feedbackSelecionado = new FeedbackController().ListarPorId(id);
+        if (feedbackSelecionado != null)
+        {
+            Console.WriteLine($"Detalhes do Feedback!");
+            Console.WriteLine($"Id: {feedbackSelecionado.Id} - Usuario: {feedbackSelecionado.Usuario} - Feedback: {feedbackSelecionado.Descricao} - Data de publicação: {feedbackSelecionado.DataPubicacao} ");
+        }
+        else
+        {
+            Console.WriteLine($"ID Feedback não encontrado.");
+        }
+
+        System.Console.WriteLine(" Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        Console.ReadKey();
+        Exibir();
 
     }
 }
