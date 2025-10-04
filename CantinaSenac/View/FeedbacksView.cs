@@ -32,6 +32,10 @@ static class FeedbacksView
                 ExibirDialogoAtualizarFeedback();
                 break;
             case "3":
+                ExibirDialogoRemoverFeedback();
+                break;
+            case "4":
+                ExibirDialogoDetalhesFeedback();
                 break;
             
         }
