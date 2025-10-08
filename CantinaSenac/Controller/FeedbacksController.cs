@@ -8,10 +8,10 @@ class FeedbackController
 
     public void PostarFeedback(string descricaoFeedback)
     {
-
         Feedback feedback = new Feedback();
         feedback.Descricao = descricaoFeedback;
         feedback.UsuarioId = 1;
+        feedback.DataPublicacao = DateTime.Now;
         dao.Cadastrar(feedback);
     }
 
@@ -21,7 +21,7 @@ class FeedbackController
     }
     public void AtualizarFeedback(Feedback feedback)
     {
-        feedback.DataPublicação = DateTime.Now;
+        feedback.DataPublicacao = DateTime.Now;
         feedback.UsuarioId = 1;
         dao.Atualizar(feedback);
     }
@@ -37,7 +37,5 @@ class FeedbackController
         {
             return null;
         }
-
-
     }
 }

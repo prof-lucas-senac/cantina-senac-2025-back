@@ -5,7 +5,6 @@ using Pomelo.EntityFrameworkCore.MySql.Metadata.Internal;
 class FeedbackDAO : IDAO<Feedback>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
-
     public void Atualizar(Feedback objeto)
     {
         contexto.Feedbacks.Update(objeto);
@@ -26,7 +25,11 @@ class FeedbackDAO : IDAO<Feedback>
 
     public Feedback ListarPorId(int id)
     {
-        return null;
+        Feedback? feedback = null;
+        feedback = contexto.Feedbacks.FirstOrDefault(
+            feedback => feedback.Id == id
+        );
+        return feedback;
     }
 
     public List<Feedback> ListarTodos()
