@@ -16,30 +16,16 @@ class FeedbackController
     }
 
 
-    public void AtualizarFeedbak(Feedback feedBack)
+    public void AtualizarFeedback(Feedback feedBack)
     {
         feedBack.DataPubicacao = DateTime.Now;
         feedBack.UsuarioId = 1;
         dao.Atualizar(feedBack);
     }
 
-
     public void ExcluirFeedback(Feedback feedback)
     {
-
+        feedback.UsuarioId = 1;
         dao.Excluir(feedback);
-    }
-
-    public Feedback ListarPorId(int id)
-    {
-        Feedback feedback = dao.ListarPorId(id);
-        if (feedback!=null)
-        {
-            return feedback;
-        }
-        else
-        {
-            return null;
-        }
     }
 }

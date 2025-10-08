@@ -47,13 +47,6 @@ static class FeedbacksView
                 ExibirDialogodeExcluirFeedback();
                 break;
 
-            case 4:
-                ExibirDialogorDetalhesDoFeedback();
-                break;
-            case 5:
-                Console.WriteLine($"Fim doprograma");
-                break;
-
 
 
 
@@ -91,7 +84,7 @@ static class FeedbacksView
         Console.WriteLine($"Insira um novo FeedBack.");
         feedbackEditar.Descricao = Console.ReadLine();
 
-        new FeedbackController().AtualizarFeedbak(feedbackEditar);
+        new FeedbackController().AtualizarFeedback(feedbackEditar);
 
         Console.WriteLine($"FeedBack Atualizado.");
 
@@ -108,36 +101,9 @@ static class FeedbacksView
         Feedback feedbackExcluir = new Feedback();
         Console.WriteLine($"Informe o ID do Feedback que deseja excluir.");
         int idExcluir = Convert.ToInt32(Console.ReadLine());
-
+        feedbackExcluir.Id = idExcluir;
         new FeedbackController().ExcluirFeedback(feedbackExcluir);
 
-        System.Console.WriteLine(" Feedback excluido com sucesso.");
-        System.Console.WriteLine(" Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
-
-
-    }
-
-    private static void ExibirDialogorDetalhesDoFeedback()
-    {
-        Console.WriteLine($"Informe o ID do Feedback a ser exibido.");
-        int id = Convert.ToInt32(Console.ReadLine());
-
-        Feedback? feedbackSelecionado = new FeedbackController().ListarPorId(id);
-        if (feedbackSelecionado != null)
-        {
-            Console.WriteLine($"Detalhes do Feedback!");
-            Console.WriteLine($"Id: {feedbackSelecionado.Id} - Usuario: {feedbackSelecionado.Usuario} - Feedback: {feedbackSelecionado.Descricao} - Data de publicação: {feedbackSelecionado.DataPubicacao} ");
-        }
-        else
-        {
-            Console.WriteLine($"ID Feedback não encontrado.");
-        }
-
-        System.Console.WriteLine(" Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
 
     }
 }
