@@ -2901,19 +2901,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\drica\\.nuget\\packages\\": {}
+    "C:\\Users\\Prog_Sis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\sistemasinformacao\\BranchBack\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "C:\\SistemasInformacao\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\sistemasinformacao\\BranchBack\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
-      "packagesPath": "C:\\Users\\drica\\.nuget\\packages\\",
-      "outputPath": "C:\\sistemasinformacao\\BranchBack\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
+      "projectPath": "C:\\SistemasInformacao\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
+      "outputPath": "C:\\SistemasInformacao\\prog_web\\back\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\drica\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2969,7 +2969,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
