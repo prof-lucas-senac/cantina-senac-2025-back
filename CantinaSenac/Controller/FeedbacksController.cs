@@ -25,17 +25,21 @@ class FeedbackController
         feedback.UsuarioId = 1;
         dao.Atualizar(feedback);
     }
+    
+    public void ExcluirFeedback(int id)
+{
+    // Buscar o feedback pelo ID
+    var feedback = dao.Listar(id);
 
-    public Feedback? ListarPorId(int id)
+    if (feedback != null)
     {
-        Feedback feedback = dao.ListarPorId(id);
-        if (feedback != null)
-        {
-            return feedback;
-        }
-        else
-        {
-            return null;
-        }
+        dao.Excluir(feedback);
     }
+    else
+    {
+        //caso não encontre o feedback, lança uma exceção
+        throw new Exception("Feedback não encontrado para exclusão.");
+    }
+}
+
 }
