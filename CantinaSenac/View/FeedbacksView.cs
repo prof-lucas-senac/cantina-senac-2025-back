@@ -40,26 +40,26 @@ static class FeedbacksView
 
     private static void ExibirDialogoDetalhesFeedback()
     {
-        System.Console.WriteLine("Informe o Id do Feedback a ser exibido:");
-        int id = Convert.ToInt32(Console.ReadLine());
+        // System.Console.WriteLine("Informe o Id do Feedback a ser exibido:");
+        // int id = Convert.ToInt32(Console.ReadLine());
 
-        Feedback? feedbackSelecionado = new FeedbackController().ListarPorId(id);
+        // Feedback? feedbackSelecionado = new FeedbackController().ListarPorId(id);
 
-        if (feedbackSelecionado != null)
-        {
-            System.Console.WriteLine("Detalhes do feedback:\n");
-            System.Console.WriteLine($"Id: {feedbackSelecionado.Id}");
-            System.Console.WriteLine($"Conteúdo: {feedbackSelecionado.Descricao}");
-            System.Console.WriteLine($"Data de publicação: {feedbackSelecionado.DataPublicacao}\n");
-        }
-        else
-        {
-            System.Console.WriteLine("Feedback não encontrado.\n");
-        }
+        // if (feedbackSelecionado != null)
+        // {
+        //     System.Console.WriteLine("Detalhes do feedback:\n");
+        //     System.Console.WriteLine($"Id: {feedbackSelecionado.Id}");
+        //     System.Console.WriteLine($"Conteúdo: {feedbackSelecionado.Descricao}");
+        //     System.Console.WriteLine($"Data de publicação: {feedbackSelecionado.DataPublicacao}\n");
+        // }
+        // else
+        // {
+        //     System.Console.WriteLine("Feedback não encontrado.\n");
+        // }
 
-        System.Console.WriteLine("Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
+        // System.Console.WriteLine("Pressione qualquer tecla para retornar à tela de Feedbacks.");
+        // Console.ReadKey();
+        // Exibir();
     }
 
     private static void ExibirDialogoRemoverFeedback()
@@ -107,23 +107,6 @@ static class FeedbacksView
         System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
         Exibir();
-    }
-
-    public static void ExibirDialogoRemoverFeedback()
-    {
-        Feedback feedback = new Feedback();
-        System.Console.WriteLine("Informe o Id do Feedback a ser excluído:");
-        feedback.Id = Convert.ToInt32(Console.ReadLine());
-
-        new FeedbackController().ExcluirFeedback(feedback);
-
-        System.Console.WriteLine("Feedback excluído com sucesso. Pressione qualquer tecla para retornar a tela de Feedbacks");
-
-        Console.ReadKey();
-        Exibir();
-
-
-
     }
 
 

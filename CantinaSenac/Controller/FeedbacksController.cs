@@ -1,4 +1,4 @@
-class FeedbackController
+public class FeedbackController
 {
     private FeedbackDAO dao = new FeedbackDAO();
     public List<Feedback> ListarFeedbacks()
@@ -29,7 +29,7 @@ class FeedbackController
     public void ExcluirFeedback(int id)
 {
     // Buscar o feedback pelo ID
-    var feedback = dao.Listar(id);
+    var feedback = dao.ListarPorId(id);
 
     if (feedback != null)
     {
