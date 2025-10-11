@@ -38,7 +38,7 @@ static class FeedbacksView
         }
     }
 
-    private static void ExibirDialogoAtualizarFeedback()
+    public static void ExibirDialogoAtualizarFeedback()
     {
         Feedback feedback = new Feedback();
         System.Console.WriteLine("Informe o Id do Feedback a ser atualizado:");
@@ -52,7 +52,7 @@ static class FeedbacksView
         Console.ReadKey();
         Exibir();
     }
-    private static void ListarFeedbacks(List<Feedback> feedbacks)
+    public static void ListarFeedbacks(List<Feedback> feedbacks)
     {
         foreach (Feedback feedback in feedbacks)
         {
@@ -60,7 +60,7 @@ static class FeedbacksView
         }
     }
 
-    private static void ExibirDialogoPostarFeedback()
+    public static void ExibirDialogoPostarFeedback()
     {
         System.Console.WriteLine("Poste o seu feedback:");
         string descricaoFeedback = Console.ReadLine();
@@ -72,7 +72,7 @@ static class FeedbacksView
         Exibir();
     }
 
-    private static void ExibirDialogoRemoverFeedback()
+    public static void ExibirDialogoRemoverFeedback()
     {
         System.Console.Write("Digite o ID do feedback que deseja remover: ");
         if (int.TryParse(Console.ReadLine(), out int id))
@@ -90,7 +90,7 @@ static class FeedbacksView
         Exibir();
     }
 
-    private static void ExibirDialogoDetalhesFeedback()
+    public static void ExibirDialogoDetalhesFeedback()
     {
         System.Console.WriteLine("Digite o ID do Feedback a ser detalhado: ");
         int id = Convert.ToInt32(Console.ReadLine());

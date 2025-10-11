@@ -1,4 +1,4 @@
-class Comentario : Postagem
+public class Comentario : Postagem
 {
     
 }

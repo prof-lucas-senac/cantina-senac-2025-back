@@ -2906,21 +2906,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectUniqueName": "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
       "projectName": "CantinaSenac",
-      "projectPath": "C:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\CantinaSenac.csproj",
+      "projectPath": "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
       "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\obj\\",
+      "outputPath": "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

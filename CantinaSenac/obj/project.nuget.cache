@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TBcPkmhs++w=",
+  "dgSpecHash": "MErLkSSkSqA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Prog_Sis\\Desktop\\workplace\\programador web\\back\\CantinaSenac\\CantinaSenac.csproj",
+  "projectFilePath": "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Prog_Sis\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Prog_Sis\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

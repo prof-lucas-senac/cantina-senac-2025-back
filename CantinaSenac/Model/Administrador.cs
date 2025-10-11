@@ -1,4 +1,4 @@
-abstract class Administrador : Usuario
+public abstract class Administrador : Usuario
 {
     public abstract void Suspender();
     public abstract void Deletar();
