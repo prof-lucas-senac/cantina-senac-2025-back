@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MyWorkplace\\CantinaSenacTarefa\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {}
+    "C:\\workplace\\p.prog_web\\back\\Backend\\CantinaSenac\\CantinaSenac.csproj": {}
   },
   "projects": {
-    "C:\\MyWorkplace\\CantinaSenacTarefa\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {
+    "C:\\workplace\\p.prog_web\\back\\Backend\\CantinaSenac\\CantinaSenac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyWorkplace\\CantinaSenacTarefa\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectUniqueName": "C:\\workplace\\p.prog_web\\back\\Backend\\CantinaSenac\\CantinaSenac.csproj",
         "projectName": "CantinaSenac",
-        "projectPath": "C:\\MyWorkplace\\CantinaSenacTarefa\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
-        "packagesPath": "C:\\Users\\Isa\\.nuget\\packages\\",
-        "outputPath": "C:\\MyWorkplace\\CantinaSenacTarefa\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
+        "projectPath": "C:\\workplace\\p.prog_web\\back\\Backend\\CantinaSenac\\CantinaSenac.csproj",
+        "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
+        "outputPath": "C:\\workplace\\p.prog_web\\back\\Backend\\CantinaSenac\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Isa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -66,30 +65,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.17, 8.0.17]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.17, 8.0.17]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.17, 8.0.17]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.17, 8.0.17]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

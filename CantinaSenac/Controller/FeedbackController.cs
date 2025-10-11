@@ -1,4 +1,4 @@
-class FeedbackController
+public class FeedbackController
 {
     private FeedbackDAO dao = new FeedbackDAO();
     public List<Feedback> ListarFeedbacks()
@@ -18,10 +18,25 @@ class FeedbackController
 
     public void AtualizarFeedback(Feedback feedBack)
     {
-        feedBack.DataPubicacao = DateTime.Now;
+        feedBack.DataPublicacao = DateTime.Now;
         feedBack.UsuarioId = 1;
         dao.Atualizar(feedBack);
     }
+
+    public Feedback? ListarPorId(int id)
+    {
+        Feedback feedback = dao.ListarPorId(id);
+
+        if (feedback != null)
+        {
+            return feedback;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 
     public void ExcluirFeedback(Feedback feedback)
     {
