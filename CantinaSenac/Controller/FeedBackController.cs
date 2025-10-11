@@ -1,4 +1,4 @@
-class FeedBackController
+public class FeedBackController
 {
     private FeedBackDAO feedBackDAO = new FeedBackDAO();
     public void AdicionarFeedBack(FeedBack feedBack)
@@ -7,15 +7,16 @@ class FeedBackController
         feedBack.DataPublicacao = DateTime.Now;
         feedBackDAO.Cadastrar(feedBack);
     }
-    public void ListarTodosFeedBacks()
+    public List<FeedBack> ListarTodosFeedBacks()
     {
         List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
-        foreach (FeedBack feedBack in feedBacks)
+        return feedBacks;
+        /*foreach (FeedBack feedBack in feedBacks)
         {
             Console.WriteLine($"Decrição: {feedBack.Descricao}");
             Console.WriteLine("ID: " + feedBack.Id);
             Console.WriteLine("----------");
-        }
+        } */
     }
     public void AlterarFeedBack(FeedBack feedBack)
     {
