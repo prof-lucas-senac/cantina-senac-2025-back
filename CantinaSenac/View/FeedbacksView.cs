@@ -21,6 +21,7 @@ static class FeedbacksView
         System.Console.WriteLine("1. Adicionar Feedback;");
         System.Console.WriteLine("2. Alterar Feedback;");
         System.Console.WriteLine("3. Excluir Feedback;");
+        System.Console.WriteLine("4. Detalhes do Feedback;");
         switch (Console.ReadLine())
         {
             case "1":

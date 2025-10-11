@@ -1,4 +1,4 @@
-class FeedbackController
+public class FeedbackController
 {
     private FeedbackDAO dao = new FeedbackDAO();
     public List<Feedback> ListarFeedbacks()
