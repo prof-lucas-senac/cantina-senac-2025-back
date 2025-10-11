@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac", "CantinaSenac\CantinaSenac.csproj", "{C97B558F-338B-4B2F-A11B-BE7F6E082908}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac.API", "CantinaSenac.API\CantinaSenac.API.csproj", "{AA8B8782-12A5-4C68-B745-45B52B46EFF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{C97B558F-338B-4B2F-A11B-BE7F6E082908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C97B558F-338B-4B2F-A11B-BE7F6E082908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C97B558F-338B-4B2F-A11B-BE7F6E082908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8B8782-12A5-4C68-B745-45B52B46EFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8B8782-12A5-4C68-B745-45B52B46EFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8B8782-12A5-4C68-B745-45B52B46EFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8B8782-12A5-4C68-B745-45B52B46EFF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
