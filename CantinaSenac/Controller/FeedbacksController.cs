@@ -21,22 +21,10 @@ public class FeedbacksController
         feedbackDAO.Atualizar(feedback);
     }
 
-    public void MostrarFeedbacks()
+    public List<Feedback> MostrarFeedbacks()
     {
-        List<Feedback> feedbacks = new FeedbackDAO().ListarTodos();
-        if (feedbacks.Count == 0)
-        {
-            Console.WriteLine("Sem feedbacks");
-            Console.WriteLine("======================================");
-        }
-        else
-        {
-            foreach (Feedback feedback in feedbacks)
-            {
-                Console.WriteLine(feedback.Id + " || " + feedback.decricao);
-                Console.WriteLine("======================================");
-            }
-        }
+        return new FeedbackDAO().ListarTodos();
+        
     }
     public Feedback ListarPorId(int id)
     {
