@@ -46,15 +46,15 @@
         
     }
 
-    public override  void PublicarFeedback() {}
+    //public override  void PublicarFeedback() {}
 
-    public override void ComentarFeedback()
-    {
+   // public override void ComentarFeedback()
+    //{
         
-    }
+   // }
 
-    public override void Logar()
-    {
+   // public override void Logar()
+   // {
         
-    }
+   // }
 }

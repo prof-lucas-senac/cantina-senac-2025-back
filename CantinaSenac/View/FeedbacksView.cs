@@ -1,4 +1,4 @@
-public static class FeedbacksView
+static class FeedbacksView
 {
     public static void Exibir()
     {
@@ -108,38 +108,4 @@ public static class FeedbacksView
         Console.ReadKey();
         Exibir();
     }
-
-
-    public static void ExibirDialogoExcluirFeedback()
-    {
-         Feedback feedback = new Feedback();
-
-        System.Console.WriteLine("Exclua o seu feedback:");
-        System.Console.WriteLine("Digite o id do feedback a ser excluido:");
-        feedback.Id = Convert.ToInt32(Console.ReadLine());
-
-        new FeedbackController().ExcluirFeedback(feedback);
-
-        System.Console.WriteLine("Feedback excluido com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
-    }
-    
-     public static void ExibirDialogoEditarFeedback()
-    {
-         Feedback feedback = new Feedback();
-
-        System.Console.WriteLine("Edite o seu feedback:");
-        System.Console.WriteLine("Digite o id do feedback a ser editado:");
-        feedback.Id = Convert.ToInt32(Console.ReadLine());
-        System.Console.WriteLine("Digite as alterações no feedback");
-        feedback.Descricao = Console.ReadLine();
-
-        new FeedbackController().EditarFeedback(feedback);
-
-        System.Console.WriteLine("Feedback editado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
-    }
-
 }
