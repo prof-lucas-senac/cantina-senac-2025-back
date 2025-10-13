@@ -11,12 +11,6 @@ public class FeedBackController
     {
         List<FeedBack> feedBacks = new FeedBackDAO().ListarTodos();
         return feedBacks;
-        /*foreach (FeedBack feedBack in feedBacks)
-        {
-            Console.WriteLine($"Decrição: {feedBack.Descricao}");
-            Console.WriteLine("ID: " + feedBack.Id);
-            Console.WriteLine("----------");
-        } */
     }
     public void AlterarFeedBack(FeedBack feedBack)
     {

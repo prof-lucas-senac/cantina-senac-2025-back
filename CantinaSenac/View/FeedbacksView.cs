@@ -57,6 +57,12 @@ public class FeedbacksView
     {
         Console.WriteLine("--- Lista de Feedbacks ---");
         feedBackController.ListarTodosFeedBacks();
+        foreach (FeedBack feedBack in feedBackController.ListarTodosFeedBacks())
+        {
+            Console.WriteLine($"Decrição: {feedBack.Descricao}");
+            Console.WriteLine("ID: " + feedBack.Id);
+            Console.WriteLine("----------");
+        }
         Console.WriteLine("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
         Console.WriteLine();
     }
