@@ -6,6 +6,7 @@ app.MapGet("/feedbacks",() =>
 {
     List<Feedback> feedbacks;
     feedbacks = new FeedbackController().Listar();
+    return Results.Json(feedbacks);
 }
 );
 
