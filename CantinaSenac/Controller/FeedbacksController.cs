@@ -1,40 +1,33 @@
-// Classe responsável por controlar as operações relacionadas à entidade Feedback
-// Atua como intermediária entre a camada de apresentação (views) e a camada de dados (DAO)
-class FeedbackController
+public class FeedbackController
 {
-
     private FeedbackDAO dao = new FeedbackDAO();
-    // Retorna todos os feedbacks cadastrados no sistema
+
     public List<Feedback> ListarFeedbacks()
     {
         return new FeedbackDAO().ListarTodos();
     }
 
-    // Cadastra um novo feedback com base no objeto recebido
-    public void Cadastrar(Feedback feedback)
+    public void PostarFeedback(string descricaoFeedback)
     {
-        new FeedbackDAO().Cadastrar(feedback);
+        Feedback feedback = new Feedback();
+        feedback.Descricao = descricaoFeedback;
+        feedback.UsuarioId = 1;
+        feedback.DataPublicacao = DateTime.Now;
+        dao.Cadastrar(feedback);
     }
 
-    // Atualiza um feedback existente com os dados fornecidos
-    public void Atualizar(Feedback feedback)
+    public void ExcluirFeedback(Feedback feedback)
     {
-        new FeedbackDAO().Atualizar(feedback);
+        dao.Excluir(feedback);
+    }
+    public void AtualizarFeedback(Feedback feedback)
+    {
+        feedback.DataPublicacao = DateTime.Now;
+        feedback.UsuarioId = 1;
+        dao.Atualizar(feedback);
     }
 
-    // Exclui um feedback com base no ID fornecido
-    public void Excluir(int id)
-    {
-        new FeedbackDAO().Excluir(id);
-    }
-
-    // Retorna um feedback específico pelo ID (opcional, útil para edição)
-    public Feedback BuscarPorId(int id)
-    {
-        return new FeedbackDAO().ListarPorId(id);
-    }
-
-    public Feedback ListarPorId(int id)
+    public Feedback? ListarPorId(int id)
     {
         Feedback feedback = dao.ListarPorId(id);
 

@@ -1,7 +1,2 @@
-﻿    LoginView.Exibir();
-
-
-
-       
-
-        
+﻿﻿// See https://aka.ms/new-console-template for more information
+LoginView.Exibir();
