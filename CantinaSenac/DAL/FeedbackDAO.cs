@@ -1,6 +1,6 @@
 
 
-class FeedbackDAO : IDAO<Feedback>
+public class FeedbackDAO : IDAO<Feedback>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Feedback objeto)
