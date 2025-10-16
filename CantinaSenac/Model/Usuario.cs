@@ -1,4 +1,4 @@
-abstract class Usuario
+public abstract class Usuario
 {
     public int Id { get; set; }
     public string NomeDoUsuario { get; set; }
@@ -7,8 +7,4 @@ abstract class Usuario
     public int Status { get; set; }
     public string? Foto { get; set; }
     public List<Postagem> Postagens { get; set; }
-    public abstract string PublicarFeedback();
-    public abstract string ComentarFeedback();
-
-    public abstract string logar();
 }

@@ -1,38 +1,29 @@
+
 class AlunoDAO : IDAO<Aluno>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
+    public void Atualizar(Aluno aluno)
+    {
+        throw new NotImplementedException();
+    }
 
     public void Cadastrar(Aluno aluno)
     {
-        contexto.Alunos.Add(aluno);
-        contexto.SaveChanges();
+        // alunos.Add(aluno);
     }
 
-    public void Atualizar(Aluno aluno)
+    public void Excluir(Aluno objeto)
     {
-        contexto.Alunos.Update(aluno);
-        contexto.SaveChanges();
+        throw new NotImplementedException();
     }
 
-    public void Excluir(Aluno aluno)
+    public Aluno ListarPorId(int id)
     {
-        contexto.Alunos.Remove(aluno);
-        contexto.SaveChanges();
+        throw new NotImplementedException();
     }
 
-    public void Remover(int id)
+    public List<Aluno> ListarTodos()
     {
-        var aluno = contexto.Alunos.FirstOrDefault(a => a.Id == id);
-        if (aluno != null)
-        {
-            contexto.Alunos.Remove(aluno);
-            contexto.SaveChanges();
-            Console.WriteLine($"\nAluno com ID {id} removido do banco de dados.");
-        }
-        else
-        {
-            Console.WriteLine($"\nAluno com ID {id} não encontrado no banco de dados.");
-        }
+        return contexto.Alunos.ToList();
     }
-
 }

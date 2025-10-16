@@ -1,6 +1,4 @@
-using System.Data;
-
-class Feedback : Postagem
+public class Feedback : Postagem
 {
- 
+    
 }

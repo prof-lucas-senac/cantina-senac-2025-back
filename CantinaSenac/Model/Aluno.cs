@@ -1,17 +1,6 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 class Aluno : Usuario
 {
-    public override string ComentarFeedback()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override string logar()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override string PublicarFeedback()
-    {
-        throw new NotImplementedException();
-    }
+    // public List<Curso> Cursos { get; set; } = new List<Curso>();
 }
