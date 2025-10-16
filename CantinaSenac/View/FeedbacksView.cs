@@ -8,6 +8,7 @@ static class FeedbacksView
         System.Console.WriteLine("Cantina SENAC");
         System.Console.WriteLine("Lista de Feedbacks:");
         feedbacks = new FeedbackController().ListarFeedbacks();
+        
         if (feedbacks.Count > 0)
         {
             ListarFeedbacks(feedbacks);
