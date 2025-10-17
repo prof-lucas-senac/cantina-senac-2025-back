@@ -1,75 +1,38 @@
-static class FeedbackController
+public class FeedbackController
 {
+    private FeedbackDAO dao = new FeedbackDAO();
 
-    private static FeedbackDAO dao = new FeedbackDAO();
-    private static List<Feedback> _feedbacks = new List<Feedback>();
-
-
-    public static void Salvar(string objeto)
+    public List<Feedback> ListarFeedbacks()
     {
-        if (string.IsNullOrWhiteSpace(objeto))
-        {
-            Console.WriteLine("\nNada foi informado. Feedback não salvo.");
-            return;
-        }
-
-        var novo = new Feedback()
-        {
-            Id = _feedbacks.Count + 1,
-            Descricao = objeto
-        };
-
-        _feedbacks.Add(novo);
-        Console.WriteLine("\nFeedback salvo com sucesso!");
+        return new FeedbackDAO().ListarTodos();
     }
 
-    public static List<Feedback> Listar()
+    public void PostarFeedback(Feedback feedback)
     {
-        return _feedbacks;
-    }
-
-    public static Feedback BuscarPorId(int id)
-    {
-        return _feedbacks.FirstOrDefault(fb => fb.Id == id);
-    }
-
-    public static void Atualizar(Feedback feedbackAtualizado)
-    {
-        var index = _feedbacks.FindIndex(fb => fb.Id == feedbackAtualizado.Id);
-        if (index != -1)
-        {
-            _feedbacks[index] = feedbackAtualizado;
-        }
-    }
-
-    public static void PostarFeedback(string descricaoFeedback)
-    {
-        Feedback feedback = new Feedback();
-        feedback.Descricao = descricaoFeedback;
-        feedback.DataPublicacao = DateTime.Now;
         dao.Cadastrar(feedback);
     }
-    public static void AtualizarFeedback(Feedback feedback)
+
+    public void ExcluirFeedback(Feedback feedback)
     {
-        feedback.DataPublicacao = DateTime.Now;
-        feedback.UsuarioId = 1;
+        dao.Excluir(feedback);
+    }
+    public void AtualizarFeedback(Feedback feedback)
+    {
+
         dao.Atualizar(feedback);
-
     }
 
-  public static void Remover(int id)
-{
-    var feedback = BuscarPorId(id);
-    if (feedback == null)
+    public Feedback? ListarPorId(int id)
     {
-        Console.WriteLine($"\nFeedback com ID {id} não encontrado.");
-        return;
+        Feedback feedback = dao.ListarPorId(id);
+
+        if (feedback != null)
+        {
+            return feedback;
+        }
+        else
+        {
+            return null;
+        }
     }
-
-    _feedbacks.Remove(feedback);
-    dao.Remover(id); 
-    Console.WriteLine($"\nFeedback com ID {id} removido com sucesso.");
 }
-}
-
-

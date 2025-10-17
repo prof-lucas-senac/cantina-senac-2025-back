@@ -1,4 +1,4 @@
-public static class FeedbacksView
+static class FeedbacksView
 {
     public static void Exibir()
     {
@@ -103,65 +103,10 @@ public static class FeedbacksView
         System.Console.WriteLine("Poste o seu feedback:");
         string descricaoFeedback = Console.ReadLine();
 
-        new FeedbackController().PostarFeedback(descricaoFeedback);
+        //new FeedbackController().PostarFeedback(descricaoFeedback);
 
         System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
         Exibir();
-    }
-
-    private static void Cadastrar()
-    {
-        Console.Clear();
-        Console.WriteLine("===== CADASTRAR FEEDBACK =====");
-        Console.Write("Descreva seu feedback: ");
-        var texto = Console.ReadLine();
-        FeedbackController.Salvar(texto);
-    }
-
-    private static void Listar()
-    {
-        Console.Clear();
-        Console.WriteLine("===== LISTA DE FEEDBACKS =====\n");
-
-        var lista = FeedbackController.Listar();
-
-        if (lista == null || lista.Count == 0)
-        {
-            Console.WriteLine("Nenhum feedback cadastrado ainda.");
-            return;
-        }
-
-        foreach (var fb in lista)
-        {
-            Console.WriteLine($"ID: {fb.Id} - {fb.Descricao}");
-        }
-    }
-
-    private static void ExibirDialogoAtualizarFeedback()
-    {
-        Console.Clear();
-        Console.WriteLine("===== ATUALIZAR FEEDBACK =====");
-        Console.Write("Informe o ID do Feedback a ser atualizado: ");
-        if (!int.TryParse(Console.ReadLine(), out int id))
-        {
-            Console.WriteLine("ID inválido.");
-            return;
-        }
-
-        Console.Write("Insira o novo feedback: ");
-        string novaDescricao = Console.ReadLine();
-
-        var feedback = FeedbackController.BuscarPorId(id);
-        if (feedback != null)
-        {
-            feedback.Descricao = novaDescricao;
-            FeedbackController.Atualizar(feedback);
-            Console.WriteLine("Feedback atualizado com sucesso!");
-        }
-        else
-        {
-            Console.WriteLine("Feedback não encontrado.");
-        }
     }
 }

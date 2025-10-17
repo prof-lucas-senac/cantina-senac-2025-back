@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
@@ -13,4 +15,16 @@ app.MapGet("/feedbacks", () =>
     return feedbacks;
 });
 
+app.MapPost("/Feedbacks", ([FromBody] Feedback feedback) =>
+{
+    new FeedbackController().PostarFeedback(feedback);
+    return "Feedback adicionado com sucesso";
+});
+
+app.MapPost( "/Feedbacks", ([FromBody]Feedback feedback) =>
+{
+    new FeedbackController().AtualizarFeedback(feedback);
+    return "Feedback adicionado com sucesso";
+});
 app.Run();
+    
