@@ -6,20 +6,14 @@ public class FeedbackController
         return new FeedbackDAO().ListarTodos();
     }
 
-    public void PostarFeedback(string descricaoFeedback)
+    public void PostarFeedback(Feedback feedback)
     {
-
-        Feedback feedback = new Feedback();
-        feedback.Descricao = descricaoFeedback;
-        feedback.UsuarioId = 1;
         dao.Cadastrar(feedback);
     }
 
 
     public void AtualizarFeedback(Feedback feedBack)
     {
-        feedBack.DataPublicacao = DateTime.Now;
-        feedBack.UsuarioId = 1;
         dao.Atualizar(feedBack);
     }
 
