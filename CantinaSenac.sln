@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac", "CantinaSena
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac.API", "CantinaSenac.API\CantinaSenac.API.csproj", "{80C9CFFB-11A8-4D9C-9CDE-270742DDB970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac.API", "CantinaSenac.API\CantinaSenac.API.csproj", "{3F0BC5CF-5610-46AF-B0FE-0CCED82DFDF7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
