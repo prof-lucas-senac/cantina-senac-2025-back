@@ -721,11 +721,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workplace\\prog_web\\back\\CantinaSenac.API\\CantinaSenac.API.csproj",
+      "projectUniqueName": "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac.API\\CantinaSenac.API.csproj",
       "projectName": "CantinaSenac.API",
-      "projectPath": "C:\\workplace\\prog_web\\back\\CantinaSenac.API\\CantinaSenac.API.csproj",
+      "projectPath": "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac.API\\CantinaSenac.API.csproj",
       "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\workplace\\prog_web\\back\\CantinaSenac.API\\obj\\",
+      "outputPath": "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -742,8 +742,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj": {
-              "projectPath": "C:\\workplace\\prog_web\\back\\CantinaSenac\\CantinaSenac.csproj"
+            "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {
+              "projectPath": "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj"
             }
           }
         }

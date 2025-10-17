@@ -2,41 +2,46 @@ static class FeedbacksView
 {
     public static void Exibir()
     {
-        string op;
-        do
+        List<Feedback> feedbacks;
+
+        Console.Clear();
+        System.Console.WriteLine("Cantina SENAC");
+        System.Console.WriteLine("Lista de Feedbacks:");
+        System.Console.WriteLine("==================================");
+        feedbacks = new FeedbacksController().MostrarFeedbacks();
+
+        if (feedbacks.Count > 0)
         {
-            Console.WriteLine("Lista de Feedbacks:");
-            Console.WriteLine("======================================");
-            new FeedbacksController().MostrarFeedbacks();
-
-            Console.WriteLine("\nCantina Senac\n ");
-            Console.WriteLine("pressione: \n[1] para adicionar feedback \n[2] para remover \n[3] para atualizar\n[4] Exibir detalhes do Feedback \n[0] para sair");
-            op = Console.ReadLine();
-
-            switch (op)
-            {
-                case "0":
-                    break;
-                case "1":
-                    ExibirDialogoAdicionarFeedback();
-                    break;
-                case "2":
-                    ExibirDialogoRemoverFeedback();
-                    break;
-                case "3":
-                    ExibirDialogoAtualizarFeedback();
-                    break;
-                case "4":
-                    ExibirDialogoDetalhesFeedback();
-                    break;
-                default:
-                    Console.WriteLine("valor invalido");
-                    break;
-            }
-        } while (op != "0");
+            ListarFeedbacks(feedbacks);
+        }
+        else
+        {
+            System.Console.WriteLine("Nenhum Feedback foi postado ainda.");
+        }
+        System.Console.WriteLine("==================================");
+        System.Console.WriteLine("Menu de opções:\n");
+        System.Console.WriteLine("1. Adicionar Feedback;");
+        System.Console.WriteLine("2. Alterar Feedback;");
+        System.Console.WriteLine("3. Excluir Feedback;");
+        System.Console.WriteLine("4. Exibir detalhes de um Feedback;");
+        switch (Console.ReadLine())
+        {
+            case "1":
+                ExibirDialogoPostarFeedback();
+                break;
+            case "2":
+                ExibirDialogoAtualizarFeedback();
+                break;
+            case "3":
+                ExibirDialogoRemoverFeedback();
+                break;
+            case "4":
+                ExibirDialogoDetalhesFeedback();
+                break;
+        }
     }
 
-    private static void ExibirDialogoAdicionarFeedback()
+    private static void ExibirDialogoPostarFeedback()
     {
         Feedback feedback = new Feedback();
         Console.WriteLine("---Adicione um feedback---");
@@ -116,5 +121,12 @@ static class FeedbacksView
         Console.WriteLine("pressione enter para continuar");
         Console.ReadKey();
         Console.Clear();
+    }
+    private static void ListarFeedbacks(List<Feedback> feedbacks)
+    {
+        foreach (Feedback feedback in feedbacks)
+        {
+            System.Console.WriteLine($"{feedback.Id} || {feedback.decricao}");
+        }
     }
 }

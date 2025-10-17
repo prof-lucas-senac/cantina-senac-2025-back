@@ -3,21 +3,16 @@ public class FeedbacksController
     private FeedbackDAO feedbackDAO = new FeedbackDAO();
     public void AdicionarFeedback(Feedback feedback)
     {
-        feedback.DataPublicacao = DateTime.Now;
-        feedback.UsuarioId = 1;
-
         feedbackDAO.Cadastrar(feedback);
     }
+    
     public void RemoverFeedback(Feedback feedback)
     {
         feedbackDAO.Excluir(feedback);
 
     }
-
     public void AtualizarFeedback(Feedback feedback)
     {
-        feedback.DataPublicacao = DateTime.Now;
-
         feedbackDAO.Atualizar(feedback);
     }
 
