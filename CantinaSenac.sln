@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac", "CantinaSenac\CantinaSenac.csproj", "{9EA63260-5FDD-43BA-BCA0-497B49715F85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CantinaSenac.API", "CantinaSenac.API\CantinaSenac.API.csproj", "{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{9EA63260-5FDD-43BA-BCA0-497B49715F85}.Release|x64.Build.0 = Release|Any CPU
 		{9EA63260-5FDD-43BA-BCA0-497B49715F85}.Release|x86.ActiveCfg = Release|Any CPU
 		{9EA63260-5FDD-43BA-BCA0-497B49715F85}.Release|x86.Build.0 = Release|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Debug|x64.Build.0 = Debug|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Debug|x86.Build.0 = Debug|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Release|x64.ActiveCfg = Release|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Release|x64.Build.0 = Release|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A4931B57-9DE6-4F2A-9E91-E9D7F6FCC55E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
