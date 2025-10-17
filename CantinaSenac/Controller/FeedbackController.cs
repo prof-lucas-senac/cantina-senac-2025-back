@@ -3,8 +3,6 @@ public static class FeedbackController
     private static FeedbackDAO feedbackDAO = new FeedbackDAO();
     public static void AdicionarFeedback(Feedback feedback)
     {
-        feedback.UsuarioId = 1;
-        feedback.DataPublicacao = DateTime.Now;
         feedbackDAO.Cadastrar(feedback);
     }
     public static void RemoverFeedback(Feedback feedback)

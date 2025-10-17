@@ -13,11 +13,6 @@ C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\ne
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\CantinaSenac.API.sourcelink.json
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets.development.json
-C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets\msbuild.CantinaSenac.API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets\msbuild.build.CantinaSenac.API.props
-C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CantinaSenac.API.props
-C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CantinaSenac.API.props
-C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\scopedcss\bundle\CantinaSenac.API.styles.css
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\CantinaSenac.API.dll
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\refint\CantinaSenac.API.dll
@@ -48,3 +43,10 @@ C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\bin\Debug\ne
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\bin\Debug\net8.0\CantinaSenac.pdb
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\CantinaSenac.API.csproj.AssemblyReference.cache
 C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\CantinaS.31A8963E.Up2Date
+C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\bin\Debug\net8.0\CantinaSenac.API.staticwebassets.endpoints.json
+C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\workplace\Prog_web\back\cantina-senac-2025-back\CantinaSenac.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
