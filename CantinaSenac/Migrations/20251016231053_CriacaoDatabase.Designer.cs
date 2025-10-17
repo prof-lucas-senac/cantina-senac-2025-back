@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaSenac.Migrations
 {
     [DbContext(typeof(CantinaSenacContext))]
-    [Migration("20251001222402_PermitirDescricaoNulaEmPostagem")]
-    partial class PermitirDescricaoNulaEmPostagem
+    [Migration("20251016231053_CriacaoDatabase")]
+    partial class CriacaoDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,7 @@ namespace CantinaSenac.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Discriminator")
@@ -65,6 +66,11 @@ namespace CantinaSenac.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -87,7 +93,9 @@ namespace CantinaSenac.Migrations
 
                     b.ToTable("Usuario");
 
-                    b.UseTptMappingStrategy();
+                    b.HasDiscriminator().HasValue("Usuario");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Feedback", b =>
@@ -101,15 +109,15 @@ namespace CantinaSenac.Migrations
                 {
                     b.HasBaseType("Usuario");
 
-                    b.ToTable("Alunos", (string)null);
+                    b.HasDiscriminator().HasValue("Aluno");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Email = "alan",
-                            NomeDoUsuario = "Alan",
-                            Senha = "123",
+                            Email = "aluno@senac.br",
+                            NomeDoUsuario = "Aluno",
+                            Senha = "aluno",
                             Status = 1
                         });
                 });
@@ -123,15 +131,6 @@ namespace CantinaSenac.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("Aluno", b =>
-                {
-                    b.HasOne("Usuario", null)
-                        .WithOne()
-                        .HasForeignKey("Aluno", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Usuario", b =>

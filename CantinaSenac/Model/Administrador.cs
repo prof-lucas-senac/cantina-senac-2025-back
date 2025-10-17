@@ -44,19 +44,19 @@ class Adminstrador : Usuario
     }
 
     // Sobrescreve o método de publicação de feedback da classe Usuario
-    public override void PublicarFeedBack()
+    public  void PublicarFeedBack()
     {
         // Ex: permitir que o administrador publique feedbacks institucionais
     }
 
     // Sobrescreve o método de comentário em feedback da classe Usuario
-    public override void ComentarFeedback()
+    public  void ComentarFeedback()
     {
         // Ex: permitir que o administrador comente em feedbacks de alunos
     }
 
     // Sobrescreve o método de login da classe Usuario
-    public override void Logar()
+    public  void Logar()
     {
         // Ex: autenticar administrador com permissões elevadas
     }

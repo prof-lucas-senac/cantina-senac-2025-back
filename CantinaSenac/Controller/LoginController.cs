@@ -1,7 +1,7 @@
 // Classe responsável por controlar o processo de autenticação de alunos no sistema
 class LoginController
 {
-    public bool Autenticar(string email, string senha)
+    public Aluno Autenticar(string email, string senha)
     {
         List<Aluno> alunos = new AlunoDAO().ListarTodos();
         

@@ -25,7 +25,7 @@ static class FeedbacksView
         switch (Console.ReadLine())
         {
             case "1":
-                ExibirDialogoPostarFeedback();
+                // ExibirDialogoPostarFeedback();
                 break;
             case "2":
                 ExibirDialogoAtualizarFeedback();
@@ -98,15 +98,15 @@ static class FeedbacksView
         }
     }
 
-    public static void ExibirDialogoPostarFeedback()
-    {
-        System.Console.WriteLine("Poste o seu feedback:");
-        string descricaoFeedback = Console.ReadLine();
+    // public static void ExibirDialogoPostarFeedback()
+    // {
+    //     System.Console.WriteLine("Poste o seu feedback:");
+    //     string descricaoFeedback = Console.ReadLine();
 
-        new FeedbackController().PostarFeedback(descricaoFeedback);
+    //     new FeedbackController().PostarFeedback(descricaoFeedback);
 
-        System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
-    }
+    //     System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+    //     Console.ReadKey();
+    //     Exibir();
+    // }
 }

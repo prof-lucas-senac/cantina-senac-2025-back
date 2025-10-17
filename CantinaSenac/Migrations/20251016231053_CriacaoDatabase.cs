@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CantinaSenac.Migrations
 {
     /// <inheritdoc />
-    public partial class ImplementacaoDBTPH : Migration
+    public partial class CriacaoDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
