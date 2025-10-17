@@ -1,4 +1,4 @@
-class LoginController
+public class LoginController
 {
     public bool Autenticar(string email, string senha)
     {

@@ -1,3 +1,5 @@
 .vscode/
 CantinaSenac/bin/
 CantinaSenac/obj
+obj/
+bin/
