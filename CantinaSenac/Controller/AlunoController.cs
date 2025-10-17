@@ -1,4 +1,4 @@
-class AlunoControler
+public class AlunoControler
 {
     public void Adicionar(Aluno aluno)
     {

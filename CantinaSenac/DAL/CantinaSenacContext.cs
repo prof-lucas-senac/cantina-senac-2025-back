@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-class CantinaSenacContext : DbContext
+public class CantinaSenacContext : DbContext
 {
     public DbSet<Aluno> Alunos { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }

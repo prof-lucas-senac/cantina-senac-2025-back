@@ -1,4 +1,4 @@
-class LoginController
+public class LoginController
 {
    
 

@@ -1,4 +1,4 @@
-interface IDAO <T>
+public interface IDAO <T>
 {
     public abstract void Cadastrar(T objeto);
 

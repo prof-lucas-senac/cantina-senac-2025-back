@@ -1,4 +1,4 @@
- class Administrador : Usuario
+ public class Administrador : Usuario
 {
     
 
