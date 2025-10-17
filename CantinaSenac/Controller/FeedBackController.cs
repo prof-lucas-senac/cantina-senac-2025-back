@@ -3,8 +3,6 @@ public class FeedBackController
     private FeedBackDAO feedBackDAO = new FeedBackDAO();
     public void AdicionarFeedBack(FeedBack feedBack)
     {
-        feedBack.UsuarioId = 1;
-        feedBack.DataPublicacao = DateTime.Now;
         feedBackDAO.Cadastrar(feedBack);
     }
     public List<FeedBack> ListarTodosFeedBacks()
@@ -14,8 +12,6 @@ public class FeedBackController
     }
     public void AlterarFeedBack(FeedBack feedBack)
     {
-        feedBack.DataPublicacao = DateTime.Now;
-        feedBack.UsuarioId = 1;
         feedBackDAO.Atualizar(feedBack);
     }
     public void ExcluirFeedBack(FeedBack feedBack)
