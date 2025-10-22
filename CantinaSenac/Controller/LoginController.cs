@@ -14,4 +14,3 @@ class LoginController
         return false;
     }
 }
-

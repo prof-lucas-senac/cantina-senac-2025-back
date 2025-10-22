@@ -2997,7 +2997,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\workplace\\Prog_web\\back\\CantinaSenac\\obj\\project.nuget.cache: '<' is an invalid start of a value. Path: $.expectedPackageFiles[42] | LineNumber: 48 | BytePositionInLine: 0."
+      "message": "Problem reading the cache file C:\\workplace\\Prog_web\\back\\CantinaSenac\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
     }
   ]
 }
