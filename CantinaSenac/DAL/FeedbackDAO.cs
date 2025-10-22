@@ -1,14 +1,37 @@
-public class FeedbackDAO
-{
-    public static List<Feedback> feedbacks = new List<Feedback>();
 
-    public static void Adicionar(Feedback feedback)
+
+public class FeedbackDAO : IDAO<Feedback>
+{
+    private CantinaSenacContext contexto = new CantinaSenacContext();
+    public void Atualizar(Feedback objeto)
     {
-        feedbacks.Add(feedback);
+        contexto.Feedbacks.Update(objeto);
+        contexto.SaveChanges();
     }
 
-    public static List<Feedback> Listar()
+    public void Cadastrar(Feedback objeto)
     {
-        return feedbacks;
+        contexto.Feedbacks.Add(objeto);
+        contexto.SaveChanges();
+    }
+
+    public void Excluir(Feedback objeto)
+    {
+        contexto.Feedbacks.Remove(objeto);
+        contexto.SaveChanges();
+    }
+
+    public Feedback ListarPorId(int id)
+    {
+        Feedback? feedback = null;
+        feedback = contexto.Feedbacks.FirstOrDefault(
+            feedback => feedback.Id == id
+        );
+        return feedback;
+    }
+
+    public List<Feedback> ListarTodos()
+    {
+        return contexto.Feedbacks.ToList();
     }
 }

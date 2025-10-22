@@ -1,9 +1,8 @@
-interface IDAO
+public interface IDAO <T>
 {
-    public abstract void Cadastrar(Aluno aluno);
-    public abstract void Atualizar(Aluno aluno);
-    public void Excluir(int id);
-    public List<Aluno> ListarTodos();
-
-    public Aluno Listar(int id);
+    public void Cadastrar(T objeto);
+    public void Atualizar(T objeto);
+    public void Excluir(T id);
+    public List<T> ListarTodos();
+    public T ListarPorId(int id);
 }
