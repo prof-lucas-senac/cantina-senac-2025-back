@@ -1,24 +1,16 @@
-class FeedbackController
+public class FeedbackController
 {
 
     public List<Feedback> Listar()
     {
         FeedbackDAO feedback = new FeedbackDAO();
-        List<Feedback> lista = feedback.ListarTodos();
-        foreach (var Feedback in lista)
-        {
-            System.Console.WriteLine($"ID: {Feedback.Id} - Descrição: {Feedback.Descricao}");
-        }
-        return lista;
+        return feedback.ListarTodos();
+       
     }
 
-    public void PostarFeedback(string descricaoFeedback)
+    public void PostarFeedback(Feedback feedback)
     {
         FeedbackDAO feedbackDAO = new FeedbackDAO();
-        Feedback feedback = new Feedback();
-        feedback.Descricao = descricaoFeedback;
-        feedback.UsuarioId = 1;
-        feedback.dataPostagem = DateTime.Now;
         feedbackDAO.Cadastrar(feedback);
     }
     public void AtualizarFeedback(Feedback feedback, string novaDescricao)

@@ -62,7 +62,7 @@ static class FeedbacksView
         Console.WriteLine("Por favor, deixe seu feedback sobre a cantina:");
         string descricaoFeedback = Console.ReadLine();
 
-        new FeedbackController().PostarFeedback(descricaoFeedback);
+        // new FeedbackController().PostarFeedback(descricaoFeedback);
 
         Console.WriteLine("Feedback cadastrado com sucesso! Pressione Enter para continuar");
         Console.ReadKey();

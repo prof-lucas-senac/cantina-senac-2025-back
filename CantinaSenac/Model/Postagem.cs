@@ -1,4 +1,4 @@
-abstract class Postagem
+public abstract class Postagem
 {
     public int Id { get; set; }
     public string Descricao { get; set; }
@@ -7,7 +7,5 @@ abstract class Postagem
     public int UsuarioId{ get; set; }
 
     // public List<Comentario> comentarios { get; set; }
-
-
 
 }
