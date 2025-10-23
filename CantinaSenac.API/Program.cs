@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,25 +10,32 @@ app.MapGet("/feedbacks", () =>
 {
     List<FeedBack> feedbacks;
     feedbacks = new FeedBackController().ListarTodosFeedBacks();
-    return feedbacks;
+    return Results.Ok(feedbacks);
 });
 //===============//
 app.MapPost("/feedbacks", ([FromBody]FeedBack feedback) =>
 {
     new FeedBackController().AdicionarFeedBack(feedback);
-    return "Feedback adicionado com sucesso!";
+    return Results.Ok("Feedback cadastrado com sucesso!");
 });
 //===============//
 app.MapPut("/feedbacks", ([FromBody] FeedBack feedback) =>
 {
     new FeedBackController().AlterarFeedBack(feedback);
-    return "Feedback alterado com sucesso!";
+    return Results.Ok("Feedback alterado com sucesso!");
 });
 //===============//
 app.MapDelete("/feedbacks", ([FromBody] FeedBack feedback) =>
 {
-    new FeedBackController().ExcluirFeedBack(feedback);
-    return "Feedback removido com sucesso!";
+    if (feedback.UsuarioId != 1)
+    {
+        return Results.Forbid();
+    }
+    else
+    {
+        new FeedBackController().ExcluirFeedBack(feedback);
+        return Results.Ok("Feedback excluído com sucesso!");
+    }
 });
 //===============//
 app.Run();
