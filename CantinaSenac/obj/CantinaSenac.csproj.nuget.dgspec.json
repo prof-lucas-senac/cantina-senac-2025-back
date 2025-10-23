@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {}
+    "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {}
   },
   "projects": {
-    "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {
+    "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectUniqueName": "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
         "projectName": "CantinaSenac",
-        "projectPath": "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectPath": "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
         "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-        "outputPath": "C:\\workplace\\prog_web\\back\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
+        "outputPath": "C:\\Users\\Prog_Sis\\Desktop\\programador web\\back\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -47,7 +47,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.9, )"
+              "version": "[9.0.8, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

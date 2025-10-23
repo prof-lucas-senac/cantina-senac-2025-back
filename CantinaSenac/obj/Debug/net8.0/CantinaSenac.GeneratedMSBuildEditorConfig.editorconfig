@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CantinaSenac
-build_property.ProjectDir = C:\workplace\prog_web\back\cantina-senac-2025-back\CantinaSenac\
+build_property.ProjectDir = C:\Users\Prog_Sis\Desktop\programador web\back\cantina-senac-2025-back\CantinaSenac\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
