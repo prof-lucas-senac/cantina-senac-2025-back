@@ -23,7 +23,7 @@ class CantinaSenacContext : DbContext
             new Aluno()
             {
                 Id = 1,
-                NomeDoUsuario = "Joao",
+                NomeDoUsuario = "Ric",
                 Email = "aluno@senac.com.br",
                 Senha = "aluno",
                 Status = 1

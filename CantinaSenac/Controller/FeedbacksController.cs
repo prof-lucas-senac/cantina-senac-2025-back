@@ -18,10 +18,11 @@ public class FeedbackController
         dao.Atualizar(feedback);
     }
 
-    public void ExcluirFeedback(int id)
+    public void ExcluirFeedback(Feedback feedback)
     {
-        dao.Excluir(id);
+        dao.Excluir(feedback.Id);
     }
+    
     public Feedback ListarPorId(int id)
     {
         Feedback feedback = dao.ListarPorId(id);
