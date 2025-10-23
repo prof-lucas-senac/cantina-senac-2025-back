@@ -11,8 +11,6 @@ public static class FeedbackController
     }
     public static void EditarFeedback(Feedback feedback)
     {
-        feedback.DataPublicacao = DateTime.Now;
-        feedback.UsuarioId = 1;
         feedbackDAO.Atualizar(feedback);
     }
     public static List<Feedback> ListarFeedback()
