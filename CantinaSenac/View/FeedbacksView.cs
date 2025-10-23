@@ -65,7 +65,7 @@ static class FeedbacksView
         System.Console.WriteLine("Poste o seu feedback:");
         string descricaoFeedback = Console.ReadLine();
 
-        new FeedbackController().PostarFeedback(descricaoFeedback);
+        //new FeedbackController().PostarFeedback(descricaoFeedback);
 
         System.Console.WriteLine("Feedback postado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
         Console.ReadKey();
