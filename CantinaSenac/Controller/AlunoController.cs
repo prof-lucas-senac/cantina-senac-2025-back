@@ -1,9 +1,27 @@
+using System.Diagnostics.CodeAnalysis;
+
 public class AlunoControler
 {
-    public void Adicionar(Aluno aluno)
+    private AlunoDAO dao = new AlunoDAO();
+
+    public List<Aluno> ListarAlunos()
     {
-        new AlunoDAO().Cadastrar(aluno);
-        LoginView.Exibir();
-       
+        return new AlunoDAO().ListarTodos();
+    }
+
+    public void CadastrarAluno(Aluno aluno)
+    {
+        dao.Cadastrar(aluno);
+
+    }
+
+    public void AtualizarAluno(Aluno aluno)
+    {
+        dao.Atualizar(aluno);
+    }
+
+    public void ExcluirAluno(Aluno aluno)
+    {
+        dao.Excluir(aluno);
     }
 }
