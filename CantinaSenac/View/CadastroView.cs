@@ -10,6 +10,6 @@ class CadastroView
         System.Console.WriteLine("Digite sua senha:");
         aluno.Senha = Console.ReadLine();
 
-        new AlunoController().Adicionar(aluno);
+       // new AlunoController().Adicionar(aluno);
       }
 }
