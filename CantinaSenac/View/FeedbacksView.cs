@@ -77,18 +77,6 @@ static class FeedbacksView
         Exibir();
     }
 
-    private static void ExibirDialogoAtualizarFeedback()
-    {
-        Feedback feedbackselecionado = new Feedback();
-        System.Console.WriteLine("informe o id do feedback que deseja remover:");
-        feedbackselecionado.Id = Convert.ToInt32(Console.ReadLine()!);
-
-        new FeedbackController().AtualizarFeedback(feedback);
-
-        System.Console.WriteLine("Feedback atualizado com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
-    }
     private static void ListarFeedbacks(List<Feedback> feedbacks)
     {
         foreach (Feedback feedback in feedbacks)

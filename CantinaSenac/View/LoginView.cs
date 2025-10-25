@@ -2,15 +2,21 @@ static class LoginView
 {
     public static void Exibir()
     {
-        string email = "";
-        string senha = "";
 
         System.Console.WriteLine("Bem-vind@ ao Cantina Senac!\n");
         System.Console.WriteLine("Por favor, insira suas credenciais:\n");
         System.Console.WriteLine("Email:");
-        email = Console.ReadLine();
+        string email = Console.ReadLine()!;
         System.Console.WriteLine("Senha:");
-        senha = Console.ReadLine();
+        string senha = Console.ReadLine()!;
+
+        if(email == "admin" && senha == "admin")
+        {
+            System.Console.WriteLine("Administrador autenticado com sucesso! Pressione Enter para continuar.");
+            Console.ReadKey();
+            AdminView.Exibir();
+
+        }
 
         if (new LoginController().Autenticar(email, senha))
         {
