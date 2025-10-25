@@ -5,22 +5,27 @@ public class AlunoDAO : IDAO <Aluno>
 
     public void Atualizar(Aluno aluno)
     {
-        throw new NotImplementedException();
+        contexto.Alunos.Update(aluno);
+        contexto.SaveChanges();
     }
 
     public void Cadastrar(Aluno aluno)
     {
-        //contexto.Add(aluno);
+        contexto.Alunos.Add(aluno);
+        contexto.SaveChanges();
     }
 
     public void Excluir(Aluno aluno)
     {
-        throw new NotImplementedException();
+        contexto.Alunos.Remove(aluno);
+        contexto.SaveChanges();
     }
 
     public Aluno ListarPorId(int id)
     {
-        throw new NotImplementedException();
+        contexto.FeedBacks.Find(id);
+        return contexto.Alunos.Find(id);
+        // pode ser usado FirstOrDefault(feedback => feedback.Id == id); para verificar se existe o id no banco
     }
 
     public List<Aluno> ListarTodos()
