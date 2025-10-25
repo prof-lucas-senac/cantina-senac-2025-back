@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CHltqXj3m8Y=",
+  "dgSpecHash": "jLsX8Mdnv14=",
   "success": true,
-  "projectFilePath": "C:\\workplace\\back\\CantinaSenac.API\\CantinaSenac.API.csproj",
+  "projectFilePath": "C:\\workplace\\back\\CantinaSenac.Api\\CantinaSenac.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jvmel\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\jvmel\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

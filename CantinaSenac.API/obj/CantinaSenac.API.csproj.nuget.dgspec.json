@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workplace\\back\\CantinaSenac.API\\CantinaSenac.API.csproj": {}
+    "C:\\workplace\\back\\CantinaSenac.Api\\CantinaSenac.API.csproj": {}
   },
   "projects": {
-    "C:\\workplace\\back\\CantinaSenac.API\\CantinaSenac.API.csproj": {
+    "C:\\workplace\\back\\CantinaSenac.Api\\CantinaSenac.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workplace\\back\\CantinaSenac.API\\CantinaSenac.API.csproj",
+        "projectUniqueName": "C:\\workplace\\back\\CantinaSenac.Api\\CantinaSenac.API.csproj",
         "projectName": "CantinaSenac.API",
-        "projectPath": "C:\\workplace\\back\\CantinaSenac.API\\CantinaSenac.API.csproj",
+        "projectPath": "C:\\workplace\\back\\CantinaSenac.Api\\CantinaSenac.API.csproj",
         "packagesPath": "C:\\Users\\jvmel\\.nuget\\packages\\",
-        "outputPath": "C:\\workplace\\back\\CantinaSenac.API\\obj\\",
+        "outputPath": "C:\\workplace\\back\\CantinaSenac.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -173,7 +173,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

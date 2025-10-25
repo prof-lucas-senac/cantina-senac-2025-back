@@ -8,7 +8,7 @@ class CadastroView
         aluno.Email = Console.ReadLine();
         System.Console.WriteLine("Entre com a senha: ");
         aluno.Senha = Console.ReadLine();
-        new AlunoController().Adicionar(aluno);
+        new AlunoController().AdicionarAluno(aluno);
     }
 }
         

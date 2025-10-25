@@ -27,6 +27,8 @@ class AlunoDAO : IDAO<Aluno>
 
     public Aluno ListarPorId(int id)
     {
+        Aluno aluno = null;
+        aluno = contexto.Alunos.FirstOrDefault(aluno => aluno.Id == id);
         return contexto.Alunos.Find(id);
     }
 

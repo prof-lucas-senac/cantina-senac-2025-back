@@ -1,4 +1,4 @@
- class Aluno : Usuario
+public class Aluno : Usuario
 {
 
 
