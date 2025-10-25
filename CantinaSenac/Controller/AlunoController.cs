@@ -1,9 +1,38 @@
-class AlunoControler
+public class AlunoController
 {
-    public void Adicionar(Aluno aluno)
+    private AlunoDAO dao = new AlunoDAO();
+    public List<Aluno> ListarAlunos()
     {
-        new AlunoDAO().Cadastrar(aluno);
-        LoginView.Exibir();
-       
+        return new AlunoDAO().ListarTodos();
+    }
+
+    public void PostarAluno(Aluno aluno)
+    {
+        dao.Cadastrar(aluno);
+    }
+
+
+    public void AtualizarAlunos(Aluno aluno)
+    {
+        dao.Atualizar(aluno);
+    }
+
+    public Aluno? ListarPorId(int id)
+    {
+        Aluno aluno = dao.ListarPorId(id);
+
+        if (aluno != null)
+        {
+            return aluno;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    public void ExcluirAluno(Aluno aluno)
+    {
+        dao.Excluir(aluno);
     }
 }
