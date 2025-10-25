@@ -3,21 +3,24 @@ using MySqlX.XDevAPI.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+
+var feedbackGroup = app.MapGroup("");
 Feedback feedback = new Feedback();
 
-app.MapGet("/", () => "Hello World!");
+
+var alunosGroup = app.MapGroup("");
 
 
-app.MapGet("/motivacional", () => "Tem boleto pra pagar, mas também tem almoço pra saborear!");
 
-app.MapGet("/feedbacks", () =>
+
+feedbackGroup.MapGet("", () =>
 {
     List<Feedback> feedbacks;
     feedbacks = new FeedbackController().ListarFeedbacks();
     return Results.Ok(feedbacks);
 });
 
-app.MapPost("/feedbacks", ([FromBody] Feedback feedback) =>
+feedbackGroup.MapPost("", ([FromBody] Feedback feedback) =>
 {
 
     new FeedbackController().PostarFeedback(feedback);
@@ -26,13 +29,13 @@ app.MapPost("/feedbacks", ([FromBody] Feedback feedback) =>
 
 });
 
-app.MapPut("/feedbacks", ([FromBody] Feedback feedback) =>
+feedbackGroup.MapPut("", ([FromBody] Feedback feedback) =>
 {
     new FeedbackController().AtualizarFeedback(feedback);
     return Results.Ok(feedback);
 });
 
-app.MapDelete("/feedbacks",  ([FromBody] Feedback feedback) =>
+feedbackGroup.MapDelete("",  ([FromBody] Feedback feedback) =>
 {
     if (feedback.UsuarioId != 1)
     {
@@ -41,6 +44,42 @@ app.MapDelete("/feedbacks",  ([FromBody] Feedback feedback) =>
     new FeedbackController().ExcluirFeedback(feedback);
     return Results.Ok();
 });
-    
+
+
+alunosGroup.MapGet("/alunos", () =>
+{
+   
+   var alunos = new AlunoController().ListarAlunos();
+    return Results.Ok(alunos);
+});
+
+alunosGroup.MapPost("/alunos", ([FromBody] Aluno aluno) =>
+{
+    if (aluno == null)
+        return Results.BadRequest();
+
+    new AlunoController().AdicionarAluno(aluno);
+    return Results.Ok(aluno);
+});
+
+
+alunosGroup.MapDelete("/alunos/{id:int}", (int id) =>
+{
+    var controller = new AlunoController();
+    var aluno = controller.ListarPorId(id);
+
+    if (aluno == null)
+        return Results.NotFound(new { message = "Aluno não encontrado" });
+
+    controller.ExcluirAluno(aluno);
+    return Results.Ok(new { message = "Aluno excluído com sucesso" });
+});
+
+
+alunosGroup.MapPut("/alunos", ([FromBody] Aluno aluno) =>
+{
+    new AlunoController().Atualizar(aluno);
+    return Results.Ok(aluno);
+});
 
 app.Run();

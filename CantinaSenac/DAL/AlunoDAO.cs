@@ -4,22 +4,31 @@ class AlunoDAO : IDAO<Aluno>
     private CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Aluno aluno)
     {
-        throw new NotImplementedException();
+        contexto.Alunos.Update(aluno);
+        contexto.SaveChanges();
     }
 
     public void Cadastrar(Aluno aluno)
     {
-        // alunos.Add(aluno);
+        contexto.Alunos.Add(aluno);
+        contexto.SaveChanges();
     }
 
     public void Excluir(int id)
     {
-        throw new NotImplementedException();
+        var aluno = contexto.Alunos.Find(id);
+        if (aluno != null)
+        {
+            contexto.Alunos.Remove(aluno);
+            contexto.SaveChanges();
+        }
     }
 
     public Aluno ListarPorId(int id)
     {
-        throw new NotImplementedException();
+        Aluno aluno = null;
+        aluno = contexto.Alunos.FirstOrDefault(a => a.Id == id); ;
+        return contexto.Alunos.Find(id);
     }
 
     public List<Aluno> ListarTodos()
