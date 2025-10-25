@@ -1,5 +1,5 @@
 
-class AlunoDAO : IDAO <Aluno>
+class AlunoDAO : IDAO<Aluno>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Aluno objeto)
@@ -22,7 +22,19 @@ class AlunoDAO : IDAO <Aluno>
 
     public Aluno ListarPorId(int id)
     {
-        throw new NotImplementedException();
+        Aluno? aluno = null;
+        aluno = contexto.Alunos.FirstOrDefault(
+            aluno => aluno.Id == id
+            );
+        if (aluno != null)
+        {
+            return aluno;
+
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public List<Aluno> ListarTodos()

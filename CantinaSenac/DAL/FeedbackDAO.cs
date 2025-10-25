@@ -1,4 +1,4 @@
-public class FeedbackDAO : IDAO <Feedback>
+public class FeedbackDAO : IDAO<Feedback>
 {
     private CantinaSenacContext contexto = new CantinaSenacContext();
 
@@ -26,7 +26,15 @@ public class FeedbackDAO : IDAO <Feedback>
         feedback = contexto.Feedbacks.FirstOrDefault(
             feedback => feedback.Id == id
             );
-        return feedback;
+        if (feedback != null)
+        {
+            return feedback;
+
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public List<Feedback> ListarTodos()
