@@ -7,26 +7,26 @@ var app = builder.Build();
 var feedbackGroup = app.MapGroup("/feedbacks");
 
 //===============//
-app.MapGet("", () =>
+feedbackGroup.MapGet("", () =>
 {
     List<FeedBack> feedbacks;
     feedbacks = new FeedBackController().ListarTodosFeedBacks();
     return Results.Ok(feedbacks);
 });
 //===============//
-app.MapPost("", ([FromBody]FeedBack feedback) =>
+feedbackGroup.MapPost("", ([FromBody]FeedBack feedback) =>
 {
     new FeedBackController().AdicionarFeedBack(feedback);
     return Results.Ok("Feedback cadastrado com sucesso!");
 });
 //===============//
-app.MapPut("", ([FromBody] FeedBack feedback) =>
+feedbackGroup.MapPut("", ([FromBody] FeedBack feedback) =>
 {
     new FeedBackController().AlterarFeedBack(feedback);
     return Results.Ok("Feedback alterado com sucesso!");
 });
 //===============//
-app.MapDelete("", ([FromBody] FeedBack feedback) =>
+feedbackGroup.MapDelete("", ([FromBody] FeedBack feedback) =>
 {
     if (feedback.UsuarioId != 1)
     {
@@ -45,26 +45,26 @@ app.MapDelete("", ([FromBody] FeedBack feedback) =>
 
 var alunoGroup = app.MapGroup("/alunos");
 
-app.MapGet("", () =>
+alunoGroup.MapGet("", () =>
 {
     List<Aluno> alunos;
     alunos = new AlunoController().ListarTodosAlunos();
     return Results.Ok(alunos);
 });
 //===============//
-app.MapPost("", ([FromBody] Aluno aluno) =>
+alunoGroup.MapPost("", ([FromBody] Aluno aluno) =>
 {
     new AlunoController().AdicionarAluno(aluno);
     return Results.Ok("Aluno cadastrado com sucesso!");
 });
 //===============//
-app.MapPut("", ([FromBody] Aluno aluno) =>
+alunoGroup.MapPut("", ([FromBody] Aluno aluno) =>
 {
     new AlunoController().AlterarAluno(aluno);
     return Results.Ok("Aluno alterado com sucesso!");
 });
 //===============//
-app.MapDelete("", ([FromBody] Aluno aluno) =>
+alunoGroup.MapDelete("", ([FromBody] Aluno aluno) =>
 {
     new AlunoController().ExcluirAluno(aluno);
     return Results.Ok("Aluno excluído com sucesso!");
