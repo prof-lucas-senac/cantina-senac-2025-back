@@ -7,7 +7,7 @@ public class FeedbackController
     }
 
     public void PostarFeedback(Feedback feedback)
-    {
+    {        
         dao.Cadastrar(feedback);
     }
 
@@ -17,7 +17,6 @@ public class FeedbackController
     }
     public void AtualizarFeedback(Feedback feedback)
     {
-
         dao.Atualizar(feedback);
     }
     
