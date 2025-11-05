@@ -2,6 +2,7 @@
 class AlunoDAO : IDAO<Aluno>
 {
     private static List<Aluno> alunos = new List<Aluno>();
+    private CantinaSenacContext contexto = new CantinaSenacContext();
     public void Atualizar(Aluno aluno)
     {
         contexto.Alunos.Update(aluno);
