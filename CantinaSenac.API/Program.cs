@@ -12,7 +12,7 @@ app.MapGet("/", () => "wow");
 //Endpoint que retorne uma frase motivacional
 app.MapGet("/motivacional", () => "Lembre-se, é por você, não pelos outros");
 
-feedbackGroup.MapGet("/feedbacks", () =>
+feedbackGroup.MapGet("", () =>
 {
     List<Feedback> feedbacks;
     feedbacks = new FeedbackController().ListarFeedbacks();
