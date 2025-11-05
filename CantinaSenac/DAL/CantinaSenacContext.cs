@@ -22,16 +22,16 @@ class CantinaSenacContext : DbContext
             .HasForeignKey(f => f.UsuarioId);
             builder.Entity<Aluno>().ToTable("Alunos");
 
-        builder.Entity<Aluno>().HasData(
-            new Aluno()
-            {
-                Id = 1,
-                NomeUsuario = "Joao",
-                Email = "aluno@senac.com.br",
-                Senha = "aluno",
-                Status = 1
-            }
-        );
+        // builder.Entity<Aluno>().HasData(
+        //     new Aluno()
+        //     {
+        //         Id = 1,
+        //         NomeUsuario = "Joao",
+        //         Email = "aluno@senac.com.br",
+        //         Senha = "aluno",
+        //         Status = 1
+        //     }
+        // );
     //     builder.Entity<Feedback>().HasData(
     //         new Feedback()
     //         {
