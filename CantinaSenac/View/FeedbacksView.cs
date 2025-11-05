@@ -95,18 +95,18 @@ static class FeedbacksView
     }
     private static void ListarFeedbacks(List<Feedback> feedbacks)
     {
-        foreach (Feedback feedback in feedbacks)
-        {
-            case "1":
-                ExibirDialogoPostarFeedback();
-                break;
-            case "2":
-                ExibirDialogoAtualizarFeedback();
-                break;
-            case "3":
-                break;
-        }
-        ExibirDialogoPostarFeedback();
+        // switch (Feedback feedback in feedbacks)
+        // {
+        //     case "1":
+        //         ExibirDialogoPostarFeedback();
+        //         break;
+        //     case "2":
+        //         ExibirDialogoAtualizarFeedback();
+        //         break;
+        //     case "3":
+        //         break;
+        // }
+        // ExibirDialogoPostarFeedback();
     }
 
     public static void ExibirDialogoPostarFeedback()
@@ -121,26 +121,26 @@ static class FeedbacksView
         Exibir();
     }
 
-    public static void ExibirDialogoAtualizarFeedback()
-    {
-        Feedback feedback = new Feedback();
-        Console.WriteLine("Informe id do Feedback: ");
-        feedback.Id = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Informe nova descrição do Feedback: ");
-        feedback.Descricao = Console.ReadLine()!;
+    // public static void ExibirDialogoAtualizarFeedback()
+    // {
+    //     // Feedback feedback = new Feedback();
+    //     // Console.WriteLine("Informe id do Feedback: ");
+    //     // feedback.Id = Convert.ToInt32(Console.ReadLine());
+    //     // Console.WriteLine("Informe nova descrição do Feedback: ");
+    //     // feedback.Descricao = Console.ReadLine()!;
 
-        new FeedbackController().AtualizarFeedback(feedback);
+    //     // new FeedbackController().AtualizarFeedback(feedback);
 
-        Console.WriteLine("Feedback atualizadio com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadLine();
-        Exibir();
-    }
+    //     // Console.WriteLine("Feedback atualizadio com sucesso. Pressione qualquer tecla para retornar à tela de Feedbacks.");
+    //     // Console.ReadLine();
+    //     // Exibir();
+    // }
     
-    private static void ListarFeedbacks(List<Feedback> feedbacks)
-    {
-        foreach (Feedback feedback in feedbacks)
-        {
-            Console.WriteLine(feedback.Descricao);
-        }
-    }
+    // private static void ListarFeedbacks(List<Feedback> feedbacks)
+    // {
+    //     foreach (Feedback feedback in feedbacks)
+    //     {
+    //         Console.WriteLine(feedback.Descricao);
+    //     }
+    // }
 }
