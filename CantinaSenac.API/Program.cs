@@ -6,8 +6,6 @@ var app = builder.Build();
 var feedbackGroup = app.MapGroup("feedbacks");
 var alunoGroup = app.MapGroup("alunos");
 
-// app.MapGet("/", () => "https://campo-minado.com/");
-// app.MapGet("/verdade", () => "Ta deveno");
 feedbackGroup.MapGet("", () =>
 {
     List<Feedback> feedbacks = FeedbackController.ListarFeedback();

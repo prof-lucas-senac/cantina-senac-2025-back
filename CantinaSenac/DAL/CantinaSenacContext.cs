@@ -2,7 +2,7 @@ using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 class CantinaSenacContext : DbContext
 {
-    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=S&nac2024";
+    string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=0123";
     public DbSet<Aluno> Alunos { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

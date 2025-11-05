@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6cFcu4xCmU4=",
+  "dgSpecHash": "yxvByHDp+J8=",
   "success": true,
-  "projectFilePath": "C:\\workplace\\Prog_web\\back\\cantina-senac-2025-back\\CantinaSenac.API\\CantinaSenac.API.csproj",
+  "projectFilePath": "C:\\workplace\\CantinaSenac\\cantina-senac-2025-back\\CantinaSenac.API\\CantinaSenac.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Prog_Sis\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.9\\microsoft.entityframeworkcore.9.0.9.nupkg.sha512",
     "C:\\Users\\Prog_Sis\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.9\\microsoft.entityframeworkcore.abstractions.9.0.9.nupkg.sha512",
