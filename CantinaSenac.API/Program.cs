@@ -4,6 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 var feedbackGroup = app.MapGroup("/feedbacks");
+var alunosGroup = app.MapGroup("/alunos");
 
 feedbackGroup.MapGet("", () =>
 {
@@ -30,26 +31,26 @@ feedbackGroup.MapDelete("", ([FromBody] Feedback feedback) =>
     return Results.Ok("Feedback excluído com sucesso.");
 });
 
-app.MapGet("/alunos", () =>
+alunosGroup.MapGet("", () =>
 {
     List<Aluno> alunos;
     alunos = new AlunoController().ListarAlunos();
     return Results.Ok(alunos);
 });
 
-app.MapPost("/alunos", ([FromBody] Aluno aluno) =>
+alunosGroup.MapPost("", ([FromBody] Aluno aluno) =>
 {
     new AlunoController().Adicionar(aluno);
     return Results.Ok("Aluno criado com sucesso.");
 });
 
-app.MapPut("/alunos", ([FromBody] Aluno aluno) =>
+alunosGroup.MapPut("", ([FromBody] Aluno aluno) =>
 {
     new AlunoController().AtualizarAluno(aluno);
     return "Aluno atualizado com sucesso.";
 });
 
-app.MapDelete("/alunos", ([FromBody] Aluno aluno) =>
+alunosGroup.MapDelete("", ([FromBody] Aluno aluno) =>
 {
     new AlunoController().ExcluirAluno(aluno);
     return Results.Ok("Aluno excluído com sucesso.");
