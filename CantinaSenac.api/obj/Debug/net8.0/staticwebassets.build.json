@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KBgkMwQt8BHGoIQoCafHkVjCxbbxw0seZfQXkck/rLc=",
+  "Source": "CantinaSenac.api",
+  "BasePath": "_content/CantinaSenac.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

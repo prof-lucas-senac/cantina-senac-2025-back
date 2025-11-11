@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "CantinaSenac.api/1.0.0": {
+        "runtime": {
+          "CantinaSenac.api.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CantinaSenac.api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

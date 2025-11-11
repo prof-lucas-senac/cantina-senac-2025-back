@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CantinaSenac")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("CantinaSenac.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe575a3820a74fb1ff2b76ca3c6e5cf612872339")]
-[assembly: System.Reflection.AssemblyProductAttribute("CantinaSenac")]
-[assembly: System.Reflection.AssemblyTitleAttribute("CantinaSenac")]
+[assembly: System.Reflection.AssemblyProductAttribute("CantinaSenac.api")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CantinaSenac.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
