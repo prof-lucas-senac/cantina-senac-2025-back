@@ -6,27 +6,26 @@ class AlunoDAO : IDAO<Aluno>
     {
         contexto.Alunos.Update(aluno);
         contexto.SaveChanges();
-
     }
 
     public void Cadastrar(Aluno aluno)
     {
         contexto.Alunos.Add(aluno);
         contexto.SaveChanges();
-
     }
 
     public void Excluir(Aluno aluno)
     {
         contexto.Alunos.Remove(aluno);
         contexto.SaveChanges();
-
     }
 
     public Aluno ListarPorId(int id)
     {
-        Aluno aluno = null;
-         aluno = contexto.Alunos.FirstOrDefault(aluno => aluno.Id == id);
+        Aluno? aluno = null;
+        aluno = contexto.Alunos.FirstOrDefault(
+            aluno => aluno.Id == id
+        );
         return aluno;
     }
 
