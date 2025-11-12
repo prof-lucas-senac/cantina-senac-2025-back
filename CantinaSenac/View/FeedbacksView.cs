@@ -39,29 +39,29 @@ static class FeedbacksView
         }
     }
 
-    private static void ExibirDialogoDetalhesFeedback()
-    {
-        System.Console.WriteLine("Informe o Id do Feedback a ser exibido:");
-        int id = Convert.ToInt32(Console.ReadLine());
+    // private static void ExibirDialogoDetalhesFeedback()
+    // {
+    //     System.Console.WriteLine("Informe o Id do Feedback a ser exibido:");
+    //     int id = Convert.ToInt32(Console.ReadLine());
 
-        Feedback? feedbackSelecionado = new FeedbackController().ListarPorId(id);
+    //     Feedback? feedbackSelecionado = new FeedbackController().ListarPorId(id);
 
-        if (feedbackSelecionado != null)
-        {
-            System.Console.WriteLine("Detalhes do feedback:\n");
-            System.Console.WriteLine($"Id: {feedbackSelecionado.Id}");
-            System.Console.WriteLine($"Conteúdo: {feedbackSelecionado.Descricao}");
-            System.Console.WriteLine($"Data de publicação: {feedbackSelecionado.DataPublicacao}\n");
-        }
-        else
-        {
-            System.Console.WriteLine("Feedback não encontrado.\n");
-        }
+    //     if (feedbackSelecionado != null)
+    //     {
+    //         System.Console.WriteLine("Detalhes do feedback:\n");
+    //         System.Console.WriteLine($"Id: {feedbackSelecionado.Id}");
+    //         System.Console.WriteLine($"Conteúdo: {feedbackSelecionado.Descricao}");
+    //         System.Console.WriteLine($"Data de publicação: {feedbackSelecionado.DataPublicacao}\n");
+    //     }
+    //     else
+    //     {
+    //         System.Console.WriteLine("Feedback não encontrado.\n");
+    //     }
 
-        System.Console.WriteLine("Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
-    }
+    //     System.Console.WriteLine("Pressione qualquer tecla para retornar à tela de Feedbacks.");
+    //     Console.ReadKey();
+    //     Exibir();
+    // }
 
     private static void ExibirDialogoRemoverFeedback()
     {
@@ -110,23 +110,23 @@ static class FeedbacksView
         Exibir();
     }
 
-    public static void ExibirDialogoRemoverFeedback()
-    {
-        System.Console.Write("Digite o ID do feedback que deseja remover: ");
-        if (int.TryParse(Console.ReadLine(), out int id))
-        {
-            new FeedbackController().RemoverFeedback(id);
-            System.Console.WriteLine("Feedback removido com sucesso.");
-        }
-        else
-        {
-            System.Console.WriteLine("Feedback não encontrado.\n");
-        }
+    // public static void ExibirDialogoRemoverFeedback()
+    // {
+    //     System.Console.Write("Digite o ID do feedback que deseja remover: ");
+    //     if (int.TryParse(Console.ReadLine(), out int id))
+    //     {
+    //         new FeedbackController().RemoverFeedback(id);
+    //         System.Console.WriteLine("Feedback removido com sucesso.");
+    //     }
+    //     else
+    //     {
+    //         System.Console.WriteLine("Feedback não encontrado.\n");
+    //     }
 
-        System.Console.WriteLine("Pressione qualquer tecla para retornar à tela de Feedbacks.");
-        Console.ReadKey();
-        Exibir();
-    }
+    //     System.Console.WriteLine("Pressione qualquer tecla para retornar à tela de Feedbacks.");
+    //     Console.ReadKey();
+    //     Exibir();
+    // }
 
     public static void ExibirDialogoDetalhesFeedback()
     {
