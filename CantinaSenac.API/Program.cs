@@ -55,16 +55,4 @@ app.MapDelete("/alunos", ([FromBody] Aluno aluno) =>
     return Results.Ok("Aluno excluído com sucesso.");
 });
 
-app.MapPost("/feedbacks", ([FromBody] Feedback feedback) =>
-{
-    new FeedbackController().PostarFeedback(feedback);
-    return "Feedback adicionado com sucesso";
-});
-
-app.MapPut("/feedback", ([FromBody] Feedback feedbacks) =>
-{
-    new FeedbackController().AtualizarFeedback(feedbacks);
-    return "Feedback Atualizado com sucesso";
-});
-
 app.Run();
