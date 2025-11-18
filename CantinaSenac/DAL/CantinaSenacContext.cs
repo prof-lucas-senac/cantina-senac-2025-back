@@ -5,6 +5,7 @@ class CantinaSenacContext : DbContext
 {
     public DbSet<Aluno> Alunos { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }
+    //string stringConexao = "Server=db32476.databaseasp.net; Database=db32476; Uid=db32476; Pwd=9Re=i2+P7!Gb; ";
     string stringConexao = "Server=localhost;Port=3306;Database=CantinaSenac;Uid=root;Pwd=S&nac2024;";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
