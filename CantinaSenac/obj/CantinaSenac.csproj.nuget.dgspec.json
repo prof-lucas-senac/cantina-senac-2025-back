@@ -1,32 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj": {}
+    "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {}
   },
   "projects": {
-    "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj": {
+    "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
+        "projectUniqueName": "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
         "projectName": "CantinaSenac",
-        "projectPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\CantinaSenac.csproj",
-        "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-        "outputPath": "C:\\workplace\\pweb_2025\\back\\CantinaSenac\\obj\\",
+        "projectPath": "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\CantinaSenac.csproj",
+        "packagesPath": "C:\\Users\\giuli\\.nuget\\packages\\",
+        "outputPath": "C:\\workspace\\CantinaEscolar\\back\\cantina-senac-2025-back\\CantinaSenac\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\giuli\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -38,13 +39,18 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.20, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -72,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.7.24407.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -3,6 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+app.MapGet("/auth", () =>
+{
+    AuthController authController = new AuthController();
+    return authController.GerarToken(null);
+});
+
 var feedbackGroup = app.MapGroup("/feedbacks");
 
 feedbackGroup.MapGet("", () =>
